@@ -22,7 +22,11 @@ import {
   Plug,
   Box,
   CupSoda,
+  Ruler,
+  Gauge,
+  Cable,
 } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import heroImage from "@/assets/makita-coffee-maker.png";
 import heroTransparent from "@/assets/hero-portada.png";
 import sideTransparent from "@/assets/side-transparent.png";
