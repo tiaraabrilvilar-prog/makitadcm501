@@ -28,6 +28,8 @@ import heroTransparent from "@/assets/hero-portada.png";
 import sideTransparent from "@/assets/side-transparent.png";
 import tankTransparent from "@/assets/tank-transparent.png";
 import oppositeTransparent from "@/assets/opposite-transparent.png";
+import tealVersion from "@/assets/teal-version.png";
+import oliveVersion from "@/assets/olive-version.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -637,6 +639,86 @@ function SpecsSection() {
   );
 }
 
+function VersionsSection() {
+  const { ref, visible } = useInView(0.1);
+
+  const versions = [
+    {
+      name: "Azul Turquesa",
+      code: "DCM501Z",
+      image: tealVersion,
+      description:
+        "Es el color institucional clásico de Makita. Es la versión más común y fácil de conseguir en la mayoría de las tiendas. Se comercializa bajo el código estándar DCM501Z.",
+      badge: "Clásico",
+      colorClass: "bg-[#14B8A6]/10 border-[#14B8A6]/20 text-[#14B8A6]",
+    },
+    {
+      name: "Verde Oliva",
+      code: "DCM501ZO",
+      image: oliveVersion,
+      description:
+        'Edición especial lanzada dentro del catálogo "Lifestyle" de Makita. Diseño táctico y campestre ideal para campings o expediciones. La "O" final hace referencia a Olive.',
+      badge: "Edición Especial",
+      colorClass: "bg-[#6B8E23]/10 border-[#6B8E23]/20 text-[#6B8E23]",
+    },
+  ];
+
+  return (
+    <section id="versions" ref={ref} className="relative py-20 sm:py-28 bg-surface-darker/30">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-14 text-center">
+          <span className="text-sm font-semibold tracking-[0.2em] text-makita-teal uppercase">
+            Versiones
+          </span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+            Elegí tu estilo
+          </h2>
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+            La DCM501 viene en dos versiones distintas para adaptarse a tu personalidad y entorno de trabajo.
+          </p>
+        </div>
+
+        <div className="grid gap-8 sm:grid-cols-2 max-w-5xl mx-auto">
+          {versions.map((v, i) => (
+            <div
+              key={i}
+              className={`group relative flex flex-col rounded-2xl border border-border/40 bg-surface-dark/40 p-6 transition-all duration-700 hover:border-makita-teal/30 hover:bg-surface-dark/60 ${
+                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${i * 200}ms` }}
+            >
+              <div className="relative flex items-center justify-center mb-6">
+                <div className="absolute inset-0 rounded-full bg-makita-teal/5 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <img
+                  src={v.image}
+                  alt={`Makita DCM501 ${v.name}`}
+                  width={1024}
+                  height={1024}
+                  loading="lazy"
+                  className="relative w-full max-w-[280px] drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="flex items-center gap-3 mb-3">
+                <span
+                  className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold ${v.colorClass}`}
+                >
+                  {v.badge}
+                </span>
+                <span className="text-xs font-mono text-muted-foreground">{v.code}</span>
+              </div>
+
+              <h3 className="text-xl font-bold text-foreground mb-2">{v.name}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{v.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 function CTASection() {
   const { ref, visible } = useInView(0.1);
 
@@ -736,6 +818,7 @@ function Index() {
       <IncludesSection />
       <ProductDetailsSection />
       <SpecsSection />
+      <VersionsSection />
       <CTASection />
       <Footer />
     </div>
