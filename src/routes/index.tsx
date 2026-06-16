@@ -905,11 +905,10 @@ function Footer() {
     <footer className="border-t border-border/40 bg-surface-darker py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <div className="flex items-center gap-2">
-            <div className="h-7 w-7 rounded bg-makita-teal flex items-center justify-center">
-              <span className="font-bold text-primary-foreground text-xs font-brand">M</span>
-            </div>
-            <span className="text-base font-bold tracking-tight text-foreground font-brand uppercase">MAKITA</span>
+          <div className="flex items-center gap-3">
+            <span className="text-2xl tracking-wide text-foreground" style={{ fontFamily: "var(--font-logo)" }}>
+              makita
+            </span>
           </div>
 
           <div className="flex items-center gap-6">
@@ -939,6 +938,7 @@ function Index() {
       <SpecsSection />
       <VersionsSection />
       <CTASection />
+      <ContactSection />
       <Footer />
     </div>
   );
