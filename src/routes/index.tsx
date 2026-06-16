@@ -350,26 +350,24 @@ function ProductDetailsSection() {
   const { ref, visible } = useInView(0.1);
 
   const details = [
-    // Top area – handle & tank lid
-    { id: 3, label: "Manija", top: "6%", left: "55%", side: "right" as const },
-    { id: 2, label: "Tapa del tanque de agua", top: "14%", left: "48%", side: "left" as const },
-    { id: 1, label: "Tanque de agua", top: "22%", left: "52%", side: "right" as const },
-    // Filter section
-    { id: 7, label: "Filtro", top: "30%", left: "45%", side: "left" as const },
-    { id: 8, label: "Portafiltros", top: "37%", left: "55%", side: "right" as const },
-    { id: 9, label: "Soporte para cápsulas de café", top: "44%", left: "42%", side: "left" as const },
-    // Cup area
-    { id: 14, label: "Tapa de la taza de café", top: "50%", left: "58%", side: "right" as const },
-    { id: 15, label: "Taza de café", top: "58%", left: "55%", side: "left" as const },
-    { id: 10, label: "Apertura de desbordamiento", top: "64%", left: "62%", side: "right" as const },
-    { id: 11, label: "Descanso de copa", top: "70%", left: "55%", side: "left" as const },
-    // Controls
-    { id: 13, label: "Interruptor de encendido", top: "76%", left: "48%", side: "right" as const },
-    { id: 12, label: "Luz de encendido", top: "80%", left: "45%", side: "left" as const },
-    // Battery
-    { id: 4, label: "Tapa de la ranura de la batería", top: "86%", left: "40%", side: "right" as const },
-    { id: 5, label: "Ranura de batería (10.8V – 12V máx.)", top: "91%", left: "42%", side: "left" as const },
-    { id: 6, label: "Ranura de batería (18V y 14.4V)", top: "96%", left: "45%", side: "right" as const },
+    // Top – handle
+    { id: 1, label: "Manija", top: "6%", left: "58%", side: "right" as const },
+    // Top – water tank lid
+    { id: 2, label: "Tapa del tanque de agua", top: "12%", left: "50%", side: "left" as const },
+    // Upper – water tank body
+    { id: 3, label: "Tanque de agua", top: "22%", left: "52%", side: "right" as const },
+    // Center – filter holder / pod drawer
+    { id: 4, label: "Portafiltros", top: "38%", left: "55%", side: "left" as const },
+    // Center – filter inside holder
+    { id: 5, label: "Filtro", top: "44%", left: "48%", side: "right" as const },
+    // Lower – cup lid
+    { id: 6, label: "Tapa de la taza", top: "56%", left: "55%", side: "left" as const },
+    // Lower – coffee cup
+    { id: 7, label: "Taza de café", top: "64%", left: "58%", side: "right" as const },
+    // Bottom front – power switch
+    { id: 8, label: "Interruptor de encendido", top: "76%", left: "48%", side: "left" as const },
+    // Bottom – battery slot
+    { id: 9, label: "Ranura de batería", top: "88%", left: "50%", side: "right" as const },
   ];
 
   const leftDetails = details.filter((d) => d.side === "left");
