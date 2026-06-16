@@ -74,10 +74,10 @@ function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded bg-makita-teal flex items-center justify-center">
-            <span className="font-bold text-primary-foreground text-sm">M</span>
+            <span className="font-bold text-primary-foreground text-sm font-brand">M</span>
           </div>
-          <span className="text-lg font-bold tracking-tight text-foreground">
-            MAKITA
+          <span className="text-xl font-brand tracking-wider text-foreground uppercase">
+            Makita
           </span>
         </div>
 
