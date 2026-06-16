@@ -197,20 +197,7 @@ function AboutSection() {
     <section id="about" ref={ref} className="relative py-20 sm:py-28 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
-          {/* Left - Text */}
-          <div className={`flex flex-col gap-5 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-            <span className="text-sm font-semibold tracking-[0.2em] text-makita-teal uppercase">
-              Características
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-              Todo lo que necesitás
-            </h2>
-            <p className="text-base text-muted-foreground leading-relaxed max-w-lg">
-              Diseñada para profesionales que no pueden detenerse. La DCM501 combina la robustez de Makita con la practicidad de un café recién hecho en cualquier lugar de obra. Funciona con baterías de iones de litio de 12V máx. CXT y 18V LXT.
-            </p>
-          </div>
-
-          {/* Right - Image */}
+          {/* Left - Image */}
           <div className={`flex items-center justify-center transition-all duration-700 delay-200 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-makita-teal/10 blur-3xl" />
@@ -222,6 +209,19 @@ function AboutSection() {
                 className="relative w-full max-w-md rounded-2xl drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
               />
             </div>
+          </div>
+
+          {/* Right - Text */}
+          <div className={`flex flex-col gap-5 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+            <span className="text-sm font-semibold tracking-[0.2em] text-makita-teal uppercase">
+              Características
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+              Todo lo que necesitás
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed max-w-lg">
+              Diseñada para profesionales que no pueden detenerse. La DCM501 combina la robustez de Makita con la practicidad de un café recién hecho en cualquier lugar de obra. Funciona con baterías de iones de litio de 12V máx. CXT y 18V LXT.
+            </p>
           </div>
         </div>
       </div>
