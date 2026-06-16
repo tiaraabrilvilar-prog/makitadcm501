@@ -350,13 +350,16 @@ function ProductDetailsSection() {
   const { ref, visible } = useInView(0.1);
 
   const details = [
-    { id: 1, label: "Tapa del tanque", top: "12%", left: "50%", side: "left" as const, lineWidth: 140 },
-    { id: 2, label: "Tanque de agua 240ml", top: "22%", left: "50%", side: "right" as const, lineWidth: 120 },
-    { id: 3, label: "Filtro permanente", top: "38%", left: "48%", side: "left" as const, lineWidth: 160 },
-    { id: 4, label: "Interruptor de encendido", top: "48%", left: "42%", side: "left" as const, lineWidth: 100 },
-    { id: 5, label: "Porta-taza extraíble", top: "60%", left: "50%", side: "right" as const, lineWidth: 140 },
-    { id: 6, label: "Puerto de batería", top: "74%", left: "50%", side: "left" as const, lineWidth: 120 },
+    { id: 1, label: "Tapa del tanque", top: "12%", left: "50%", side: "left" as const },
+    { id: 2, label: "Tanque de agua 240ml", top: "22%", left: "50%", side: "right" as const },
+    { id: 3, label: "Filtro permanente", top: "38%", left: "48%", side: "left" as const },
+    { id: 4, label: "Interruptor de encendido", top: "48%", left: "42%", side: "left" as const },
+    { id: 5, label: "Porta-taza extraíble", top: "60%", left: "50%", side: "right" as const },
+    { id: 6, label: "Puerto de batería 18V", top: "74%", left: "50%", side: "right" as const },
   ];
+
+  const leftDetails = details.filter(d => d.side === 'left');
+  const rightDetails = details.filter(d => d.side === 'right');
 
   return (
     <section ref={ref} className="relative py-20 sm:py-28 bg-surface-darker/50">
@@ -370,77 +373,80 @@ function ProductDetailsSection() {
           </h2>
         </div>
 
-        <div className="relative mx-auto max-w-2xl">
+        {/* Desktop: image with callout lines */}
+        <div className="hidden md:block relative mx-auto w-[320px] lg:w-[400px]">
           {/* Glow behind image */}
           <div className="absolute inset-0 rounded-full bg-makita-teal/5 blur-3xl" />
 
-          {/* Product image */}
-          <div className="relative z-10">
-            <img
-              src={heroImage}
-              alt="Makita DCM501 con detalles"
-              className="w-full max-w-md mx-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
-            />
+          <img
+            src={heroImage}
+            alt="Makita DCM501 con detalles"
+            className="relative z-10 w-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+          />
 
-            {/* Hotspots - desktop only */}
-            <div className="hidden md:block">
-              {details.map((d) => (
-                <div
-                  key={d.id}
-                  className="absolute"
-                  style={{ top: d.top, left: d.left }}
-                >
-                  {/* Pulse ring */}
-                  <div className="absolute -inset-2 rounded-full bg-makita-teal/20 animate-ping" style={{ animationDuration: '2s' }} />
-
-                  {/* Dot */}
-                  <div className="relative w-3 h-3 bg-makita-teal rounded-full -translate-x-1/2 -translate-y-1/2 ring-2 ring-makita-teal/40 shadow-lg shadow-makita-teal/30" />
-
-                  {/* Left side label */}
-                  {d.side === 'left' && (
-                    <div
-                      className="absolute top-1/2 right-2 flex items-center -translate-y-1/2"
-                      style={{ width: d.lineWidth }}
-                    >
-                      <div className="flex-1 h-px bg-makita-teal/60" />
-                      <span className="ml-3 text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/80 px-2 py-1 rounded">
-                        {d.label}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Right side label */}
-                  {d.side === 'right' && (
-                    <div
-                      className="absolute top-1/2 left-2 flex items-center -translate-y-1/2"
-                      style={{ width: d.lineWidth }}
-                    >
-                      <span className="mr-3 text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/80 px-2 py-1 rounded">
-                        {d.label}
-                      </span>
-                      <div className="flex-1 h-px bg-makita-teal/60" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile list */}
-          <div className="md:hidden mt-10 grid grid-cols-2 gap-3">
-            {details.map((d, i) => (
+          {details.map((d) => (
+            <div key={d.id}>
+              {/* Hotspot dot */}
               <div
-                key={d.id}
-                className={`flex items-center gap-3 rounded-xl border border-border/40 bg-surface-dark/40 px-4 py-3 transition-all duration-500 ${
-                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <div className="h-2 w-2 shrink-0 rounded-full bg-makita-teal ring-2 ring-makita-teal/30" />
-                <span className="text-sm font-medium text-foreground">{d.label}</span>
-              </div>
-            ))}
-          </div>
+                className="absolute z-20 w-3 h-3 bg-makita-teal rounded-full -translate-x-1/2 -translate-y-1/2 ring-2 ring-makita-teal/40 shadow-lg shadow-makita-teal/30"
+                style={{ top: d.top, left: d.left }}
+              />
+
+              {/* Pulse ring */}
+              <div
+                className="absolute z-10 -inset-2 rounded-full bg-makita-teal/20 animate-ping"
+                style={{ top: d.top, left: d.left, animationDuration: '2s' }}
+              />
+
+              {d.side === 'left' ? (
+                <>
+                  {/* Line from label to hotspot */}
+                  <div
+                    className="absolute h-px bg-makita-teal/60 z-10"
+                    style={{ top: d.top, left: '-60px', width: `calc(${d.left} + 60px)` }}
+                  />
+                  {/* Label */}
+                  <div
+                    className="absolute z-20 text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-3 py-1.5 rounded-md border border-border/30 -translate-y-1/2"
+                    style={{ top: d.top, right: 'calc(100% + 60px)' }}
+                  >
+                    {d.label}
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/* Line from hotspot to label */}
+                  <div
+                    className="absolute h-px bg-makita-teal/60 z-10"
+                    style={{ top: d.top, left: d.left, width: '80px' }}
+                  />
+                  {/* Label */}
+                  <div
+                    className="absolute z-20 text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-3 py-1.5 rounded-md border border-border/30 -translate-y-1/2"
+                    style={{ top: d.top, left: `calc(${d.left} + 80px)` }}
+                  >
+                    {d.label}
+                  </div>
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile list */}
+        <div className="md:hidden mt-10 grid grid-cols-2 gap-3">
+          {details.map((d, i) => (
+            <div
+              key={d.id}
+              className={`flex items-center gap-3 rounded-xl border border-border/40 bg-surface-dark/40 px-4 py-3 transition-all duration-500 ${
+                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
+              <div className="h-2 w-2 shrink-0 rounded-full bg-makita-teal ring-2 ring-makita-teal/30" />
+              <span className="text-sm font-medium text-foreground">{d.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
