@@ -25,6 +25,9 @@ import {
   Ruler,
   Gauge,
   Cable,
+  Phone,
+  Mail,
+  MapPin,
 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import heroImage from "@/assets/makita-coffee-maker.png";
