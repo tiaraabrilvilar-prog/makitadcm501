@@ -155,7 +155,7 @@ function HeroSection() {
               <span>La favorita de los profesionales</span>
             </div>
 
-            <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-[3.5rem] leading-[1.1]">
+            <h1 className="text-4xl font-brand tracking-wider uppercase text-foreground sm:text-5xl lg:text-[3.5rem] leading-[1.1]">
               Tu café caliente, donde sea que el trabajo te lleve.
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
