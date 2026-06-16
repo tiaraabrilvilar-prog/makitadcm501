@@ -24,6 +24,10 @@ import {
   CupSoda,
 } from "lucide-react";
 import heroImage from "@/assets/makita-coffee-maker.png";
+import heroAngleAsset from "@/assets/DCM501_C2L0_1-2.jpg.asset.json";
+import sideViewAsset from "@/assets/DCM501_C7C0.jpg.asset.json";
+import tankAsset from "@/assets/DCM501_F_001.jpg.asset.json";
+import oppositeAngleAsset from "@/assets/DCM501_C2R0.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -164,7 +168,7 @@ function HeroSection() {
 
             <div className="relative animate-float">
               <img
-                src={heroImage}
+                src={heroAngleAsset.url}
                 alt="Makita DCM501 cafetera inalámbrica"
                 width={800}
                 height={800}
@@ -203,8 +207,8 @@ function AboutSection() {
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-makita-teal/10 blur-3xl" />
               <img
-                src={heroImage}
-                alt="Makita DCM501 en detalle"
+                src={sideViewAsset.url}
+                alt="Makita DCM501 vista lateral"
                 width={600}
                 height={600}
                 className="relative w-full max-w-md rounded-2xl"
@@ -307,8 +311,8 @@ function IncludesSection() {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-makita-teal/10 blur-3xl" />
               <img
-                src={heroImage}
-                alt="Makita DCM501 con accesorios"
+                src={tankAsset.url}
+                alt="Makita DCM501 tanque de agua extraíble"
                 width={500}
                 height={500}
                 className="relative w-full max-w-sm rounded-xl"
