@@ -350,24 +350,15 @@ function ProductDetailsSection() {
   const { ref, visible } = useInView(0.1);
 
   const details = [
-    // Top – handle
-    { id: 1, label: "Manija", top: "6%", left: "58%", side: "right" as const },
-    // Top – water tank lid
-    { id: 2, label: "Tapa del tanque de agua", top: "12%", left: "50%", side: "left" as const },
-    // Upper – water tank body
-    { id: 3, label: "Tanque de agua", top: "22%", left: "52%", side: "right" as const },
-    // Center – filter holder / pod drawer
-    { id: 4, label: "Portafiltros", top: "38%", left: "55%", side: "left" as const },
-    // Center – filter inside holder
-    { id: 5, label: "Filtro", top: "44%", left: "48%", side: "right" as const },
-    // Lower – cup lid
-    { id: 6, label: "Tapa de la taza", top: "56%", left: "55%", side: "left" as const },
-    // Lower – coffee cup
-    { id: 7, label: "Taza de café", top: "64%", left: "58%", side: "right" as const },
-    // Bottom front – power switch
-    { id: 8, label: "Interruptor de encendido", top: "76%", left: "48%", side: "left" as const },
-    // Bottom – battery slot
-    { id: 9, label: "Ranura de batería", top: "88%", left: "50%", side: "right" as const },
+    { id: 1, label: "Manija", top: "6.5%", left: "50%", side: "right" as const },
+    { id: 2, label: "Tapa del tanque de agua", top: "25%", left: "28%", side: "left" as const },
+    { id: 3, label: "Tanque de agua", top: "34%", left: "16%", side: "left" as const },
+    { id: 4, label: "Portafiltros", top: "44%", left: "84%", side: "right" as const },
+    { id: 5, label: "Tapa de la taza", top: "57%", left: "74%", side: "right" as const },
+    { id: 6, label: "Taza de café", top: "73%", left: "72%", side: "right" as const },
+    { id: 7, label: "Ranura de batería", top: "73%", left: "39%", side: "left" as const },
+    { id: 8, label: "Descanso de copa", top: "86%", left: "69%", side: "left" as const },
+    { id: 9, label: "Interruptor de encendido", top: "88%", left: "87%", side: "right" as const },
   ];
 
   const leftDetails = details.filter((d) => d.side === "left");
