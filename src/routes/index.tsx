@@ -24,10 +24,10 @@ import {
   CupSoda,
 } from "lucide-react";
 import heroImage from "@/assets/makita-coffee-maker.png";
-import heroAngleAsset from "@/assets/DCM501_C2L0_1-2.jpg.asset.json";
-import sideViewAsset from "@/assets/DCM501_C7C0.jpg.asset.json";
-import tankAsset from "@/assets/DCM501_F_001.jpg.asset.json";
-import oppositeAngleAsset from "@/assets/DCM501_C2R0.jpg.asset.json";
+import heroTransparent from "@/assets/hero-transparent.png";
+import sideTransparent from "@/assets/side-transparent.png";
+import tankTransparent from "@/assets/tank-transparent.png";
+import oppositeTransparent from "@/assets/opposite-transparent.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -163,16 +163,17 @@ function HeroSection() {
           {/* Right Column - Image */}
           <div className="relative flex items-center justify-center order-1 lg:order-2">
             {/* Glow layers */}
-            <div className="absolute -inset-12 rounded-full bg-makita-teal/10 blur-[120px] animate-pulse-glow" />
-            <div className="absolute -inset-8 rounded-full bg-makita-teal/5 blur-[80px]" />
+            <div className="absolute -inset-20 rounded-full bg-makita-teal/15 blur-[150px] animate-pulse-glow" />
+            <div className="absolute -inset-12 rounded-full bg-makita-teal/8 blur-[100px]" />
+            <div className="absolute -inset-4 rounded-full bg-makita-teal/5 blur-[60px]" />
 
-            <div className="relative animate-float">
+            <div className="relative animate-float scale-110 lg:scale-125">
               <img
-                src={heroAngleAsset.url}
+                src={heroTransparent}
                 alt="Makita DCM501 cafetera inalámbrica"
-                width={800}
-                height={800}
-                className="relative z-10 w-full max-w-lg lg:max-w-xl drop-shadow-[0_20px_60px_rgba(0,162,167,0.25)]"
+                width={1024}
+                height={1024}
+                className="relative z-10 w-full max-w-2xl drop-shadow-[0_30px_80px_rgba(20,184,166,0.35)]"
               />
             </div>
           </div>
@@ -207,11 +208,11 @@ function AboutSection() {
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-makita-teal/10 blur-3xl" />
               <img
-                src={sideViewAsset.url}
+                src={sideTransparent}
                 alt="Makita DCM501 vista lateral"
-                width={600}
-                height={600}
-                className="relative w-full max-w-md rounded-2xl"
+                width={1024}
+                height={1024}
+                className="relative w-full max-w-md rounded-2xl drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
               />
             </div>
           </div>
@@ -311,11 +312,11 @@ function IncludesSection() {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-makita-teal/10 blur-3xl" />
               <img
-                src={tankAsset.url}
+                src={tankTransparent}
                 alt="Makita DCM501 tanque de agua extraíble"
-                width={500}
-                height={500}
-                className="relative w-full max-w-sm rounded-xl"
+                width={1024}
+                height={1024}
+                className="relative w-full max-w-sm drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
               />
             </div>
           </div>
