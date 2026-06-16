@@ -390,7 +390,8 @@ function ProductDetailsSection() {
         {/* Desktop: 3-column grid with connecting lines */}
         <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-0 max-w-6xl mx-auto items-stretch">
           {/* Left labels */}
-          <div className="relative min-h-[640px]">
+          <div className="relative">
+
             {leftDetails.map((d) => (
               <div
                 key={d.id}
