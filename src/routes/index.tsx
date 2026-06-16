@@ -170,14 +170,32 @@ function HeroSection() {
           </div>
 
           <div className="relative flex items-center justify-center">
-            <div className="absolute inset-0 rounded-full bg-makita-teal/5 blur-3xl" />
-            <img
-              src={heroImage}
-              alt="Makita DCM501 cafetera inalámbrica en sitio de trabajo"
-              width={1024}
-              height={1024}
-              className="relative z-10 w-full max-w-lg drop-shadow-2xl"
-            />
+            {/* Background glow - multiple layers for depth */}
+            <div className="absolute -inset-8 rounded-full bg-makita-teal/10 blur-[100px] animate-pulse-glow" />
+            <div className="absolute -inset-4 rounded-full bg-makita-teal/5 blur-[60px]" />
+            
+            {/* Product badge */}
+            <div className="absolute -top-2 -right-2 z-20 rounded-full bg-makita-teal px-3 py-1 text-xs font-bold text-primary-foreground shadow-lg shadow-makita-teal/30">
+              NUEVO
+            </div>
+
+            {/* Image with floating animation and enhanced shadow */}
+            <div className="relative animate-float">
+              <img
+                src={heroImage}
+                alt="Makita DCM501 cafetera inalámbrica en sitio de trabajo"
+                width={1024}
+                height={1024}
+                className="relative z-10 w-full max-w-lg drop-shadow-[0_20px_50px_rgba(0,162,167,0.25)] drop-shadow-[0_40px_80px_rgba(0,0,0,0.4)]"
+              />
+              
+              {/* Reflection/shine overlay */}
+              <div className="absolute inset-0 z-20 rounded-lg bg-gradient-to-tr from-white/5 via-white/10 to-transparent opacity-0 transition-opacity duration-500 hover:opacity-100 pointer-events-none" />
+            </div>
+
+            {/* Subtle ring behind product */}
+            <div className="absolute inset-0 -z-10 rounded-full border border-makita-teal/20 scale-110" />
+            <div className="absolute inset-0 -z-10 rounded-full border border-makita-teal/10 scale-125" />
           </div>
         </div>
       </div>
