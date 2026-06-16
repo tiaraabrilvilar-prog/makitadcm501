@@ -321,10 +321,10 @@ function StepsSection() {
   ];
 
   const stats = [
-    { value: "240", unit: "ml", label: "Capacidad" },
-    { value: "5", unit: "min", label: "Por taza" },
-    { value: "1.5", unit: "kg", label: "Peso" },
-    { value: "3", unit: "tazas", label: "Autonomía" },
+    { value: "12V", unit: "MAX", label: "Batería CXT" },
+    { value: "18V", unit: "LXT", label: "Batería estándar" },
+    { value: "40V", unit: "MAX", label: "También compatible" },
+    { value: "5.0", unit: "Ah", label: "Capacidad ideal" },
   ];
 
   return (
@@ -498,18 +498,18 @@ function CTASection() {
 
         <div className="mt-12 flex items-center justify-center gap-8 text-muted-foreground">
           <div className="flex items-center gap-2 text-sm">
-            <Droplets className="h-4 w-4 text-makita-teal" />
-            <span>240 ml</span>
+            <Shield className="h-4 w-4 text-makita-teal" />
+            <span>2 años garantía</span>
           </div>
           <div className="h-4 w-px bg-border/40" />
           <div className="flex items-center gap-2 text-sm">
-            <Timer className="h-4 w-4 text-makita-teal" />
-            <span>5 min</span>
+            <Zap className="h-4 w-4 text-makita-teal" />
+            <span>Envío 24-48h</span>
           </div>
           <div className="h-4 w-px bg-border/40" />
           <div className="flex items-center gap-2 text-sm">
-            <Coffee className="h-4 w-4 text-makita-teal" />
-            <span>3 tazas</span>
+            <Check className="h-4 w-4 text-makita-teal" />
+            <span>30 días devolución</span>
           </div>
         </div>
       </div>
