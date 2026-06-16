@@ -24,7 +24,7 @@ import {
   CupSoda,
 } from "lucide-react";
 import heroImage from "@/assets/makita-coffee-maker.png";
-import heroTransparent from "@/assets/hero-transparent.png";
+import heroTransparent from "@/assets/hero-portada.png";
 import sideTransparent from "@/assets/side-transparent.png";
 import tankTransparent from "@/assets/tank-transparent.png";
 import oppositeTransparent from "@/assets/opposite-transparent.png";
@@ -142,8 +142,8 @@ function HeroSection() {
             <p className="text-sm font-semibold tracking-[0.2em] text-makita-teal uppercase">
               Cafetera Inalámbrica Makita
             </p>
-            <h1 className="text-5xl font-brand tracking-wider uppercase text-foreground sm:text-6xl lg:text-7xl leading-[1.05]">
-              Sin Cables<br />Sin Límites
+            <h1 className="text-4xl font-brand tracking-wider uppercase text-foreground sm:text-5xl lg:text-6xl leading-[1.05]">
+              Tu café caliente,<br />donde sea que el<br /><span className="text-makita-teal">trabajo te lleve</span>
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg">
               La DCM501 te permite disfrutar tu café caliente donde sea que el trabajo te lleve. Sin cables, sin filtros de papel, impulsada por las mismas baterías de tus herramientas.
@@ -163,17 +163,24 @@ function HeroSection() {
           {/* Right Column - Image */}
           <div className="relative flex items-center justify-center order-1 lg:order-2">
             {/* Glow layers */}
-            <div className="absolute -inset-20 rounded-full bg-makita-teal/15 blur-[150px] animate-pulse-glow" />
-            <div className="absolute -inset-12 rounded-full bg-makita-teal/8 blur-[100px]" />
-            <div className="absolute -inset-4 rounded-full bg-makita-teal/5 blur-[60px]" />
+            <div className="absolute -inset-20 rounded-full bg-makita-teal/20 blur-[150px] animate-pulse-glow" />
+            <div className="absolute -inset-12 rounded-full bg-makita-teal/10 blur-[100px]" />
+            <div className="absolute inset-x-10 bottom-10 h-16 rounded-[50%] bg-makita-teal/30 blur-2xl" />
+
+            {/* Steam wisps */}
+            <div className="pointer-events-none absolute right-[18%] top-[35%] z-20 flex flex-col gap-2">
+              <span className="block h-16 w-1.5 rounded-full bg-gradient-to-t from-white/0 via-white/40 to-white/0 blur-md animate-steam-1" />
+              <span className="block h-20 w-2 rounded-full bg-gradient-to-t from-white/0 via-white/50 to-white/0 blur-md animate-steam-2" style={{ marginLeft: "10px" }} />
+              <span className="block h-14 w-1.5 rounded-full bg-gradient-to-t from-white/0 via-white/30 to-white/0 blur-md animate-steam-3" style={{ marginLeft: "-8px" }} />
+            </div>
 
             <div className="relative animate-float scale-110 lg:scale-125">
               <img
                 src={heroTransparent}
-                alt="Makita DCM501 cafetera inalámbrica"
+                alt="Makita DCM501 cafetera inalámbrica con taza humeante"
                 width={1024}
                 height={1024}
-                className="relative z-10 w-full max-w-2xl drop-shadow-[0_30px_80px_rgba(20,184,166,0.35)]"
+                className="relative z-10 w-full max-w-2xl drop-shadow-[0_40px_90px_rgba(20,184,166,0.45)]"
               />
             </div>
           </div>
