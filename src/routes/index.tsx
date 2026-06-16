@@ -448,7 +448,7 @@ function ProductDetailsSection() {
           </div>
 
           {/* Right labels */}
-          <div className="relative min-h-[640px]">
+          <div className="relative">
             {rightDetails.map((d) => (
               <div
                 key={d.id}
