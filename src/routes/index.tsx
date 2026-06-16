@@ -207,8 +207,8 @@ function AboutSection() {
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-makita-teal/10 blur-3xl" />
               <img
-                src={heroImage}
-                alt="Makita DCM501 en detalle"
+                src={sideViewAsset.url}
+                alt="Makita DCM501 vista lateral"
                 width={600}
                 height={600}
                 className="relative w-full max-w-md rounded-2xl"
