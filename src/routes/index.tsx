@@ -796,14 +796,14 @@ function CTASection() {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          No vuelvas a tomar café frío.
+          Quiero mi Makita
         </h2>
         <p
           className={`mt-6 text-lg text-muted-foreground transition-all duration-700 delay-150 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Llevá la potencia de Makita a tu taza. Stock disponible con envío a todo el país.
+          Llevá la potencia de Makita a tu taza.
         </p>
         <div
           className={`mt-10 flex flex-wrap items-center justify-center gap-4 transition-all duration-700 delay-300 ${
@@ -814,7 +814,7 @@ function CTASection() {
             href="#"
             className="group inline-flex items-center gap-2 rounded-full bg-makita-teal px-8 py-4 text-base font-bold text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-[0_0_32px_8px_var(--makita-teal-glow)]"
           >
-            Comprar Ahora
+            Quiero mi Makita
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </a>
           <a
@@ -823,23 +823,6 @@ function CTASection() {
           >
             Ver especificaciones
           </a>
-        </div>
-
-        <div className="mt-12 flex items-center justify-center gap-8 text-muted-foreground">
-          <div className="flex items-center gap-2 text-sm">
-            <Shield className="h-4 w-4 text-makita-teal" />
-            <span>2 años garantía</span>
-          </div>
-          <div className="h-4 w-px bg-border/40" />
-          <div className="flex items-center gap-2 text-sm">
-            <Zap className="h-4 w-4 text-makita-teal" />
-            <span>Envío 24-48h</span>
-          </div>
-          <div className="h-4 w-px bg-border/40" />
-          <div className="flex items-center gap-2 text-sm">
-            <Check className="h-4 w-4 text-makita-teal" />
-            <span>30 días devolución</span>
-          </div>
         </div>
       </div>
     </section>
