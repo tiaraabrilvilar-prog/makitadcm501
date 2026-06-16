@@ -152,14 +152,7 @@ function HeroSection() {
           <div className="flex flex-col gap-6">
             {/* Rating badge */}
             <div className="inline-flex w-fit items-center gap-2 rounded-full bg-makita-teal/10 border border-makita-teal/20 px-3 py-1.5 text-xs font-medium text-makita-teal">
-              <div className="flex items-center gap-0.5">
-                <Star className="h-3 w-3 fill-makita-teal text-makita-teal" />
-                <Star className="h-3 w-3 fill-makita-teal text-makita-teal" />
-                <Star className="h-3 w-3 fill-makita-teal text-makita-teal" />
-                <Star className="h-3 w-3 fill-makita-teal text-makita-teal" />
-                <Star className="h-3 w-3 fill-makita-teal text-makita-teal" />
-              </div>
-              <span>5.0 — La favorita de los profesionales</span>
+              <span>La favorita de los profesionales</span>
             </div>
 
             <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-[3.5rem] leading-[1.1]">
@@ -190,18 +183,18 @@ function HeroSection() {
             {/* Stats row */}
             <div className="mt-6 flex items-center gap-6 sm:gap-10 border-t border-border/30 pt-6">
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-foreground">240<span className="text-sm font-medium text-muted-foreground ml-1">ml</span></div>
-                <div className="text-xs text-muted-foreground mt-0.5">Capacidad del tanque</div>
+                <div className="text-2xl sm:text-3xl font-bold text-foreground">1915</div>
+                <div className="text-xs text-muted-foreground mt-0.5">Año de fundación</div>
               </div>
               <div className="h-10 w-px bg-border/30" />
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-foreground">5<span className="text-sm font-medium text-muted-foreground ml-1">min</span></div>
-                <div className="text-xs text-muted-foreground mt-0.5">Por taza</div>
+                <div className="text-2xl sm:text-3xl font-bold text-foreground">190<span className="text-sm font-medium text-muted-foreground ml-1">+</span></div>
+                <div className="text-xs text-muted-foreground mt-0.5">Países donde opera</div>
               </div>
               <div className="h-10 w-px bg-border/30" />
               <div>
-                <div className="text-2xl sm:text-3xl font-bold text-foreground">1.5<span className="text-sm font-medium text-muted-foreground ml-1">kg</span></div>
-                <div className="text-xs text-muted-foreground mt-0.5">Peso total</div>
+                <div className="text-2xl sm:text-3xl font-bold text-foreground">40<span className="text-sm font-medium text-muted-foreground ml-1">M+</span></div>
+                <div className="text-xs text-muted-foreground mt-0.5">Herramientas vendidas</div>
               </div>
             </div>
           </div>
@@ -212,19 +205,6 @@ function HeroSection() {
             <div className="absolute -inset-8 rounded-full bg-makita-teal/10 blur-[100px] animate-pulse-glow" />
             <div className="absolute -inset-4 rounded-full bg-makita-teal/5 blur-[60px]" />
 
-            {/* Sparkle decorations */}
-            <div className="absolute top-4 left-8 z-20 text-yellow-400/80">
-              <Sparkles className="h-5 w-5" />
-            </div>
-            <div className="absolute top-12 right-12 z-20 text-yellow-400/60">
-              <Star className="h-4 w-4 fill-yellow-400/60" />
-            </div>
-            <div className="absolute bottom-20 left-4 z-20 text-yellow-400/50">
-              <Sparkles className="h-4 w-4" />
-            </div>
-            <div className="absolute top-1/3 right-4 z-20 text-yellow-400/40">
-              <Star className="h-3 w-3 fill-yellow-400/40" />
-            </div>
 
             {/* Product badge */}
             <div className="absolute -top-2 -right-2 z-20 rounded-full bg-makita-teal px-3.5 py-1.5 text-xs font-bold text-primary-foreground shadow-lg shadow-makita-teal/30">
@@ -341,10 +321,10 @@ function StepsSection() {
   ];
 
   const stats = [
-    { value: "240", unit: "ml", label: "Capacidad" },
-    { value: "5", unit: "min", label: "Por taza" },
-    { value: "1.5", unit: "kg", label: "Peso" },
-    { value: "3", unit: "tazas", label: "Autonomía" },
+    { value: "12V", unit: "MAX", label: "Batería CXT" },
+    { value: "18V", unit: "LXT", label: "Batería estándar" },
+    { value: "40V", unit: "MAX", label: "También compatible" },
+    { value: "5.0", unit: "Ah", label: "Capacidad ideal" },
   ];
 
   return (
@@ -518,18 +498,18 @@ function CTASection() {
 
         <div className="mt-12 flex items-center justify-center gap-8 text-muted-foreground">
           <div className="flex items-center gap-2 text-sm">
-            <Droplets className="h-4 w-4 text-makita-teal" />
-            <span>240 ml</span>
+            <Shield className="h-4 w-4 text-makita-teal" />
+            <span>2 años garantía</span>
           </div>
           <div className="h-4 w-px bg-border/40" />
           <div className="flex items-center gap-2 text-sm">
-            <Timer className="h-4 w-4 text-makita-teal" />
-            <span>5 min</span>
+            <Zap className="h-4 w-4 text-makita-teal" />
+            <span>Envío 24-48h</span>
           </div>
           <div className="h-4 w-px bg-border/40" />
           <div className="flex items-center gap-2 text-sm">
-            <Coffee className="h-4 w-4 text-makita-teal" />
-            <span>3 tazas</span>
+            <Check className="h-4 w-4 text-makita-teal" />
+            <span>30 días devolución</span>
           </div>
         </div>
       </div>
