@@ -342,51 +342,101 @@ function IncludesSection() {
   );
 }
 
-function AccessoriesSection() {
+function ProductDetailsSection() {
   const { ref, visible } = useInView(0.1);
 
-  const accessories = [
-    {
-      icon: <Battery className="h-12 w-12" />,
-      title: "Batería 18V LXT",
-      description: "La potencia estándar para máxima autonomía. Hasta 3 tazas con 5.0 Ah.",
-    },
-    {
-      icon: <Zap className="h-12 w-12" />,
-      title: "Cargador CXT/LXT",
-      description: "Cargá rápidamente tu batería y mantené el café fluyendo todo el día.",
-    },
-    {
-      icon: <Droplets className="h-12 w-12" />,
-      title: "Tanque de 240 ml",
-      description: "Capacidad perfecta para una taza estándar. Fácil de llenar y limpiar.",
-    },
-    {
-      icon: <Weight className="h-12 w-12" />,
-      title: "Diseño ligero 1.5 kg",
-      description: "Liviana y manejable con una sola mano. Ideal para transportar en obra.",
-    },
+  const details = [
+    { id: 1, label: "Tapa del tanque", top: "12%", left: "50%", side: "left" as const, lineWidth: 140 },
+    { id: 2, label: "Tanque de agua 240ml", top: "22%", left: "50%", side: "right" as const, lineWidth: 120 },
+    { id: 3, label: "Filtro permanente", top: "38%", left: "48%", side: "left" as const, lineWidth: 160 },
+    { id: 4, label: "Interruptor de encendido", top: "48%", left: "42%", side: "left" as const, lineWidth: 100 },
+    { id: 5, label: "Porta-taza extraíble", top: "60%", left: "50%", side: "right" as const, lineWidth: 140 },
+    { id: 6, label: "Puerto de batería", top: "74%", left: "50%", side: "left" as const, lineWidth: 120 },
   ];
 
   return (
     <section ref={ref} className="relative py-20 sm:py-28 bg-surface-darker/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {accessories.map((a, i) => (
-            <div
-              key={i}
-              className={`group flex flex-col items-center text-center gap-4 rounded-2xl border border-border/40 bg-surface-dark/40 p-8 transition-all duration-700 hover:border-makita-teal/20 hover:bg-surface-dark/60 ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-              style={{ transitionDelay: `${i * 120}ms` }}
-            >
-              <div className="text-makita-teal/80 group-hover:text-makita-teal transition-colors transform group-hover:scale-110 duration-300">
-                {a.icon}
-              </div>
-              <h4 className="text-lg font-bold text-foreground">{a.title}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">{a.description}</p>
+        <div className="mb-14 text-center">
+          <span className="text-sm font-semibold tracking-[0.2em] text-makita-teal uppercase">
+            Detalles
+          </span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+            Conocé todos sus detalles
+          </h2>
+        </div>
+
+        <div className="relative mx-auto max-w-2xl">
+          {/* Glow behind image */}
+          <div className="absolute inset-0 rounded-full bg-makita-teal/5 blur-3xl" />
+
+          {/* Product image */}
+          <div className="relative z-10">
+            <img
+              src={heroImage}
+              alt="Makita DCM501 con detalles"
+              className="w-full max-w-md mx-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+            />
+
+            {/* Hotspots - desktop only */}
+            <div className="hidden md:block">
+              {details.map((d) => (
+                <div
+                  key={d.id}
+                  className="absolute"
+                  style={{ top: d.top, left: d.left }}
+                >
+                  {/* Pulse ring */}
+                  <div className="absolute -inset-2 rounded-full bg-makita-teal/20 animate-ping" style={{ animationDuration: '2s' }} />
+
+                  {/* Dot */}
+                  <div className="relative w-3 h-3 bg-makita-teal rounded-full -translate-x-1/2 -translate-y-1/2 ring-2 ring-makita-teal/40 shadow-lg shadow-makita-teal/30" />
+
+                  {/* Left side label */}
+                  {d.side === 'left' && (
+                    <div
+                      className="absolute top-1/2 right-2 flex items-center -translate-y-1/2"
+                      style={{ width: d.lineWidth }}
+                    >
+                      <div className="flex-1 h-px bg-makita-teal/60" />
+                      <span className="ml-3 text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/80 px-2 py-1 rounded">
+                        {d.label}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Right side label */}
+                  {d.side === 'right' && (
+                    <div
+                      className="absolute top-1/2 left-2 flex items-center -translate-y-1/2"
+                      style={{ width: d.lineWidth }}
+                    >
+                      <span className="mr-3 text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/80 px-2 py-1 rounded">
+                        {d.label}
+                      </span>
+                      <div className="flex-1 h-px bg-makita-teal/60" />
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Mobile list */}
+          <div className="md:hidden mt-10 grid grid-cols-2 gap-3">
+            {details.map((d, i) => (
+              <div
+                key={d.id}
+                className={`flex items-center gap-3 rounded-xl border border-border/40 bg-surface-dark/40 px-4 py-3 transition-all duration-500 ${
+                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                }`}
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <div className="h-2 w-2 shrink-0 rounded-full bg-makita-teal ring-2 ring-makita-teal/30" />
+                <span className="text-sm font-medium text-foreground">{d.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -533,7 +583,7 @@ function Index() {
       <AboutSection />
       <FeaturesSection />
       <IncludesSection />
-      <AccessoriesSection />
+      <ProductDetailsSection />
       <SpecsSection />
       <CTASection />
       <Footer />
