@@ -8,8 +8,6 @@ import {
   Coffee,
   Zap,
   Filter,
-  Shield,
-  Check,
   ChevronDown,
   ArrowRight,
   Menu,
