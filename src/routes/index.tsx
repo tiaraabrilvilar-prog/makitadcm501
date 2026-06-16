@@ -74,10 +74,10 @@ function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
           <div className="h-8 w-8 rounded bg-makita-teal flex items-center justify-center">
-            <span className="font-bold text-primary-foreground text-sm">M</span>
+            <span className="font-bold text-primary-foreground text-sm font-brand">M</span>
           </div>
-          <span className="text-lg font-bold tracking-tight text-foreground">
-            MAKITA
+          <span className="text-xl font-brand tracking-wider text-foreground uppercase">
+            Makita
           </span>
         </div>
 
@@ -155,7 +155,7 @@ function HeroSection() {
               <span>La favorita de los profesionales</span>
             </div>
 
-            <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-[3.5rem] leading-[1.1]">
+            <h1 className="text-4xl font-brand tracking-wider uppercase text-foreground sm:text-5xl lg:text-[3.5rem] leading-[1.1]">
               Tu café caliente, donde sea que el trabajo te lleve.
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
