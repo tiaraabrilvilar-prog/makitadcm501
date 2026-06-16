@@ -829,6 +829,77 @@ function CTASection() {
   );
 }
 
+function ContactSection() {
+  const { ref, visible } = useInView(0.1);
+
+  const contacts = [
+    {
+      icon: Phone,
+      label: "Teléfono",
+      value: "+54 9 11 5555-0199",
+      note: "Atención de lunes a viernes de 9 a 18 h",
+    },
+    {
+      icon: Mail,
+      label: "Correo electrónico",
+      value: "hola@makita-demo.local",
+      note: "Respuesta en 24-48 h",
+    },
+    {
+      icon: MapPin,
+      label: "Dirección",
+      value: "Av. Industrial 1234, Piso 5",
+      note: "Buenos Aires, Argentina",
+    },
+  ];
+
+  return (
+    <section id="contact" ref={ref} className="py-20 sm:py-28 bg-surface-darker">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div
+          className={`text-center mb-14 transition-all duration-700 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Contacto
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Datos de contacto de demostración.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {contacts.map((c, i) => (
+            <div
+              key={c.label}
+              className={`rounded-2xl border border-border/40 bg-card/40 p-6 transition-all duration-700 hover:bg-card/60 ${
+                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+              style={{ transitionDelay: `${i * 150}ms` }}
+            >
+              <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-makita-teal/10 p-3">
+                <c.icon className="h-6 w-6 text-makita-teal" />
+              </div>
+              <p className="text-sm font-medium text-muted-foreground">{c.label}</p>
+              <p className="mt-1 text-lg font-semibold text-foreground">{c.value}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{c.note}</p>
+            </div>
+          ))}
+        </div>
+
+        <p
+          className={`mt-10 text-center text-sm text-muted-foreground transition-all duration-700 delay-500 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          Estos datos son ficticios y se utilizan únicamente como referencia visual.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="border-t border-border/40 bg-surface-darker py-12">
