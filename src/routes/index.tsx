@@ -168,7 +168,7 @@ function HeroSection() {
 
             <div className="relative animate-float">
               <img
-                src={heroImage}
+                src={heroAngleAsset.url}
                 alt="Makita DCM501 cafetera inalámbrica"
                 width={800}
                 height={800}
