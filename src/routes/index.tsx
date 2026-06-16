@@ -794,7 +794,7 @@ function CTASection() {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Quiero mi Makita
+          No vuelvas a tomar café frío.
         </h2>
         <p
           className={`mt-6 text-lg text-muted-foreground transition-all duration-700 delay-150 ${
