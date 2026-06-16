@@ -358,8 +358,8 @@ function ProductDetailsSection() {
     { id: 6, label: "Puerto de batería 18V", top: "74%", left: "50%", side: "right" as const },
   ];
 
-  const leftDetails = details.filter(d => d.side === 'left');
-  const rightDetails = details.filter(d => d.side === 'right');
+  const leftDetails = details.filter((d) => d.side === "left");
+  const rightDetails = details.filter((d) => d.side === "right");
 
   return (
     <section ref={ref} className="relative py-20 sm:py-28 bg-surface-darker/50">
@@ -373,64 +373,81 @@ function ProductDetailsSection() {
           </h2>
         </div>
 
-        {/* Desktop: image with callout lines */}
-        <div className="hidden md:block relative mx-auto w-[320px] lg:w-[400px]">
-          {/* Glow behind image */}
-          <div className="absolute inset-0 rounded-full bg-makita-teal/5 blur-3xl" />
-
-          <img
-            src={heroImage}
-            alt="Makita DCM501 con detalles"
-            className="relative z-10 w-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
-          />
-
-          {details.map((d) => (
-            <div key={d.id}>
-              {/* Hotspot dot */}
+        {/* Desktop: 3-column grid with connecting lines */}
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-0 max-w-5xl mx-auto items-stretch">
+          {/* Left labels */}
+          <div className="relative">
+            {leftDetails.map((d) => (
               <div
-                className="absolute z-20 w-3 h-3 bg-makita-teal rounded-full -translate-x-1/2 -translate-y-1/2 ring-2 ring-makita-teal/40 shadow-lg shadow-makita-teal/30"
-                style={{ top: d.top, left: d.left }}
-              />
+                key={d.id}
+                className="absolute flex items-center w-full pr-3"
+                style={{ top: d.top, transform: "translateY(-50%)" }}
+              >
+                <span className="text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-3 py-1.5 rounded-md border border-border/30 mr-2">
+                  {d.label}
+                </span>
+                <div className="flex-1 h-px bg-makita-teal/60" />
+              </div>
+            ))}
+          </div>
 
-              {/* Pulse ring */}
+          {/* Center image with hotspots and connecting lines */}
+          <div className="relative w-[300px] lg:w-[380px]">
+            <img
+              src={heroImage}
+              alt="Makita DCM501 con detalles"
+              className="w-full relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+            />
+
+            {/* Glow behind image */}
+            <div className="absolute inset-0 rounded-full bg-makita-teal/5 blur-3xl" />
+
+            {/* Hotspot dots */}
+            {details.map((d) => (
+              <div key={d.id}>
+                <div
+                  className="absolute w-3 h-3 bg-makita-teal rounded-full -translate-x-1/2 -translate-y-1/2 ring-2 ring-makita-teal/40 z-20"
+                  style={{ top: d.top, left: d.left }}
+                />
+                <div
+                  className="absolute -inset-2 rounded-full bg-makita-teal/20 animate-ping z-10"
+                  style={{ top: d.top, left: d.left, animationDuration: "2s" }}
+                />
+              </div>
+            ))}
+
+            {/* Connecting lines from column edge to hotspot */}
+            {leftDetails.map((d) => (
               <div
-                className="absolute z-10 -inset-2 rounded-full bg-makita-teal/20 animate-ping"
-                style={{ top: d.top, left: d.left, animationDuration: '2s' }}
+                key={d.id}
+                className="absolute h-px bg-makita-teal/60 z-10"
+                style={{ top: d.top, left: 0, width: d.left }}
               />
+            ))}
+            {rightDetails.map((d) => (
+              <div
+                key={d.id}
+                className="absolute h-px bg-makita-teal/60 z-10"
+                style={{ top: d.top, right: 0, width: `calc(100% - ${d.left})` }}
+              />
+            ))}
+          </div>
 
-              {d.side === 'left' ? (
-                <>
-                  {/* Line from label to hotspot */}
-                  <div
-                    className="absolute h-px bg-makita-teal/60 z-10"
-                    style={{ top: d.top, left: '-60px', width: `calc(${d.left} + 60px)` }}
-                  />
-                  {/* Label */}
-                  <div
-                    className="absolute z-20 text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-3 py-1.5 rounded-md border border-border/30 -translate-y-1/2"
-                    style={{ top: d.top, right: 'calc(100% + 60px)' }}
-                  >
-                    {d.label}
-                  </div>
-                </>
-              ) : (
-                <>
-                  {/* Line from hotspot to label */}
-                  <div
-                    className="absolute h-px bg-makita-teal/60 z-10"
-                    style={{ top: d.top, left: d.left, width: '80px' }}
-                  />
-                  {/* Label */}
-                  <div
-                    className="absolute z-20 text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-3 py-1.5 rounded-md border border-border/30 -translate-y-1/2"
-                    style={{ top: d.top, left: `calc(${d.left} + 80px)` }}
-                  >
-                    {d.label}
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
+          {/* Right labels */}
+          <div className="relative">
+            {rightDetails.map((d) => (
+              <div
+                key={d.id}
+                className="absolute flex items-center w-full pl-3"
+                style={{ top: d.top, transform: "translateY(-50%)" }}
+              >
+                <div className="flex-1 h-px bg-makita-teal/60" />
+                <span className="text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-3 py-1.5 rounded-md border border-border/30 ml-2">
+                  {d.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Mobile list */}
