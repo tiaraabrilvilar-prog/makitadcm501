@@ -350,12 +350,21 @@ function ProductDetailsSection() {
   const { ref, visible } = useInView(0.1);
 
   const details = [
-    { id: 1, label: "Tapa del tanque", top: "12%", left: "50%", side: "left" as const },
-    { id: 2, label: "Tanque de agua 240ml", top: "22%", left: "50%", side: "right" as const },
-    { id: 3, label: "Filtro permanente", top: "38%", left: "48%", side: "left" as const },
-    { id: 4, label: "Interruptor de encendido", top: "48%", left: "42%", side: "left" as const },
-    { id: 5, label: "Porta-taza extraíble", top: "60%", left: "50%", side: "right" as const },
-    { id: 6, label: "Puerto de batería 18V", top: "74%", left: "50%", side: "right" as const },
+    { id: 2, label: "Tapa del tanque de agua", top: "6%", left: "50%", side: "left" as const },
+    { id: 3, label: "Manija", top: "10%", left: "70%", side: "right" as const },
+    { id: 1, label: "Tanque de agua", top: "18%", left: "45%", side: "left" as const },
+    { id: 7, label: "Filtro", top: "28%", left: "50%", side: "right" as const },
+    { id: 8, label: "Portafiltros", top: "35%", left: "45%", side: "left" as const },
+    { id: 9, label: "Soporte para cápsulas de café", top: "42%", left: "52%", side: "right" as const },
+    { id: 10, label: "Apertura de desbordamiento", top: "50%", left: "40%", side: "left" as const },
+    { id: 14, label: "Tapa de la taza de café", top: "56%", left: "55%", side: "right" as const },
+    { id: 15, label: "Taza de café", top: "63%", left: "45%", side: "left" as const },
+    { id: 11, label: "Descanso de copa", top: "70%", left: "55%", side: "right" as const },
+    { id: 13, label: "Interruptor de encendido", top: "76%", left: "38%", side: "left" as const },
+    { id: 12, label: "Luz de encendido", top: "80%", left: "60%", side: "right" as const },
+    { id: 4, label: "Tapa de la ranura de la batería", top: "86%", left: "42%", side: "left" as const },
+    { id: 5, label: "Ranura de batería (10.8V – 12V máx.)", top: "92%", left: "55%", side: "right" as const },
+    { id: 6, label: "Ranura de batería (18V y 14.4V)", top: "97%", left: "45%", side: "left" as const },
   ];
 
   const leftDetails = details.filter((d) => d.side === "left");
@@ -374,16 +383,19 @@ function ProductDetailsSection() {
         </div>
 
         {/* Desktop: 3-column grid with connecting lines */}
-        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-0 max-w-5xl mx-auto items-stretch">
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-0 max-w-6xl mx-auto items-stretch">
           {/* Left labels */}
-          <div className="relative">
+          <div className="relative min-h-[640px]">
             {leftDetails.map((d) => (
               <div
                 key={d.id}
                 className="absolute flex items-center w-full pr-3"
                 style={{ top: d.top, transform: "translateY(-50%)" }}
               >
-                <span className="text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-3 py-1.5 rounded-md border border-border/30 mr-2">
+                <span className="flex items-center gap-2 text-xs font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-2.5 py-1 rounded-md border border-border/30 mr-2">
+                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-makita-teal text-[10px] font-bold text-background">
+                    {d.id}
+                  </span>
                   {d.label}
                 </span>
                 <div className="flex-1 h-px bg-makita-teal/60" />
@@ -392,7 +404,7 @@ function ProductDetailsSection() {
           </div>
 
           {/* Center image with hotspots and connecting lines */}
-          <div className="relative w-[300px] lg:w-[380px]">
+          <div className="relative w-[280px] lg:w-[340px]">
             <img
               src={heroImage}
               alt="Makita DCM501 con detalles"
@@ -406,12 +418,8 @@ function ProductDetailsSection() {
             {details.map((d) => (
               <div key={d.id}>
                 <div
-                  className="absolute w-3 h-3 bg-makita-teal rounded-full -translate-x-1/2 -translate-y-1/2 ring-2 ring-makita-teal/40 z-20"
+                  className="absolute w-2.5 h-2.5 bg-makita-teal rounded-full -translate-x-1/2 -translate-y-1/2 ring-2 ring-makita-teal/40 z-20"
                   style={{ top: d.top, left: d.left }}
-                />
-                <div
-                  className="absolute -inset-2 rounded-full bg-makita-teal/20 animate-ping z-10"
-                  style={{ top: d.top, left: d.left, animationDuration: "2s" }}
                 />
               </div>
             ))}
@@ -434,7 +442,7 @@ function ProductDetailsSection() {
           </div>
 
           {/* Right labels */}
-          <div className="relative">
+          <div className="relative min-h-[640px]">
             {rightDetails.map((d) => (
               <div
                 key={d.id}
@@ -442,7 +450,10 @@ function ProductDetailsSection() {
                 style={{ top: d.top, transform: "translateY(-50%)" }}
               >
                 <div className="flex-1 h-px bg-makita-teal/60" />
-                <span className="text-sm font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-3 py-1.5 rounded-md border border-border/30 ml-2">
+                <span className="flex items-center gap-2 text-xs font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-2.5 py-1 rounded-md border border-border/30 ml-2">
+                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-makita-teal text-[10px] font-bold text-background">
+                    {d.id}
+                  </span>
                   {d.label}
                 </span>
               </div>
