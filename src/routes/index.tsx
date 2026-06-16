@@ -151,10 +151,10 @@ function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a
-                href="#about"
+                href="#includes"
                 className="group inline-flex items-center gap-3 rounded-full bg-makita-teal px-8 py-4 text-sm font-bold text-primary-foreground transition-all duration-300 hover:bg-makita-teal/90 hover:scale-105"
               >
-                Descubrí la libertad
+                Potenciá tus mañanas
                 <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-1" />
               </a>
             </div>
