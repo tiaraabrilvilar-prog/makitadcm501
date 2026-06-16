@@ -311,8 +311,8 @@ function IncludesSection() {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-makita-teal/10 blur-3xl" />
               <img
-                src={heroImage}
-                alt="Makita DCM501 con accesorios"
+                src={tankAsset.url}
+                alt="Makita DCM501 tanque de agua extraíble"
                 width={500}
                 height={500}
                 className="relative w-full max-w-sm rounded-xl"
