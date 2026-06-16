@@ -8,8 +8,6 @@ import {
   Coffee,
   Zap,
   Filter,
-  Shield,
-  Check,
   ChevronDown,
   ArrowRight,
   Menu,
@@ -25,6 +23,9 @@ import {
   Ruler,
   Gauge,
   Cable,
+  Phone,
+  Mail,
+  MapPin,
 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import heroImage from "@/assets/makita-coffee-maker.png";
@@ -793,14 +794,14 @@ function CTASection() {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          No vuelvas a tomar café frío.
+          Quiero mi Makita
         </h2>
         <p
           className={`mt-6 text-lg text-muted-foreground transition-all duration-700 delay-150 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          Llevá la potencia de Makita a tu taza. Stock disponible con envío a todo el país.
+          Llevá la potencia de Makita a tu taza.
         </p>
         <div
           className={`mt-10 flex flex-wrap items-center justify-center gap-4 transition-all duration-700 delay-300 ${
@@ -811,7 +812,7 @@ function CTASection() {
             href="#"
             className="group inline-flex items-center gap-2 rounded-full bg-makita-teal px-8 py-4 text-base font-bold text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-[0_0_32px_8px_var(--makita-teal-glow)]"
           >
-            Comprar Ahora
+            Quiero mi Makita
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </a>
           <a
@@ -821,23 +822,77 @@ function CTASection() {
             Ver especificaciones
           </a>
         </div>
+      </div>
+    </section>
+  );
+}
 
-        <div className="mt-12 flex items-center justify-center gap-8 text-muted-foreground">
-          <div className="flex items-center gap-2 text-sm">
-            <Shield className="h-4 w-4 text-makita-teal" />
-            <span>2 años garantía</span>
-          </div>
-          <div className="h-4 w-px bg-border/40" />
-          <div className="flex items-center gap-2 text-sm">
-            <Zap className="h-4 w-4 text-makita-teal" />
-            <span>Envío 24-48h</span>
-          </div>
-          <div className="h-4 w-px bg-border/40" />
-          <div className="flex items-center gap-2 text-sm">
-            <Check className="h-4 w-4 text-makita-teal" />
-            <span>30 días devolución</span>
-          </div>
+function ContactSection() {
+  const { ref, visible } = useInView(0.1);
+
+  const contacts = [
+    {
+      icon: Phone,
+      label: "Teléfono",
+      value: "+54 9 11 5555-0199",
+      note: "Atención de lunes a viernes de 9 a 18 h",
+    },
+    {
+      icon: Mail,
+      label: "Correo electrónico",
+      value: "hola@makita-demo.local",
+      note: "Respuesta en 24-48 h",
+    },
+    {
+      icon: MapPin,
+      label: "Dirección",
+      value: "Av. Industrial 1234, Piso 5",
+      note: "Buenos Aires, Argentina",
+    },
+  ];
+
+  return (
+    <section id="contact" ref={ref} className="py-20 sm:py-28 bg-surface-darker">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div
+          className={`text-center mb-14 transition-all duration-700 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Contacto
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Datos de contacto de demostración.
+          </p>
         </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {contacts.map((c, i) => (
+            <div
+              key={c.label}
+              className={`rounded-2xl border border-border/40 bg-card/40 p-6 transition-all duration-700 hover:bg-card/60 ${
+                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+              style={{ transitionDelay: `${i * 150}ms` }}
+            >
+              <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-makita-teal/10 p-3">
+                <c.icon className="h-6 w-6 text-makita-teal" />
+              </div>
+              <p className="text-sm font-medium text-muted-foreground">{c.label}</p>
+              <p className="mt-1 text-lg font-semibold text-foreground">{c.value}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{c.note}</p>
+            </div>
+          ))}
+        </div>
+
+        <p
+          className={`mt-10 text-center text-sm text-muted-foreground transition-all duration-700 delay-500 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          Estos datos son ficticios y se utilizan únicamente como referencia visual.
+        </p>
       </div>
     </section>
   );
@@ -848,11 +903,10 @@ function Footer() {
     <footer className="border-t border-border/40 bg-surface-darker py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <div className="flex items-center gap-2">
-            <div className="h-7 w-7 rounded bg-makita-teal flex items-center justify-center">
-              <span className="font-bold text-primary-foreground text-xs font-brand">M</span>
-            </div>
-            <span className="text-base font-bold tracking-tight text-foreground font-brand uppercase">MAKITA</span>
+          <div className="flex items-center gap-3">
+            <span className="text-2xl tracking-wide text-foreground" style={{ fontFamily: "var(--font-logo)" }}>
+              makita
+            </span>
           </div>
 
           <div className="flex items-center gap-6">
@@ -882,6 +936,7 @@ function Index() {
       <SpecsSection />
       <VersionsSection />
       <CTASection />
+      <ContactSection />
       <Footer />
     </div>
   );
