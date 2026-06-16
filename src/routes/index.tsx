@@ -601,13 +601,46 @@ function ProductDetailsSection() {
 
 function SpecsSection() {
   const { ref, visible } = useInView(0.1);
-  const specs = [
-    { label: "Capacidad del tanque", value: "240 ml" },
-    { label: "Autonomía promedio", value: "Hasta 3 tazas" },
-    { label: "Altura máxima de taza", value: "90 mm" },
-    { label: "Peso (sin batería)", value: "1.5 kg" },
-    { label: "Tiempo de preparación", value: "5 minutos" },
-    { label: "Compatibilidad", value: "12V CXT / 18V LXT" },
+
+  const performanceSpecs = [
+    { label: "Capacidad del tanque", value: "240 ml", icon: <Droplets className="w-5 h-5 text-makita-teal" /> },
+    { label: "Autonomía promedio", value: "Hasta 3 tazas", icon: <Coffee className="w-5 h-5 text-makita-teal" /> },
+    { label: "Tiempo de preparación", value: "5 minutos", icon: <Timer className="w-5 h-5 text-makita-teal" /> },
+    { label: "Temperatura de extracción", value: "~90°C", icon: <Thermometer className="w-5 h-5 text-makita-teal" /> },
+  ];
+
+  const compatibilitySpecs = [
+    { label: "Baterías compatibles", value: "12V CXT / 18V LXT", icon: <Battery className="w-5 h-5 text-makita-teal" /> },
+    { label: "Sistema de filtro", value: "Filtro permanente", icon: <Filter className="w-5 h-5 text-makita-teal" /> },
+    { label: "Tipo de café", value: "Café molido", icon: <Coffee className="w-5 h-5 text-makita-teal" /> },
+    { label: "Conexión", value: "Inalámbrica", icon: <Zap className="w-5 h-5 text-makita-teal" /> },
+  ];
+
+  const dimensionSpecs = [
+    { label: "Peso (sin batería)", value: "1.5 kg", icon: <Weight className="w-5 h-5 text-makita-teal" /> },
+    { label: "Altura máxima de taza", value: "90 mm", icon: <Box className="w-5 h-5 text-makita-teal" /> },
+    { label: "Dimensiones (A×A×L)", value: "135 × 118 × 244 mm", icon: <Ruler className="w-5 h-5 text-makita-teal" /> },
+  ];
+
+  const tabs = [
+    {
+      id: "performance",
+      label: "Rendimiento",
+      icon: <Gauge className="w-4 h-4" />,
+      specs: performanceSpecs,
+    },
+    {
+      id: "compatibility",
+      label: "Compatibilidad",
+      icon: <Cable className="w-4 h-4" />,
+      specs: compatibilitySpecs,
+    },
+    {
+      id: "dimensions",
+      label: "Dimensiones",
+      icon: <Ruler className="w-4 h-4" />,
+      specs: dimensionSpecs,
+    },
   ];
 
   return (
@@ -623,20 +656,48 @@ function SpecsSection() {
         </div>
 
         <div className="mx-auto max-w-4xl">
-          <div className="grid gap-4 sm:grid-cols-2">
-            {specs.map((spec, i) => (
-              <div
-                key={i}
-                className={`flex items-center justify-between rounded-xl border border-border/40 bg-surface-dark/40 px-6 py-5 transition-all duration-500 hover:border-makita-teal/20 hover:bg-surface-dark/60 ${
-                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <span className="text-sm font-medium text-muted-foreground">{spec.label}</span>
-                <span className="text-lg font-bold text-foreground">{spec.value}</span>
-              </div>
+          <Tabs defaultValue="performance" className="w-full">
+            <TabsList className="w-full grid grid-cols-3 bg-surface-dark/60 border border-border/40 p-1 rounded-xl h-auto mb-8">
+              {tabs.map((tab) => (
+                <TabsTrigger
+                  key={tab.id}
+                  value={tab.id}
+                  className="flex items-center gap-2 py-3 rounded-lg text-sm font-medium text-muted-foreground data-[state=active]:bg-makita-teal data-[state=active]:text-background data-[state=active]:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300"
+                >
+                  {tab.icon}
+                  <span>{tab.label}</span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
+            {tabs.map((tab) => (
+              <TabsContent key={tab.id} value={tab.id} className="mt-0">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {tab.specs.map((spec, i) => (
+                    <div
+                      key={i}
+                      className={`flex items-center gap-4 rounded-xl border border-border/40 bg-surface-dark/40 px-6 py-5 transition-all duration-500 hover:border-makita-teal/20 hover:bg-surface-dark/60 ${
+                        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                      }`}
+                      style={{ transitionDelay: `${i * 100}ms` }}
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-makita-teal/10 border border-makita-teal/20 flex items-center justify-center">
+                        {spec.icon}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                          {spec.label}
+                        </span>
+                        <span className="block text-lg font-bold text-foreground mt-0.5">
+                          {spec.value}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </TabsContent>
             ))}
-          </div>
+          </Tabs>
         </div>
       </div>
     </section>
