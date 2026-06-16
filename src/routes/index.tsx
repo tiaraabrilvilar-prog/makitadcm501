@@ -229,6 +229,61 @@ function AboutSection() {
   );
 }
 
+function PainPointsSection() {
+  const { ref, visible } = useInView(0.1);
+  const pains = [
+    {
+      icon: <Thermometer className="h-8 w-8" />,
+      text: "¿Cansado del café tibio de termo después de unas horas?",
+    },
+    {
+      icon: <Plug className="h-8 w-8" />,
+      text: "¿Perdés tiempo buscando un enchufe en la obra o el camping?",
+    },
+    {
+      icon: <Coffee className="h-8 w-8" />,
+      text: "¿El café instantáneo ya no es una opción para vos?",
+    },
+  ];
+
+  return (
+    <section id="pain-points" ref={ref} className="relative py-20 sm:py-28 bg-surface-darker/30">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-14 text-center">
+          <span className="text-sm font-semibold tracking-[0.2em] text-makita-teal uppercase">
+            Empatía
+          </span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+            Te entendemos
+          </h2>
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+            Antes de mostrarte la solución, sabemos que estos dolores te suenan familiares.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-3">
+          {pains.map((pain, i) => (
+            <div
+              key={i}
+              className={`flex flex-col items-center text-center gap-5 rounded-2xl border border-border/40 bg-surface-dark/40 p-8 transition-all duration-700 hover:border-makita-teal/20 hover:bg-surface-dark/60 ${
+                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${i * 150}ms` }}
+            >
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-makita-teal/10 text-makita-teal">
+                {pain.icon}
+              </div>
+              <p className="text-lg font-medium text-foreground leading-relaxed">
+                {pain.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FeaturesSection() {
   const { ref, visible } = useInView(0.1);
   const features = [
@@ -676,6 +731,7 @@ function Index() {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <PainPointsSection />
       <FeaturesSection />
       <IncludesSection />
       <ProductDetailsSection />
