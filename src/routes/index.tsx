@@ -19,7 +19,7 @@ import {
   Facebook,
   Youtube,
 } from "lucide-react";
-import heroImage from "@/assets/hero-coffee-maker.png";
+import heroImage from "@/assets/makita-coffee-maker.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
