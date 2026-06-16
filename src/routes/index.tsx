@@ -83,11 +83,8 @@ function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded bg-makita-teal flex items-center justify-center">
-            <span className="font-bold text-primary-foreground text-sm font-brand">M</span>
-          </div>
-          <span className="text-xl font-brand tracking-wider text-foreground uppercase">
+        <div className="flex items-center gap-3">
+          <span className="text-2xl tracking-wide text-foreground uppercase" style={{ fontFamily: "var(--font-logo)" }}>
             Makita
           </span>
         </div>
