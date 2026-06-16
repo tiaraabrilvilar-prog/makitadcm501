@@ -348,6 +348,7 @@ function IncludesSection() {
 
 function ProductDetailsSection() {
   const { ref, visible } = useInView(0.1);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   const details = [
     { id: 1, label: "Manija", top: "6.5%", left: "50%", side: "right" as const },
@@ -380,22 +381,40 @@ function ProductDetailsSection() {
         <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-0 max-w-6xl mx-auto items-stretch">
           {/* Left labels */}
           <div className="relative">
-
-            {leftDetails.map((d) => (
-              <div
-                key={d.id}
-                className="absolute flex items-center w-full pr-3"
-                style={{ top: d.top, transform: "translateY(-50%)" }}
-              >
-                <span className="flex items-center gap-2 text-xs font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-2.5 py-1 rounded-md border border-border/30 mr-2">
-                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-makita-teal text-[10px] font-bold text-background">
-                    {d.id}
+            {leftDetails.map((d) => {
+              const isActive = hoveredId === d.id;
+              return (
+                <div
+                  key={d.id}
+                  onMouseEnter={() => setHoveredId(d.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  className="absolute flex items-center w-full cursor-pointer group"
+                  style={{ top: d.top, transform: "translateY(-50%)" }}
+                >
+                  <span
+                    className={`flex items-center gap-2 text-xs font-medium whitespace-nowrap px-2.5 py-1 rounded-md border transition-all duration-300 ${
+                      isActive
+                        ? "text-background bg-makita-teal border-makita-teal shadow-[0_0_20px_rgba(20,184,166,0.5)]"
+                        : "text-foreground bg-surface-darker/90 border-border/30"
+                    }`}
+                  >
+                    <span
+                      className={`flex h-4 w-4 items-center justify-center rounded-full text-[10px] font-bold transition-colors ${
+                        isActive ? "bg-background text-makita-teal" : "bg-makita-teal text-background"
+                      }`}
+                    >
+                      {d.id}
+                    </span>
+                    {d.label}
                   </span>
-                  {d.label}
-                </span>
-                <div className="flex-1 h-px bg-makita-teal/60" />
-              </div>
-            ))}
+                  <div
+                    className={`flex-1 h-px transition-all duration-300 ${
+                      isActive ? "bg-makita-teal shadow-[0_0_8px_rgba(20,184,166,0.8)]" : "bg-makita-teal/60"
+                    }`}
+                  />
+                </div>
+              );
+            })}
           </div>
 
           {/* Center image with hotspots and connecting lines */}
@@ -409,50 +428,85 @@ function ProductDetailsSection() {
             {/* Glow behind image */}
             <div className="absolute inset-0 rounded-full bg-makita-teal/5 blur-3xl" />
 
-            {/* Hotspot dots */}
-            {details.map((d) => (
-              <div key={d.id}>
+            {/* Connecting lines from column edge to hotspot */}
+            {leftDetails.map((d) => {
+              const isActive = hoveredId === d.id;
+              return (
                 <div
-                  className="absolute w-2.5 h-2.5 bg-makita-teal rounded-full -translate-x-1/2 -translate-y-1/2 ring-2 ring-makita-teal/40 z-20"
+                  key={d.id}
+                  className={`absolute h-px z-20 transition-all duration-300 ${
+                    isActive ? "bg-makita-teal shadow-[0_0_8px_rgba(20,184,166,0.8)]" : "bg-makita-teal/60"
+                  }`}
+                  style={{ top: d.top, left: 0, width: d.left }}
+                />
+              );
+            })}
+            {rightDetails.map((d) => {
+              const isActive = hoveredId === d.id;
+              return (
+                <div
+                  key={d.id}
+                  className={`absolute h-px z-20 transition-all duration-300 ${
+                    isActive ? "bg-makita-teal shadow-[0_0_8px_rgba(20,184,166,0.8)]" : "bg-makita-teal/60"
+                  }`}
+                  style={{ top: d.top, right: 0, width: `calc(100% - ${d.left})` }}
+                />
+              );
+            })}
+
+            {/* Hotspot dots */}
+            {details.map((d) => {
+              const isActive = hoveredId === d.id;
+              return (
+                <div
+                  key={d.id}
+                  className={`absolute rounded-full -translate-x-1/2 -translate-y-1/2 z-30 transition-all duration-300 ${
+                    isActive
+                      ? "w-4 h-4 bg-makita-teal ring-4 ring-makita-teal/50 shadow-[0_0_20px_rgba(20,184,166,0.9)] animate-pulse"
+                      : "w-2.5 h-2.5 bg-makita-teal ring-2 ring-makita-teal/40"
+                  }`}
                   style={{ top: d.top, left: d.left }}
                 />
-              </div>
-            ))}
-
-            {/* Connecting lines from column edge to hotspot */}
-            {leftDetails.map((d) => (
-              <div
-                key={d.id}
-                className="absolute h-px bg-makita-teal/60 z-10"
-                style={{ top: d.top, left: 0, width: d.left }}
-              />
-            ))}
-            {rightDetails.map((d) => (
-              <div
-                key={d.id}
-                className="absolute h-px bg-makita-teal/60 z-10"
-                style={{ top: d.top, right: 0, width: `calc(100% - ${d.left})` }}
-              />
-            ))}
+              );
+            })}
           </div>
 
           {/* Right labels */}
           <div className="relative">
-            {rightDetails.map((d) => (
-              <div
-                key={d.id}
-                className="absolute flex items-center w-full pl-3"
-                style={{ top: d.top, transform: "translateY(-50%)" }}
-              >
-                <div className="flex-1 h-px bg-makita-teal/60" />
-                <span className="flex items-center gap-2 text-xs font-medium text-foreground whitespace-nowrap bg-surface-darker/90 px-2.5 py-1 rounded-md border border-border/30 ml-2">
-                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-makita-teal text-[10px] font-bold text-background">
-                    {d.id}
+            {rightDetails.map((d) => {
+              const isActive = hoveredId === d.id;
+              return (
+                <div
+                  key={d.id}
+                  onMouseEnter={() => setHoveredId(d.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  className="absolute flex items-center w-full cursor-pointer group"
+                  style={{ top: d.top, transform: "translateY(-50%)" }}
+                >
+                  <div
+                    className={`flex-1 h-px transition-all duration-300 ${
+                      isActive ? "bg-makita-teal shadow-[0_0_8px_rgba(20,184,166,0.8)]" : "bg-makita-teal/60"
+                    }`}
+                  />
+                  <span
+                    className={`flex items-center gap-2 text-xs font-medium whitespace-nowrap px-2.5 py-1 rounded-md border transition-all duration-300 ${
+                      isActive
+                        ? "text-background bg-makita-teal border-makita-teal shadow-[0_0_20px_rgba(20,184,166,0.5)]"
+                        : "text-foreground bg-surface-darker/90 border-border/30"
+                    }`}
+                  >
+                    <span
+                      className={`flex h-4 w-4 items-center justify-center rounded-full text-[10px] font-bold transition-colors ${
+                        isActive ? "bg-background text-makita-teal" : "bg-makita-teal text-background"
+                      }`}
+                    >
+                      {d.id}
+                    </span>
+                    {d.label}
                   </span>
-                  {d.label}
-                </span>
-              </div>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
 
