@@ -583,7 +583,7 @@ function Index() {
       <AboutSection />
       <FeaturesSection />
       <IncludesSection />
-      <AccessoriesSection />
+      <ProductDetailsSection />
       <SpecsSection />
       <CTASection />
       <Footer />
