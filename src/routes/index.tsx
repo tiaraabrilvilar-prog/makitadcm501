@@ -785,7 +785,7 @@ function CTASection() {
   const { ref, visible } = useInView(0.1);
 
   return (
-    <section id="cta" ref={ref} className="relative py-24 sm:py-32 overflow-hidden bg-surface-darker">
+    <section id="cta" ref={ref} className="relative py-24 sm:py-32 overflow-hidden bg-makita-teal/10">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--makita-teal-glow),_transparent_60%)] opacity-20" />
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <h2
