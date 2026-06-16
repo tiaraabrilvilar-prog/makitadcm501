@@ -24,6 +24,10 @@ import {
   CupSoda,
 } from "lucide-react";
 import heroImage from "@/assets/makita-coffee-maker.png";
+import heroAngleAsset from "@/assets/DCM501_C2L0_1-2.jpg.asset.json";
+import sideViewAsset from "@/assets/DCM501_C7C0.jpg.asset.json";
+import tankAsset from "@/assets/DCM501_F_001.jpg.asset.json";
+import oppositeAngleAsset from "@/assets/DCM501_C2R0.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
