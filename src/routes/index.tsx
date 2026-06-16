@@ -35,6 +35,7 @@ import tankTransparent from "@/assets/tank-transparent.png";
 import oppositeTransparent from "@/assets/opposite-transparent.png";
 import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
+import constructionImage from "@/assets/makita-construction-bg.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -206,11 +207,12 @@ function AboutSection() {
             <div className="relative">
               <div className="absolute inset-0 rounded-3xl bg-makita-teal/10 blur-3xl" />
               <img
-                src={sideTransparent}
-                alt="Makita DCM501 vista lateral"
+                src={constructionImage}
+                alt="Makita DCM501 en obra de construcción"
                 width={1024}
                 height={1024}
                 className="relative w-full max-w-md rounded-2xl drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                loading="lazy"
               />
             </div>
           </div>
