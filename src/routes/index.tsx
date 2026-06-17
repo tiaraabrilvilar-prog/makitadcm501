@@ -410,6 +410,7 @@ function IncludesSection() {
 function ProductDetailsSection() {
   const { ref, visible } = useInView(0.1);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [activeId, setActiveId] = useState<number | null>(null);
 
   const details = [
     { id: 1, label: "Manija", top: "6.5%", left: "50%", side: "right" as const },
@@ -571,20 +572,54 @@ function ProductDetailsSection() {
           </div>
         </div>
 
-        {/* Mobile list */}
-        <div className="md:hidden mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto">
-          {details.map((d, i) => (
-            <div
-              key={d.id}
-              className={`flex items-center gap-3 rounded-xl border border-border/40 bg-surface-dark/40 px-4 py-3 transition-all duration-500 ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              <div className="h-2 w-2 shrink-0 rounded-full bg-makita-teal ring-2 ring-makita-teal/30" />
-              <span className="text-sm font-medium text-foreground break-words min-w-0">{d.label}</span>
-            </div>
-          ))}
+        {/* Mobile: image with interactive hotspots */}
+        <div className="md:hidden mt-10 flex flex-col items-center gap-6">
+          <div className="relative w-full max-w-[320px] mx-auto">
+            <img
+              src={heroImage}
+              alt="Makita DCM501 con detalles"
+              className="w-full relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+            />
+            <div className="absolute inset-0 rounded-full bg-makita-teal/5 blur-3xl" />
+
+            {details.map((d) => {
+              const isActive = activeId === d.id;
+              return (
+                <button
+                  key={d.id}
+                  type="button"
+                  aria-label={d.label}
+                  onClick={() => setActiveId(isActive ? null : d.id)}
+                  className="absolute -translate-x-1/2 -translate-y-1/2 z-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-makita-teal rounded-full"
+                  style={{ top: d.top, left: d.left }}
+                >
+                  <span
+                    className={`block rounded-full transition-all duration-300 ${
+                      isActive
+                        ? "w-5 h-5 bg-red-500 ring-4 ring-red-500/40 shadow-[0_0_20px_rgba(239,68,68,0.8)]"
+                        : "w-3.5 h-3.5 bg-red-500 ring-2 ring-red-500/50 animate-pulse"
+                    }`}
+                  />
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active detail label */}
+          <div className="w-full max-w-sm mx-auto min-h-[60px] flex items-center justify-center rounded-2xl border border-border/40 bg-surface-dark/60 px-6 py-4 text-center">
+            {activeId ? (
+              <span className="text-base font-medium text-foreground">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-makita-teal text-background text-xs font-bold mr-2">
+                  {activeId}
+                </span>
+                {details.find((d) => d.id === activeId)?.label}
+              </span>
+            ) : (
+              <span className="text-sm text-muted-foreground">
+                Tocá los puntos rojos para ver el nombre de cada parte
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </section>
