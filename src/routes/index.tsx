@@ -596,8 +596,8 @@ function ProductDetailsSection() {
                   <span
                     className={`block rounded-full transition-all duration-300 ${
                       isActive
-                        ? "w-5 h-5 bg-red-500 ring-4 ring-red-500/40 shadow-[0_0_20px_rgba(239,68,68,0.8)]"
-                        : "w-3.5 h-3.5 bg-red-500 ring-2 ring-red-500/50 animate-pulse"
+                        ? "w-5 h-5 bg-makita-teal ring-4 ring-makita-teal/40 shadow-[0_0_20px_rgba(20,184,166,0.8)]"
+                        : "w-3.5 h-3.5 bg-makita-teal ring-2 ring-makita-teal/50 animate-pulse"
                     }`}
                   />
                 </button>
