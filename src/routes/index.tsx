@@ -888,13 +888,6 @@ function ContactSection() {
           ))}
         </div>
 
-        <p
-          className={`mt-10 text-center text-sm text-muted-foreground transition-all duration-700 delay-500 ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-        >
-          Estos datos son ficticios y se utilizan únicamente como referencia visual.
-        </p>
       </div>
     </section>
   );
