@@ -120,7 +120,6 @@ function Navbar() {
           <a href="#features" className="block text-sm font-medium text-muted-foreground" onClick={() => setMobileOpen(false)}>Funciones</a>
           <a href="#includes" className="block text-sm font-medium text-muted-foreground" onClick={() => setMobileOpen(false)}>Accesorios</a>
           <a href="#specs" className="block text-sm font-medium text-muted-foreground" onClick={() => setMobileOpen(false)}>Especificaciones</a>
-          <a href="#cta" className="block text-sm font-bold text-makita-teal" onClick={() => setMobileOpen(false)}>Comprar Ahora</a>
         </div>
       )}
     </nav>
