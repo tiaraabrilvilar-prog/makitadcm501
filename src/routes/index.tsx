@@ -412,7 +412,6 @@ function ProductDetailsSection() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [activeId, setActiveId] = useState<number | null>(null);
 
-
   const details = [
     { id: 1, label: "Manija", top: "6.5%", left: "50%", side: "right" as const },
     { id: 2, label: "Tapa del tanque de agua", top: "25%", left: "28%", side: "left" as const },
