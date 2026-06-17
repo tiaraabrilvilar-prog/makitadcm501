@@ -104,13 +104,6 @@ function Navbar() {
           <a href="#specs" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Especificaciones
           </a>
-          <a
-            href="#cta"
-            className="inline-flex items-center gap-2 rounded-md bg-makita-teal px-5 py-2.5 text-sm font-bold text-primary-foreground hover:bg-makita-teal/90 transition-colors"
-          >
-            Comprar Ahora
-            <ArrowRight className="h-4 w-4" />
-          </a>
         </div>
 
         <button
@@ -127,7 +120,6 @@ function Navbar() {
           <a href="#features" className="block text-sm font-medium text-muted-foreground" onClick={() => setMobileOpen(false)}>Funciones</a>
           <a href="#includes" className="block text-sm font-medium text-muted-foreground" onClick={() => setMobileOpen(false)}>Accesorios</a>
           <a href="#specs" className="block text-sm font-medium text-muted-foreground" onClick={() => setMobileOpen(false)}>Especificaciones</a>
-          <a href="#cta" className="block text-sm font-bold text-makita-teal" onClick={() => setMobileOpen(false)}>Comprar Ahora</a>
         </div>
       )}
     </nav>
