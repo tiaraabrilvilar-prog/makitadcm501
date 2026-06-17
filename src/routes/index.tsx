@@ -657,15 +657,15 @@ function SpecsSection() {
 
         <div className="mx-auto max-w-4xl">
           <Tabs defaultValue="performance" className="w-full">
-            <TabsList className="w-full grid grid-cols-3 bg-surface-dark/60 border border-border/40 p-1 rounded-xl h-auto mb-8">
+            <TabsList className="w-full grid grid-cols-3 bg-surface-dark/60 border border-border/40 p-1 rounded-xl h-auto mb-8 gap-1">
               {tabs.map((tab) => (
                 <TabsTrigger
                   key={tab.id}
                   value={tab.id}
-                  className="flex items-center gap-2 py-3 rounded-lg text-sm font-medium text-muted-foreground data-[state=active]:bg-makita-teal data-[state=active]:text-background data-[state=active]:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300"
+                  className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 py-2.5 px-1 sm:px-3 rounded-lg text-[11px] sm:text-sm font-medium text-muted-foreground data-[state=active]:bg-makita-teal data-[state=active]:text-background data-[state=active]:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300 min-w-0"
                 >
                   {tab.icon}
-                  <span>{tab.label}</span>
+                  <span className="truncate">{tab.label}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
