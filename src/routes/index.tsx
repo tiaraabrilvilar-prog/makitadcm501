@@ -580,17 +580,17 @@ function ProductDetailsSection() {
         </div>
 
         {/* Mobile list */}
-        <div className="md:hidden mt-10 grid grid-cols-2 gap-3">
+        <div className="md:hidden mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto">
           {details.map((d, i) => (
             <div
               key={d.id}
               className={`flex items-center gap-3 rounded-xl border border-border/40 bg-surface-dark/40 px-4 py-3 transition-all duration-500 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="h-2 w-2 shrink-0 rounded-full bg-makita-teal ring-2 ring-makita-teal/30" />
-              <span className="text-sm font-medium text-foreground">{d.label}</span>
+              <span className="text-sm font-medium text-foreground break-words min-w-0">{d.label}</span>
             </div>
           ))}
         </div>
@@ -657,15 +657,15 @@ function SpecsSection() {
 
         <div className="mx-auto max-w-4xl">
           <Tabs defaultValue="performance" className="w-full">
-            <TabsList className="w-full grid grid-cols-3 bg-surface-dark/60 border border-border/40 p-1 rounded-xl h-auto mb-8">
+            <TabsList className="w-full grid grid-cols-3 bg-surface-dark/60 border border-border/40 p-1 rounded-xl h-auto mb-8 gap-1">
               {tabs.map((tab) => (
                 <TabsTrigger
                   key={tab.id}
                   value={tab.id}
-                  className="flex items-center gap-2 py-3 rounded-lg text-sm font-medium text-muted-foreground data-[state=active]:bg-makita-teal data-[state=active]:text-background data-[state=active]:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300"
+                  className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 py-2.5 px-1 sm:px-3 rounded-lg text-[11px] sm:text-sm font-medium text-muted-foreground data-[state=active]:bg-makita-teal data-[state=active]:text-background data-[state=active]:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300 min-w-0"
                 >
                   {tab.icon}
-                  <span>{tab.label}</span>
+                  <span className="truncate">{tab.label}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
@@ -685,10 +685,10 @@ function SpecsSection() {
                         {spec.icon}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        <span className="block text-xs font-medium text-muted-foreground uppercase tracking-wide">
                           {spec.label}
                         </span>
-                        <span className="block text-lg font-bold text-foreground mt-0.5">
+                        <span className="block text-lg font-bold text-foreground mt-1 break-words">
                           {spec.value}
                         </span>
                       </div>
