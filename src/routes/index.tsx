@@ -580,17 +580,17 @@ function ProductDetailsSection() {
         </div>
 
         {/* Mobile list */}
-        <div className="md:hidden mt-10 grid grid-cols-2 gap-3">
+        <div className="md:hidden mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto">
           {details.map((d, i) => (
             <div
               key={d.id}
               className={`flex items-center gap-3 rounded-xl border border-border/40 bg-surface-dark/40 px-4 py-3 transition-all duration-500 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="h-2 w-2 shrink-0 rounded-full bg-makita-teal ring-2 ring-makita-teal/30" />
-              <span className="text-sm font-medium text-foreground">{d.label}</span>
+              <span className="text-sm font-medium text-foreground break-words min-w-0">{d.label}</span>
             </div>
           ))}
         </div>
