@@ -685,10 +685,10 @@ function SpecsSection() {
                         {spec.icon}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        <span className="block text-xs font-medium text-muted-foreground uppercase tracking-wide">
                           {spec.label}
                         </span>
-                        <span className="block text-lg font-bold text-foreground mt-0.5">
+                        <span className="block text-lg font-bold text-foreground mt-1 break-words">
                           {spec.value}
                         </span>
                       </div>
