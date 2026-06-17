@@ -410,6 +410,8 @@ function IncludesSection() {
 function ProductDetailsSection() {
   const { ref, visible } = useInView(0.1);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [activeId, setActiveId] = useState<number | null>(null);
+
 
   const details = [
     { id: 1, label: "Manija", top: "6.5%", left: "50%", side: "right" as const },
