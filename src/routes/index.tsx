@@ -621,7 +621,6 @@ function ProductDetailsSection() {
             )}
           </div>
         </div>
-
       </div>
     </section>
   );
