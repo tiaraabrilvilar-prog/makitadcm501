@@ -616,7 +616,7 @@ function ProductDetailsSection() {
               </span>
             ) : (
               <span className="text-sm text-muted-foreground">
-                Tocá los puntos rojos para ver el nombre de cada parte
+                Tocá los puntos verdes para ver el nombre de cada parte
               </span>
             )}
           </div>
