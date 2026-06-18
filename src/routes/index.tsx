@@ -16,7 +16,7 @@ import {
 import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
 import constructionImage from "@/assets/makita-construction-bg.png";
-import heroAsset from "@/assets/DCM501_F_001.jpg.asset.json";
+import heroAsset from "@/assets/hero-makita-transparent.png.asset.json";
 import anatomyAsset from "@/assets/DCM501_C2L0_1-2.jpg.asset.json";
 
 const heroImg = heroAsset.url;
