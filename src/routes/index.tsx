@@ -106,7 +106,7 @@ function Hero() {
               Nueva en obra · 18V LXT
             </div>
 
-            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[4rem] sm:text-[7rem] lg:text-[9rem]">
+            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[3rem] sm:text-[4.5rem] lg:text-[6rem]">
               CAFÉ <span className="text-primary">SIN</span><br />
               ENCHUFE.<br />
               <span className="text-mocha">CAFÉ DE OBRA.</span>
@@ -126,20 +126,6 @@ function Hero() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
-
-            <div className="mt-12 flex flex-wrap gap-8 pt-8 border-t border-cream/15">
-              {[
-                { n: "240ml", u: "por carga" },
-                { n: "5min", u: "preparación" },
-                { n: "18V", u: "batería LXT" },
-                { n: "0", u: "cables" },
-              ].map((s) => (
-                <div key={s.u}>
-                  <p className="font-serif-display text-3xl sm:text-4xl text-primary leading-none">{s.n}</p>
-                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-cream/50">{s.u}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Image */}
@@ -148,7 +134,7 @@ function Hero() {
               <div className="absolute inset-6 rounded-full bg-primary/15 blur-2xl" />
               <div className="absolute inset-10 rounded-full border border-primary/30" />
               <img
-                src={heroTransparent}
+                src={heroImg}
                 alt="Makita DCM501"
                 className="relative z-10 w-full h-full object-contain animate-float"
               />
