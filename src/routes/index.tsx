@@ -27,6 +27,9 @@ import bl1860 from "@/assets/compat/BL1860B_C2L0.jpg.asset.json";
 import dc18sd from "@/assets/compat/DC18SD_C2L0.jpg.asset.json";
 import dc18sf from "@/assets/compat/DC18SF_C2L0.jpg.asset.json";
 import dc18rd from "@/assets/compat/DC18RD_C2L0.jpg.asset.json";
+import dc10wd from "@/assets/compat/DC10WD_C2L0.png.asset.json";
+import dc10sb from "@/assets/compat/DC10SB_C2L0.png.asset.json";
+import dc18re from "@/assets/compat/DC18RE_C2L0.png.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const heroImg = heroAsset.url;
@@ -505,6 +508,9 @@ function Compatibles() {
     { img: dc18rd.url, family: "Cargador rápido LXT", code: "DC18RC", meta: "14,4 – 18V · Li-Ion", body: "Cargador rápido con ventilador para refrigerar la batería. Carga optimizada en 15-55 min según capacidad." },
     { img: dc18sf.url, family: "Cargador cuádruple LXT", code: "DC18SF", meta: "14,4 – 18V · Li-Ion", body: "Cargador cuádruple con liberación rápida para baterías LXT® de 14,4V y 18V. 30-130 min según capacidad." },
     { img: dc18rd.url, family: "Cargador doble rápido LXT", code: "DC18RD", meta: "14,4 – 18V · Li-Ion", body: "Cargador rápido doble con ventilador. Carga optimizada en 15-55 min por batería según capacidad." },
+    { img: dc10wd.url, family: "Cargador CXT", code: "DC10WD", meta: "10,8 – 12V · Li-Ion", body: "Cargador para baterías CXT® de 10,8V a 12V max con mecanismo deslizante. Compacto y liviano para uso diario." },
+    { img: dc10sb.url, family: "Cargador rápido CXT", code: "DC10SB", meta: "12V max · Li-Ion", body: "Cargador rápido CXT® con ventilador. Carga una batería de 2,0Ah en 30 min y una de 4,0Ah en 60 min." },
+    { img: dc18re.url, family: "Cargador rápido LXT / CXT", code: "DC18RE", meta: "12V max / 18V · Li-Ion", body: "Carga simultánea de baterías 18V LXT® y 12V max CXT®. Ventilador integrado. Tiempo de carga de 15 a 60 min según capacidad." },
   ];
 
   return (
