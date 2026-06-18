@@ -324,25 +324,6 @@ function Parts() {
           </p>
         </div>
 
-        <div className="mb-6 flex flex-wrap items-center gap-3">
-          <button
-            onClick={() => setEditMode((v) => !v)}
-            className={`font-mono text-xs px-3 py-1.5 rounded border ${editMode ? "bg-terracotta text-cream border-terracotta" : "border-cream/30 text-cream/70 hover:border-cream"}`}
-          >
-            {editMode ? "✓ Modo edición ON" : "Activar modo edición"}
-          </button>
-          {editMode && (
-            <>
-              <button onClick={copyCoords} className="font-mono text-xs px-3 py-1.5 rounded border border-cream/30 text-cream/70 hover:border-cream">
-                Copiar coordenadas
-              </button>
-              <button onClick={() => setHotspots(initialHotspots)} className="font-mono text-xs px-3 py-1.5 rounded border border-cream/30 text-cream/70 hover:border-cream">
-                Reset
-              </button>
-              <span className="font-mono text-[11px] text-cream/50">Arrastrá los puntos para reubicarlos</span>
-            </>
-          )}
-        </div>
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 relative mx-auto w-full max-w-[520px]">
@@ -359,32 +340,19 @@ function Parts() {
                 return (
                   <button
                     key={h.id}
-                    onClick={() => !editMode && setActive(h.id)}
-                    onPointerDown={(e) => {
-                      if (!editMode) return;
-                      e.preventDefault();
-                      setActive(h.id);
-                      setDragging(h.id);
-                    }}
+                    onClick={() => setActive(h.id)}
                     aria-label={h.name}
-                    style={{ left: `${h.x}%`, top: `${h.y}%`, cursor: editMode ? "grab" : "pointer" }}
+                    style={{ left: `${h.x}%`, top: `${h.y}%`, cursor: "pointer" }}
                     className="absolute -translate-x-1/2 -translate-y-1/2 group touch-none"
                   >
                     <span
                       className={`block rounded-full transition-all ${
-                        editMode
-                          ? "h-5 w-5 bg-terracotta ring-[3px] ring-terracotta/50 ring-offset-2 ring-offset-espresso"
-                          : isActive
-                            ? "h-5 w-5 bg-primary ring-4 ring-primary/30"
-                            : "h-4 w-4 bg-cream/90 group-hover:bg-primary"
+                        isActive
+                          ? "h-5 w-5 bg-primary ring-4 ring-primary/30"
+                          : "h-4 w-4 bg-cream/90 group-hover:bg-primary"
                       }`}
                     />
-                    {editMode && (
-                      <span className="absolute left-1/2 top-[130%] -translate-x-1/2 whitespace-nowrap font-mono text-[10px] text-terracotta bg-espresso/90 px-1.5 py-0.5 rounded">
-                        {h.name} ({h.x}, {h.y})
-                      </span>
-                    )}
-                    {isActive && !editMode && (
+                    {isActive && (
                       <span className="absolute left-1/2 top-1/2 -z-10 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/40 animate-ping" />
                     )}
                   </button>
