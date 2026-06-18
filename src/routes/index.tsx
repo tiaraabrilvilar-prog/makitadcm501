@@ -13,14 +13,14 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import heroTransparent from "@/assets/hero-portada.png";
 import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
 import constructionImage from "@/assets/makita-construction-bg.png";
-import partTanque from "@/assets/part-tanque.jpg";
-import partFiltro from "@/assets/part-filtro.jpg";
-import partBateria from "@/assets/part-bateria.jpg";
-import partAsa from "@/assets/part-asa.jpg";
+import heroAsset from "@/assets/DCM501_F_001.jpg.asset.json";
+import anatomyAsset from "@/assets/DCM501_C2L0_1-2.jpg.asset.json";
+
+const heroImg = heroAsset.url;
+const anatomyImg = anatomyAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
