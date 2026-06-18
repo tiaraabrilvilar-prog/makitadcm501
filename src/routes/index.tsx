@@ -333,6 +333,7 @@ function Parts() {
 
               {hotspots.map((h) => {
                 const isActive = h.id === active;
+                const isDebug = h.id === "filtro" || h.id === "taza";
                 return (
                   <button
                     key={h.id}
@@ -345,10 +346,20 @@ function Parts() {
                       className={`block rounded-full transition-all ${
                         isActive
                           ? "h-5 w-5 bg-primary ring-4 ring-primary/30"
-                          : "h-4 w-4 bg-cream/90 group-hover:bg-primary"
+                          : isDebug
+                            ? "h-5 w-5 bg-terracotta ring-[3px] ring-terracotta/50 ring-offset-2 ring-offset-espresso"
+                            : "h-4 w-4 bg-cream/90 group-hover:bg-primary"
                       }`}
                     />
-                    {isActive && (
+                    {isDebug && (
+                      <span className="absolute left-1/2 top-1/2 -z-10 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-terracotta/30 animate-ping" />
+                    )}
+                    {isDebug && (
+                      <span className="absolute left-1/2 top-[120%] -translate-x-1/2 whitespace-nowrap font-mono text-[10px] text-terracotta bg-espresso/80 px-1.5 py-0.5 rounded">
+                        {h.name} ({h.x}%, {h.y}%)
+                      </span>
+                    )}
+                    {isActive && !isDebug && (
                       <span className="absolute left-1/2 top-1/2 -z-10 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/40 animate-ping" />
                     )}
                   </button>
