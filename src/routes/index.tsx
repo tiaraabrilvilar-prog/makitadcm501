@@ -114,7 +114,7 @@ function Hero() {
         <div className="flex flex-col items-center min-h-[80vh]">
           {/* Image */}
           <div className="relative w-full flex items-center justify-center pt-10 pb-6 lg:pt-12 lg:pb-8">
-            <div className="relative aspect-square max-w-sm w-full sm:max-w-md lg:max-w-lg">
+            <div className="relative aspect-square max-w-md w-full sm:max-w-lg lg:max-w-xl">
               <div className="absolute inset-6 rounded-full bg-primary/15 blur-2xl" />
               <div className="absolute inset-10 rounded-full border border-primary/30" />
               <img
