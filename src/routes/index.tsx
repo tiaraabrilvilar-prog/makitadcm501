@@ -17,7 +17,7 @@ import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
 import constructionImage from "@/assets/makita-construction-bg.png";
 import heroAsset from "@/assets/hero-makita-transparent.png.asset.json";
-import anatomyAsset from "@/assets/DCM501_C2L0_1-2.jpg.asset.json";
+import anatomyTransparent from "@/assets/DCM501_C2L0_1-2-transparent.png";
 import bl1041 from "@/assets/compat/BL1041B_C2L0.jpg.asset.json";
 import bl1820 from "@/assets/compat/BL1820B_C2L0.jpg.asset.json";
 import bl1830 from "@/assets/compat/BL1830B_C2L0.jpg.asset.json";
@@ -33,7 +33,7 @@ import dc18re from "@/assets/compat/DC18RE_C2L0.png.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const heroImg = heroAsset.url;
-const anatomyImg = anatomyAsset.url;
+const anatomyImg = anatomyTransparent;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -111,39 +111,10 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-6 items-center min-h-[80vh]">
-          {/* Headline */}
-          <div className="lg:col-span-7 pt-10 pb-16 lg:py-24">
-            <div className="inline-flex items-center gap-3 mb-8 px-3 py-1.5 border border-primary/40 bg-primary/10 text-primary font-mono text-[11px] uppercase tracking-[0.25em]">
-              <span className="block h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-              Nueva en obra · 18V LXT
-            </div>
-
-            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[3rem] sm:text-[4.5rem] lg:text-[6rem]">
-              CAFÉ <span className="text-primary">SIN</span><br />
-              ENCHUFE.<br />
-              <span className="text-mocha">CAFÉ DE OBRA.</span>
-            </h1>
-
-            <div className="mt-10 grid sm:grid-cols-[1fr_auto] gap-6 items-center max-w-2xl">
-              <p className="text-base sm:text-lg text-cream/75 leading-relaxed font-light">
-                La <strong className="text-primary font-semibold">DCM501</strong> corre con la
-                misma batería que tu taladro. Sin cables, sin filtros de papel,
-                sin café frío.
-              </p>
-              <a
-                href="#cta"
-                className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-cream transition-colors whitespace-nowrap uppercase tracking-wider"
-              >
-                Pedila ahora
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
-          </div>
-
+        <div className="flex flex-col items-center min-h-[80vh]">
           {/* Image */}
-          <div className="lg:col-span-5 relative self-stretch flex items-center justify-center pb-10 lg:pb-0">
-            <div className="relative aspect-square max-w-md w-full">
+          <div className="relative w-full flex items-center justify-center pt-10 pb-6 lg:pt-12 lg:pb-8">
+            <div className="relative aspect-square max-w-md w-full sm:max-w-lg lg:max-w-xl">
               <div className="absolute inset-6 rounded-full bg-primary/15 blur-2xl" />
               <div className="absolute inset-10 rounded-full border border-primary/30" />
               <img
@@ -151,6 +122,35 @@ function Hero() {
                 alt="Makita DCM501"
                 className="relative z-10 w-full h-full object-contain animate-float"
               />
+            </div>
+          </div>
+
+          {/* Headline */}
+          <div className="text-center pb-16 lg:pb-24">
+            <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-primary/40 bg-primary/10 text-primary font-mono text-[11px] uppercase tracking-[0.25em]">
+              <span className="block h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              Nueva en obra · 18V LXT
+            </div>
+
+            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[4.5rem]">
+              CAFÉ <span className="text-primary">SIN</span><br />
+              ENCHUFE.<br />
+              <span className="text-mocha">CAFÉ DE OBRA.</span>
+            </h1>
+
+            <div className="mt-8 flex flex-col items-center gap-6 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-cream/75 leading-relaxed font-light">
+                La <strong className="text-primary font-semibold">DCM501</strong> corre con la
+                misma batería que tu taladro. Sin cables, sin filtros de papel,
+                sin café frío.
+              </p>
+              <a
+                href="#versions"
+                className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-cream transition-colors whitespace-nowrap uppercase tracking-wider"
+              >
+                Usá tus baterías acá
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </div>
           </div>
         </div>
@@ -324,7 +324,7 @@ function Parts() {
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 relative mx-auto w-full max-w-[520px]">
-            <div className="relative aspect-[724/1000] w-full bg-cream rounded-md overflow-hidden border border-cream/10">
+            <div className="relative aspect-[724/1000] w-full rounded-md overflow-hidden border border-cream/10">
               <img
                 src={anatomyImg}
                 alt="Makita DCM501 — anatomía"
@@ -459,7 +459,7 @@ function Versions() {
   ];
 
   return (
-    <section className="py-24 sm:py-32">
+    <section id="versions" className="py-24 sm:py-32">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="flex items-end justify-between mb-12">
           <h2 className="font-serif-display text-5xl sm:text-6xl text-espresso leading-[1.02] tracking-wide">
