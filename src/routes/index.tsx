@@ -301,13 +301,13 @@ function Features() {
 /* ---------- PARTS (interactive anatomy) ---------- */
 function Parts() {
   const hotspots = [
-    { id: "tanque", x: 62, y: 18, name: "Tanque", sub: "removible · 240 ml" },
-    { id: "filtro", x: 50, y: 42, name: "Filtro", sub: "malla permanente" },
-    { id: "asa", x: 22, y: 50, name: "Asa", sub: "de transporte" },
-    { id: "bateria", x: 75, y: 75, name: "Puerto", sub: "batería 18V LXT" },
-    { id: "taza", x: 42, y: 86, name: "Taza", sub: "acero inoxidable" },
+    { id: "asa", x: 50, y: 9, name: "Asa", sub: "de transporte" },
+    { id: "tanque", x: 55, y: 27, name: "Tanque", sub: "removible · 240 ml" },
+    { id: "filtro", x: 70, y: 50, name: "Filtro", sub: "malla permanente" },
+    { id: "bateria", x: 20, y: 70, name: "Puerto", sub: "batería 18V LXT" },
+    { id: "taza", x: 72, y: 78, name: "Taza", sub: "acero inoxidable" },
   ];
-  const [active, setActive] = useState<string>("tanque");
+  const [active, setActive] = useState<string>("asa");
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
 
   return (
@@ -323,13 +323,14 @@ function Parts() {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-8 relative">
-            <div className="relative aspect-[4/3] w-full bg-black rounded-md overflow-hidden border border-cream/10">
+          <div className="lg:col-span-7 relative mx-auto w-full max-w-[520px]">
+            <div className="relative aspect-[724/1000] w-full bg-cream rounded-md overflow-hidden border border-cream/10">
               <img
                 src={anatomyImg}
                 alt="Makita DCM501 — anatomía"
-                className="w-full h-full object-contain"
+                className="absolute inset-0 w-full h-full object-cover"
               />
+
               {hotspots.map((h) => {
                 const isActive = h.id === active;
                 return (
@@ -356,7 +357,8 @@ function Parts() {
             </div>
           </div>
 
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-5">
+
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary mb-4">
               {String(hotspots.findIndex((h) => h.id === active) + 1).padStart(2, "0")} / {String(hotspots.length).padStart(2, "0")}
             </p>
