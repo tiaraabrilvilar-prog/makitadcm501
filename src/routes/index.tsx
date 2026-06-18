@@ -564,9 +564,9 @@ function Compatibles() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="hidden md:block">
-            <CarouselPrevious className="left-0 -translate-x-1/2 bg-espresso text-cream border-espresso hover:bg-terracotta hover:text-cream" />
-            <CarouselNext className="right-0 translate-x-1/2 bg-espresso text-cream border-espresso hover:bg-terracotta hover:text-cream" />
+          <div className="mt-4 flex justify-center gap-3 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:right-0 md:justify-between md:mt-0 md:pointer-events-none">
+            <CarouselPrevious className="relative md:absolute md:left-0 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 bg-espresso text-cream border-espresso hover:bg-terracotta hover:text-cream pointer-events-auto" />
+            <CarouselNext className="relative md:absolute md:right-0 md:translate-x-1/2 md:top-1/2 md:-translate-y-1/2 bg-espresso text-cream border-espresso hover:bg-terracotta hover:text-cream pointer-events-auto" />
           </div>
         </Carousel>
       </div>
