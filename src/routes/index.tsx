@@ -300,15 +300,42 @@ function Features() {
 
 /* ---------- PARTS (interactive anatomy) ---------- */
 function Parts() {
-  const hotspots = [
+  const initialHotspots = [
     { id: "manija", x: 38, y: 5, name: "Manija", sub: "de transporte" },
     { id: "tanque", x: 50, y: 28, name: "Tanque", sub: "removible · 240 ml" },
     { id: "filtro", x: 20, y: 68, name: "Filtro", sub: "malla permanente" },
     { id: "taza", x: 61, y: 72, name: "Taza", sub: "acero inoxidable" },
     { id: "bateria", x: 28, y: 72, name: "Puerto", sub: "batería 18V LXT" },
   ];
+  const [hotspots, setHotspots] = useState(initialHotspots);
   const [active, setActive] = useState<string>("manija");
+  const [editMode, setEditMode] = useState(false);
+  const [dragging, setDragging] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
+
+  useEffect(() => {
+    if (!dragging) return;
+    const onMove = (e: PointerEvent) => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      if (!rect) return;
+      const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+      const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+      setHotspots((prev) => prev.map((h) => (h.id === dragging ? { ...h, x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 } : h)));
+    };
+    const onUp = () => setDragging(null);
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+    };
+  }, [dragging]);
+
+  const copyCoords = () => {
+    const text = hotspots.map((h) => `{ id: "${h.id}", x: ${h.x}, y: ${h.y}, name: "${h.name}", sub: "${h.sub}" },`).join("\n");
+    navigator.clipboard?.writeText(text);
+  };
 
   return (
     <section id="parts" className="py-24 sm:py-32 bg-espresso text-cream">
@@ -322,44 +349,67 @@ function Parts() {
           </p>
         </div>
 
+        <div className="mb-6 flex flex-wrap items-center gap-3">
+          <button
+            onClick={() => setEditMode((v) => !v)}
+            className={`font-mono text-xs px-3 py-1.5 rounded border ${editMode ? "bg-terracotta text-cream border-terracotta" : "border-cream/30 text-cream/70 hover:border-cream"}`}
+          >
+            {editMode ? "✓ Modo edición ON" : "Activar modo edición"}
+          </button>
+          {editMode && (
+            <>
+              <button onClick={copyCoords} className="font-mono text-xs px-3 py-1.5 rounded border border-cream/30 text-cream/70 hover:border-cream">
+                Copiar coordenadas
+              </button>
+              <button onClick={() => setHotspots(initialHotspots)} className="font-mono text-xs px-3 py-1.5 rounded border border-cream/30 text-cream/70 hover:border-cream">
+                Reset
+              </button>
+              <span className="font-mono text-[11px] text-cream/50">Arrastrá los puntos para reubicarlos</span>
+            </>
+          )}
+        </div>
+
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 relative mx-auto w-full max-w-[520px]">
-            <div className="relative aspect-[807/1000] w-full overflow-hidden">
+            <div ref={containerRef} className="relative aspect-[807/1000] w-full overflow-hidden select-none">
               <img
                 src={anatomyImg}
                 alt="Makita DCM501 — anatomía"
-                className="absolute inset-0 w-full h-full object-cover"
+                draggable={false}
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               />
 
               {hotspots.map((h) => {
                 const isActive = h.id === active;
-                const isDebug = h.id === "filtro" || h.id === "taza";
                 return (
                   <button
                     key={h.id}
-                    onClick={() => setActive(h.id)}
+                    onClick={() => !editMode && setActive(h.id)}
+                    onPointerDown={(e) => {
+                      if (!editMode) return;
+                      e.preventDefault();
+                      setActive(h.id);
+                      setDragging(h.id);
+                    }}
                     aria-label={h.name}
-                    style={{ left: `${h.x}%`, top: `${h.y}%` }}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 group"
+                    style={{ left: `${h.x}%`, top: `${h.y}%`, cursor: editMode ? "grab" : "pointer" }}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 group touch-none"
                   >
                     <span
                       className={`block rounded-full transition-all ${
-                        isActive
-                          ? "h-5 w-5 bg-primary ring-4 ring-primary/30"
-                          : isDebug
-                            ? "h-5 w-5 bg-terracotta ring-[3px] ring-terracotta/50 ring-offset-2 ring-offset-espresso"
+                        editMode
+                          ? "h-5 w-5 bg-terracotta ring-[3px] ring-terracotta/50 ring-offset-2 ring-offset-espresso"
+                          : isActive
+                            ? "h-5 w-5 bg-primary ring-4 ring-primary/30"
                             : "h-4 w-4 bg-cream/90 group-hover:bg-primary"
                       }`}
                     />
-                    {isDebug && (
-                      <span className="absolute left-1/2 top-1/2 -z-10 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-terracotta/30 animate-ping" />
-                    )}
-                    {isDebug && (
-                      <span className="absolute left-1/2 top-[120%] -translate-x-1/2 whitespace-nowrap font-mono text-[10px] text-terracotta bg-espresso/80 px-1.5 py-0.5 rounded">
-                        {h.name} ({h.x}%, {h.y}%)
+                    {editMode && (
+                      <span className="absolute left-1/2 top-[130%] -translate-x-1/2 whitespace-nowrap font-mono text-[10px] text-terracotta bg-espresso/90 px-1.5 py-0.5 rounded">
+                        {h.name} ({h.x}, {h.y})
                       </span>
                     )}
-                    {isActive && !isDebug && (
+                    {isActive && !editMode && (
                       <span className="absolute left-1/2 top-1/2 -z-10 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/40 animate-ping" />
                     )}
                   </button>
