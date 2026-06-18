@@ -301,11 +301,11 @@ function Features() {
 /* ---------- PARTS (interactive anatomy) ---------- */
 function Parts() {
   const hotspots = [
-    { id: "asa", x: 50, y: 9, name: "Asa", sub: "de transporte" },
-    { id: "tanque", x: 55, y: 27, name: "Tanque", sub: "removible · 240 ml" },
-    { id: "filtro", x: 70, y: 50, name: "Filtro", sub: "malla permanente" },
-    { id: "bateria", x: 20, y: 70, name: "Puerto", sub: "batería 18V LXT" },
-    { id: "taza", x: 72, y: 78, name: "Taza", sub: "acero inoxidable" },
+    { id: "asa", x: 50, y: 12, name: "Asa", sub: "de transporte" },
+    { id: "tanque", x: 52, y: 28, name: "Tanque", sub: "removible · 240 ml" },
+    { id: "filtro", x: 55, y: 48, name: "Filtro", sub: "malla permanente" },
+    { id: "bateria", x: 50, y: 78, name: "Puerto", sub: "batería 18V LXT" },
+    { id: "taza", x: 72, y: 88, name: "Taza", sub: "acero inoxidable" },
   ];
   const [active, setActive] = useState<string>("asa");
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
@@ -414,9 +414,6 @@ function Specs() {
           <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] tracking-wide">
             LA <span className="text-terracotta">LETRA CHICA</span>,<br />EN GRANDE.
           </h2>
-          <p className="mt-8 text-espresso-soft max-w-sm">
-            Todos los números detrás de una taza de café que no debería existir.
-          </p>
         </div>
 
         <div className="lg:col-span-8">
