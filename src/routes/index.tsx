@@ -302,10 +302,10 @@ function Features() {
 function Parts() {
   const hotspots = [
     { id: "manija", x: 50, y: 10, name: "Manija", sub: "de transporte" },
-    { id: "filtro", x: 50, y: 48, name: "Filtro", sub: "malla permanente" },
-    { id: "boton", x: 50, y: 65, name: "Botón", sub: "encendido / apagado" },
-    { id: "bateria", x: 50, y: 82, name: "Puerto", sub: "batería 18V LXT" },
-    { id: "taza", x: 72, y: 82, name: "Taza", sub: "acero inoxidable" },
+    { id: "tanque", x: 50, y: 28, name: "Tanque", sub: "removible · 240 ml" },
+    { id: "filtro", x: 58, y: 45, name: "Filtro", sub: "malla permanente" },
+    { id: "taza", x: 60, y: 72, name: "Taza", sub: "acero inoxidable" },
+    { id: "bateria", x: 40, y: 72, name: "Puerto", sub: "batería 18V LXT" },
   ];
   const [active, setActive] = useState<string>("asa");
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
