@@ -304,7 +304,7 @@ function Parts() {
     { id: "manija", x: 38, y: 5, name: "Manija", sub: "de transporte" },
     { id: "tanque", x: 50, y: 28, name: "Tanque", sub: "removible · 240 ml" },
     { id: "filtro", x: 91.5, y: 40.3, name: "Filtro", sub: "malla permanente" },
-    { id: "taza", x: 78.2, y: 70.4, name: "Taza", sub: "acero inoxidable" },
+    { id: "taza", x: 86.1, y: 68.3, name: "Taza", sub: "acero inoxidable" },
     { id: "bateria", x: 28, y: 72, name: "Puerto", sub: "batería 18V LXT" },
   ];
   const [hotspots, setHotspots] = useState(initialHotspots);
