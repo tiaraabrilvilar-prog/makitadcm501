@@ -324,7 +324,7 @@ function Parts() {
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 relative mx-auto w-full max-w-[520px]">
-            <div className="relative aspect-[724/1000] w-full rounded-md overflow-hidden border border-cream/10">
+            <div className="relative aspect-[724/1000] w-full overflow-hidden">
               <img
                 src={anatomyImg}
                 alt="Makita DCM501 — anatomía"
