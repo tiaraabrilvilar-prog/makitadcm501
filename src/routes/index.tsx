@@ -207,18 +207,6 @@ function Story() {
               metálica permanente y los sirve directo en una taza de acero que viene incluida.
               Sin papel, sin cables, sin termos resignados.
             </p>
-            <div className="grid grid-cols-3 gap-6 pt-6 border-t border-espresso/15">
-              {[
-                { n: "240", u: "ml por carga" },
-                { n: "05", u: "minutos" },
-                { n: "18V", u: "batería LXT" },
-              ].map((s) => (
-                <div key={s.n}>
-                  <p className="font-serif-display text-4xl sm:text-5xl text-terracotta">{s.n}</p>
-                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-mocha">{s.u}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
