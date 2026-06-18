@@ -307,7 +307,7 @@ function Parts() {
     { id: "taza", x: 68, y: 72, name: "Taza", sub: "acero inoxidable" },
     { id: "bateria", x: 32, y: 72, name: "Puerto", sub: "batería 18V LXT" },
   ];
-  const [active, setActive] = useState<string>("asa");
+  const [active, setActive] = useState<string>("manija");
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
 
   return (
