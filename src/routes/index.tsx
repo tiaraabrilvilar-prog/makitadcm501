@@ -492,6 +492,79 @@ function Versions() {
   );
 }
 
+/* ---------- COMPATIBLES ---------- */
+function Compatibles() {
+  const items = [
+    { img: bl1041.url, family: "Batería CXT 4,0 Ah", code: "BL1041B", meta: "12V max · Li-Ion · 4,0 Ah", body: "Batería compacta con indicador de carga para herramientas Makita 12V max CXT®. Carga aprox. 60 min con cargador rápido." },
+    { img: bl1820.url, family: "Batería LXT 2,0 Ah", code: "BL1820B", meta: "18V · Li-Ion · 2,0 Ah", body: "Compacta y ligera con indicador de carga. Ideal para atornilladores. Carga aprox. 24 min con cargador rápido." },
+    { img: bl1830.url, family: "Batería LXT 3,0 Ah", code: "BL1830B", meta: "18V · Li-Ion · 3,0 Ah", body: "Potente batería de uso general para herramientas Makita LXT® de 18V. Carga aprox. 24 min con cargador rápido." },
+    { img: bl1840.url, family: "Batería LXT 4,0 Ah", code: "BL1840B", meta: "18V · Li-Ion · 4,0 Ah", body: "Para herramientas con consumo normal. Indicador de carga. Carga aprox. 36 min con cargador rápido." },
+    { img: bl1850.url, family: "Batería LXT 5,0 Ah", code: "BL1850B", meta: "18V · Li-Ion · 5,0 Ah", body: "Ideal para herramientas de alto consumo. Indicador de carga. Carga aprox. 45 min con cargador rápido." },
+    { img: bl1860.url, family: "Batería LXT 6,0 Ah", code: "BL1860B", meta: "18V · Li-Ion · 6,0 Ah", body: "Máxima autonomía para herramientas Makita LXT® de 18V. Carga aprox. 55 min con cargador rápido." },
+    { img: dc18sd.url, family: "Cargador LXT", code: "DC18SD", meta: "14,4 – 18V · Li-Ion", body: "Cargador para baterías deslizantes LXT® de 14,4V y 18V. Carga entre 30 y 130 min según capacidad." },
+    { img: dc18rd.url, family: "Cargador rápido LXT", code: "DC18RC", meta: "14,4 – 18V · Li-Ion", body: "Cargador rápido con ventilador para refrigerar la batería. Carga optimizada en 15-55 min según capacidad." },
+    { img: dc18sf.url, family: "Cargador cuádruple LXT", code: "DC18SF", meta: "14,4 – 18V · Li-Ion", body: "Cargador cuádruple con liberación rápida para baterías LXT® de 14,4V y 18V. 30-130 min según capacidad." },
+    { img: dc18rd.url, family: "Cargador doble rápido LXT", code: "DC18RD", meta: "14,4 – 18V · Li-Ion", body: "Cargador rápido doble con ventilador. Carga optimizada en 15-55 min por batería según capacidad." },
+  ];
+
+  return (
+    <section id="compatibles" className="py-24 sm:py-32 bg-cream">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+          <div>
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
+              Compatibles
+            </p>
+            <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] text-espresso tracking-wide max-w-2xl">
+              UNA BATERÍA,<br /><span className="text-terracotta">MUCHAS HERRAMIENTAS</span>.
+            </h2>
+          </div>
+          <p className="max-w-sm text-espresso-soft">
+            Toda la línea CXT® 12V y LXT® 18V de Makita carga la DCM501. Estos son los modelos compatibles.
+          </p>
+        </div>
+
+        <Carousel opts={{ align: "start", loop: false }} className="relative">
+          <CarouselContent className="-ml-4">
+            {items.map((it) => (
+              <CarouselItem key={it.code} className="pl-4 sm:basis-1/2 lg:basis-1/3">
+                <article className="h-full border border-espresso/15 bg-cream-deep/40 rounded-sm overflow-hidden flex flex-col group hover:border-terracotta transition-colors">
+                  <div className="aspect-[4/3] bg-white flex items-center justify-center overflow-hidden">
+                    <img
+                      src={it.img}
+                      alt={it.family}
+                      loading="lazy"
+                      className="w-3/4 h-3/4 object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-terracotta">
+                      {it.code}
+                    </span>
+                    <h3 className="mt-2 font-serif-display text-3xl text-espresso tracking-wide leading-tight">
+                      {it.family}
+                    </h3>
+                    <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.2em] text-mocha">
+                      {it.meta}
+                    </p>
+                    <p className="mt-4 text-sm text-espresso-soft leading-relaxed flex-1">
+                      {it.body}
+                    </p>
+                  </div>
+                </article>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="hidden md:block">
+            <CarouselPrevious className="left-0 -translate-x-1/2 bg-espresso text-cream border-espresso hover:bg-terracotta hover:text-cream" />
+            <CarouselNext className="right-0 translate-x-1/2 bg-espresso text-cream border-espresso hover:bg-terracotta hover:text-cream" />
+          </div>
+        </Carousel>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- CTA ---------- */
 function CTA() {
   return (
