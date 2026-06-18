@@ -297,40 +297,89 @@ function Features() {
   );
 }
 
-/* ---------- PARTS (dark cards grid) ---------- */
+/* ---------- PARTS (interactive anatomy) ---------- */
 function Parts() {
-  const parts = [
-    { img: partTanque, name: "Tanque", sub: "removible" },
-    { img: partFiltro, name: "Filtro", sub: "de goteo permanente" },
-    { img: partBateria, name: "Tapa para", sub: "puerto de batería" },
-    { img: partAsa, name: "Asa de", sub: "transporte" },
+  const hotspots = [
+    { id: "tanque", x: 62, y: 18, name: "Tanque", sub: "removible · 240 ml" },
+    { id: "filtro", x: 50, y: 42, name: "Filtro", sub: "malla permanente" },
+    { id: "asa", x: 22, y: 50, name: "Asa", sub: "de transporte" },
+    { id: "bateria", x: 75, y: 75, name: "Puerto", sub: "batería 18V LXT" },
+    { id: "taza", x: 42, y: 86, name: "Taza", sub: "acero inoxidable" },
   ];
+  const [active, setActive] = useState<string>("tanque");
+  const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
+
   return (
     <section id="parts" className="py-24 sm:py-32 bg-espresso text-cream">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
-        <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-cream max-w-3xl tracking-wide">
-          PARTES DE<br />LA CAFETERA
-        </h2>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+          <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-cream max-w-3xl tracking-wide">
+            PARTES DE<br />LA CAFETERA
+          </h2>
+          <p className="max-w-sm text-cream/65 text-sm sm:text-base">
+            Tocá los puntos amarillos para conocer cada parte.
+          </p>
+        </div>
 
-        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-7">
-          {parts.map((p) => (
-            <article key={p.name + p.sub} className="group">
-              <div className="aspect-square overflow-hidden rounded-md border border-cream/10 bg-black">
-                <img
-                  src={p.img}
-                  alt={`${p.name} ${p.sub}`}
-                  loading="lazy"
-                  width={768}
-                  height={768}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <p className="mt-5 font-sans text-lg sm:text-xl text-cream leading-tight">
-                {p.name}<br />
-                <span className="text-cream/70">{p.sub}</span>
-              </p>
-            </article>
-          ))}
+        <div className="grid lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-8 relative">
+            <div className="relative aspect-[4/3] w-full bg-black rounded-md overflow-hidden border border-cream/10">
+              <img
+                src={anatomyImg}
+                alt="Makita DCM501 — anatomía"
+                className="w-full h-full object-contain"
+              />
+              {hotspots.map((h) => {
+                const isActive = h.id === active;
+                return (
+                  <button
+                    key={h.id}
+                    onClick={() => setActive(h.id)}
+                    aria-label={h.name}
+                    style={{ left: `${h.x}%`, top: `${h.y}%` }}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 group"
+                  >
+                    <span
+                      className={`block rounded-full transition-all ${
+                        isActive
+                          ? "h-5 w-5 bg-primary ring-4 ring-primary/30"
+                          : "h-4 w-4 bg-cream/90 group-hover:bg-primary"
+                      }`}
+                    />
+                    {isActive && (
+                      <span className="absolute left-1/2 top-1/2 -z-10 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/40 animate-ping" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="lg:col-span-4">
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary mb-4">
+              {String(hotspots.findIndex((h) => h.id === active) + 1).padStart(2, "0")} / {String(hotspots.length).padStart(2, "0")}
+            </p>
+            <h3 className="font-serif-display text-5xl sm:text-6xl text-cream tracking-wide leading-none">
+              {current.name}
+            </h3>
+            <p className="mt-3 font-sans text-lg text-cream/70">{current.sub}</p>
+
+            <div className="mt-8 flex flex-wrap gap-2">
+              {hotspots.map((h) => (
+                <button
+                  key={h.id}
+                  onClick={() => setActive(h.id)}
+                  className={`font-mono text-[10px] uppercase tracking-[0.25em] px-3 py-2 border transition-colors ${
+                    h.id === active
+                      ? "border-primary bg-primary text-espresso"
+                      : "border-cream/20 text-cream/60 hover:border-primary/60 hover:text-primary"
+                  }`}
+                >
+                  {h.name}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
