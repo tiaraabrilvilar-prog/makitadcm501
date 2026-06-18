@@ -13,12 +13,14 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import heroImage from "@/assets/makita-coffee-maker.png";
 import heroTransparent from "@/assets/hero-portada.png";
-import tankTransparent from "@/assets/tank-transparent.png";
 import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
 import constructionImage from "@/assets/makita-construction-bg.png";
+import partTanque from "@/assets/part-tanque.jpg";
+import partFiltro from "@/assets/part-filtro.jpg";
+import partBateria from "@/assets/part-bateria.jpg";
+import partAsa from "@/assets/part-asa.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,14 +57,15 @@ function Navbar() {
     <nav className="fixed top-0 inset-x-0 z-50 bg-cream/80 backdrop-blur-md border-b border-espresso/10">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-4 sm:px-8">
         <a href="#top" className="flex items-baseline gap-2">
-          <span className="font-serif-display text-3xl leading-none italic text-espresso">Makita</span>
+          <span className="font-serif-display text-3xl leading-none text-espresso tracking-wide">MAKITA</span>
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">/ DCM501</span>
         </a>
         <div className="hidden md:flex items-center gap-10 font-mono text-[11px] uppercase tracking-[0.2em]">
-          <a href="#story" className="text-espresso/70 hover:text-terracotta transition-colors">01 · Historia</a>
-          <a href="#features" className="text-espresso/70 hover:text-terracotta transition-colors">02 · Detalles</a>
-          <a href="#specs" className="text-espresso/70 hover:text-terracotta transition-colors">03 · Ficha</a>
-          <a href="#contact" className="text-espresso/70 hover:text-terracotta transition-colors">04 · Contacto</a>
+          <a href="#story" className="text-espresso/70 hover:text-terracotta transition-colors">Historia</a>
+          <a href="#features" className="text-espresso/70 hover:text-terracotta transition-colors">Detalles</a>
+          <a href="#parts" className="text-espresso/70 hover:text-terracotta transition-colors">Partes</a>
+          <a href="#specs" className="text-espresso/70 hover:text-terracotta transition-colors">Ficha</a>
+          <a href="#contact" className="text-espresso/70 hover:text-terracotta transition-colors">Contacto</a>
         </div>
         <a href="#cta" className="hidden md:inline-flex items-center gap-2 rounded-full bg-espresso px-5 py-2.5 text-xs font-medium text-cream hover:bg-terracotta transition-colors">
           Comprar <ArrowUpRight className="h-3.5 w-3.5" />
@@ -73,10 +76,11 @@ function Navbar() {
       </div>
       {open && (
         <div className="md:hidden border-t border-espresso/10 bg-cream/95 px-5 py-5 space-y-4 font-mono text-xs uppercase tracking-[0.2em]">
-          <a href="#story" onClick={() => setOpen(false)} className="block text-espresso/80">01 · Historia</a>
-          <a href="#features" onClick={() => setOpen(false)} className="block text-espresso/80">02 · Detalles</a>
-          <a href="#specs" onClick={() => setOpen(false)} className="block text-espresso/80">03 · Ficha</a>
-          <a href="#contact" onClick={() => setOpen(false)} className="block text-espresso/80">04 · Contacto</a>
+          <a href="#story" onClick={() => setOpen(false)} className="block text-espresso/80">Historia</a>
+          <a href="#features" onClick={() => setOpen(false)} className="block text-espresso/80">Detalles</a>
+          <a href="#parts" onClick={() => setOpen(false)} className="block text-espresso/80">Partes</a>
+          <a href="#specs" onClick={() => setOpen(false)} className="block text-espresso/80">Ficha</a>
+          <a href="#contact" onClick={() => setOpen(false)} className="block text-espresso/80">Contacto</a>
         </div>
       )}
     </nav>
@@ -86,56 +90,68 @@ function Navbar() {
 /* ---------- HERO ---------- */
 function Hero() {
   return (
-    <section id="top" className="relative pt-32 pb-10 sm:pt-40 sm:pb-16 overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
-        {/* Top meta strip */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-10 font-mono text-[11px] uppercase tracking-[0.25em] text-mocha">
-          <span>Edición N.º 01 — Otoño 2026</span>
-          <span className="hidden sm:inline">Buenos Aires · 06:42 AM</span>
-          <span>Café · Obra · Energía</span>
+    <section id="top" className="relative pt-28 pb-0 overflow-hidden bg-espresso text-cream">
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none select-none">
+        <div className="absolute -bottom-10 -left-6 font-serif-display text-[22rem] sm:text-[34rem] leading-none text-primary">
+          DCM501
         </div>
+      </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-6 items-end">
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-6 items-center min-h-[80vh]">
           {/* Headline */}
-          <div className="lg:col-span-7 order-2 lg:order-1">
-            <h1 className="font-serif-display text-espresso leading-[0.95] tracking-tight text-[3.5rem] sm:text-[5.5rem] lg:text-[7.5rem]">
-              Café <em className="text-terracotta">recién hecho</em>,<br />
-              donde el cable<br />
-              <span className="italic text-mocha">no llega.</span>
+          <div className="lg:col-span-7 pt-10 pb-16 lg:py-24">
+            <div className="inline-flex items-center gap-3 mb-8 px-3 py-1.5 border border-primary/40 bg-primary/10 text-primary font-mono text-[11px] uppercase tracking-[0.25em]">
+              <span className="block h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              Nueva en obra · 18V LXT
+            </div>
+
+            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[4rem] sm:text-[7rem] lg:text-[9rem]">
+              CAFÉ <span className="text-primary">SIN</span><br />
+              ENCHUFE.<br />
+              <span className="text-mocha">CAFÉ DE OBRA.</span>
             </h1>
-            <div className="mt-10 grid sm:grid-cols-[1fr_auto] gap-6 items-start">
-              <p className="max-w-md text-base sm:text-lg text-espresso-soft leading-relaxed">
-                La <strong className="font-semibold">DCM501</strong> es una cafetera inalámbrica
-                que corre con la misma batería que tu taladro. Sin enchufe, sin filtros de papel,
-                sin excusas para tomar café frío.
+
+            <div className="mt-10 grid sm:grid-cols-[1fr_auto] gap-6 items-center max-w-2xl">
+              <p className="text-base sm:text-lg text-cream/75 leading-relaxed font-light">
+                La <strong className="text-primary font-semibold">DCM501</strong> corre con la
+                misma batería que tu taladro. Sin cables, sin filtros de papel,
+                sin café frío.
               </p>
               <a
                 href="#cta"
-                className="group inline-flex items-center gap-3 rounded-full bg-terracotta px-7 py-4 text-sm font-medium text-cream hover:bg-terracotta-deep transition-colors whitespace-nowrap"
+                className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-cream transition-colors whitespace-nowrap uppercase tracking-wider"
               >
                 Pedila ahora
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
+
+            <div className="mt-12 flex flex-wrap gap-8 pt-8 border-t border-cream/15">
+              {[
+                { n: "240ml", u: "por carga" },
+                { n: "5min", u: "preparación" },
+                { n: "18V", u: "batería LXT" },
+                { n: "0", u: "cables" },
+              ].map((s) => (
+                <div key={s.u}>
+                  <p className="font-serif-display text-3xl sm:text-4xl text-primary leading-none">{s.n}</p>
+                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-cream/50">{s.u}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Image */}
-          <div className="lg:col-span-5 order-1 lg:order-2 relative">
-            <div className="relative aspect-square max-w-md mx-auto">
-              <div className="absolute inset-6 rounded-full bg-cream-deep" />
-              <div className="absolute inset-x-10 -top-2 bottom-2 flex justify-center pointer-events-none z-20">
-                <span className="block h-20 w-1.5 rounded-full bg-gradient-to-t from-transparent via-espresso/15 to-transparent blur-md animate-steam-1" />
-                <span className="block h-24 w-2 rounded-full bg-gradient-to-t from-transparent via-espresso/20 to-transparent blur-md animate-steam-2 mx-3" />
-                <span className="block h-16 w-1.5 rounded-full bg-gradient-to-t from-transparent via-espresso/15 to-transparent blur-md animate-steam-3" />
-              </div>
+          <div className="lg:col-span-5 relative self-stretch flex items-center justify-center pb-10 lg:pb-0">
+            <div className="relative aspect-square max-w-md w-full">
+              <div className="absolute inset-6 rounded-full bg-primary/15 blur-2xl" />
+              <div className="absolute inset-10 rounded-full border border-primary/30" />
               <img
                 src={heroTransparent}
                 alt="Makita DCM501"
                 className="relative z-10 w-full h-full object-contain animate-float"
               />
-              {/* corner tags */}
-              <span className="absolute top-2 left-0 font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">Fig. 01</span>
-              <span className="absolute bottom-2 right-0 font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">DCM501Z</span>
             </div>
           </div>
         </div>
@@ -149,12 +165,12 @@ function Marquee() {
   const items = ["Sin cables", "240 ml", "18V LXT", "Filtro permanente", "Café molido", "90 °C", "5 minutos", "Hecha para obra"];
   const loop = [...items, ...items];
   return (
-    <div className="border-y border-espresso/15 bg-espresso text-cream overflow-hidden py-5">
+    <div className="border-y border-espresso bg-primary text-espresso overflow-hidden py-4">
       <div className="flex animate-marquee whitespace-nowrap">
         {loop.map((t, i) => (
-          <span key={i} className="flex items-center font-serif-display italic text-3xl sm:text-4xl px-8">
+          <span key={i} className="flex items-center font-serif-display text-3xl sm:text-4xl px-8 tracking-wide">
             {t}
-            <span className="ml-8 inline-block h-2 w-2 rounded-full bg-terracotta" />
+            <span className="ml-8 inline-block h-2 w-2 rounded-full bg-espresso" />
           </span>
         ))}
       </div>
@@ -171,10 +187,10 @@ function Story() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5 lg:sticky lg:top-28 self-start">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-6">
-              Capítulo 01 — Historia
+              Historia
             </p>
             <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] text-espresso">
-              Una herramienta<br />que también <em>despierta</em>.
+              UNA HERRAMIENTA<br />QUE TAMBIÉN <span className="text-terracotta">DESPIERTA</span>.
             </h2>
             <div className={`mt-8 transition-all duration-700 ${visible ? "opacity-100" : "opacity-0"}`}>
               <img
@@ -190,9 +206,9 @@ function Story() {
           </div>
 
           <div className="lg:col-span-7 lg:col-start-7 space-y-10 text-lg text-espresso-soft leading-[1.7]">
-            <p className="font-serif-display text-3xl sm:text-4xl italic text-espresso leading-snug">
-              "El café del termo se enfría a las dos horas. El instantáneo nunca fue una opción.
-              Y los enchufes en la obra son una utopía."
+            <p className="font-serif-display text-3xl sm:text-4xl text-espresso leading-snug tracking-wide">
+              "EL CAFÉ DEL TERMO SE ENFRÍA A LAS DOS HORAS. EL INSTANTÁNEO NUNCA FUE UNA OPCIÓN.
+              Y LOS ENCHUFES EN LA OBRA SON UNA UTOPÍA."
             </p>
             <p>
               Por eso Makita hizo lo que nadie esperaba de una marca de herramientas: diseñó una
@@ -229,32 +245,32 @@ function Features() {
   const items = [
     {
       n: "01",
-      title: "Batería compartida",
+      title: "BATERÍA COMPARTIDA",
       body: "Compatible con la línea CXT 12V y LXT 18V de Makita. La misma batería de tu taladro hace tu café.",
     },
     {
       n: "02",
-      title: "Filtro permanente",
+      title: "FILTRO PERMANENTE",
       body: "Malla metálica fina. Se enjuaga bajo la canilla en segundos. Cero filtros de papel descartables.",
     },
     {
       n: "03",
-      title: "Taza de acero incluida",
+      title: "TAZA DE ACERO INCLUIDA",
       body: "Vaso térmico de acero inoxidable de 90 mm con tapa. Calza ajustado al portafiltros.",
     },
     {
       n: "04",
-      title: "Tanque extraíble",
+      title: "TANQUE EXTRAÍBLE",
       body: "Carga 240 ml de agua. Se desmonta para limpiar como cualquier termo.",
     },
     {
       n: "05",
-      title: "Café molido común",
+      title: "CAFÉ MOLIDO COMÚN",
       body: "No necesita cápsulas, ni pads. Sólo café molido del que ya tomás.",
     },
     {
       n: "06",
-      title: "Hecha para obra",
+      title: "HECHA PARA OBRA",
       body: "Carcasa robusta, agarre antideslizante, pensada para subir andamios sin romperse.",
     },
   ];
@@ -265,10 +281,10 @@ function Features() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
-              Capítulo 02 — Detalles
+              Detalles
             </p>
             <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] text-espresso max-w-2xl">
-              Seis razones,<br /><em>una sola taza.</em>
+              SEIS RAZONES,<br /><span className="text-terracotta">UNA SOLA TAZA.</span>
             </h2>
           </div>
           <p className="max-w-sm text-espresso-soft">
@@ -281,7 +297,7 @@ function Features() {
           {items.map((it) => (
             <li key={it.n} className="group grid grid-cols-12 gap-4 py-7 sm:py-9 items-baseline hover:bg-cream transition-colors px-2">
               <span className="col-span-2 sm:col-span-1 font-mono text-sm text-terracotta">{it.n}</span>
-              <h3 className="col-span-10 sm:col-span-4 font-serif-display text-2xl sm:text-4xl text-espresso leading-tight">
+              <h3 className="col-span-10 sm:col-span-4 font-serif-display text-2xl sm:text-4xl text-espresso leading-tight tracking-wide">
                 {it.title}
               </h3>
               <p className="col-span-12 sm:col-span-6 sm:col-start-7 text-espresso-soft text-base sm:text-lg leading-relaxed">
@@ -295,73 +311,40 @@ function Features() {
   );
 }
 
-/* ---------- ANATOMY ---------- */
-function Anatomy() {
-  const [active, setActive] = useState<number | null>(1);
+/* ---------- PARTS (dark cards grid) ---------- */
+function Parts() {
   const parts = [
-    { id: 1, label: "Manija" },
-    { id: 2, label: "Tapa del tanque" },
-    { id: 3, label: "Tanque de agua" },
-    { id: 4, label: "Portafiltros" },
-    { id: 5, label: "Tapa de la taza" },
-    { id: 6, label: "Taza de café" },
-    { id: 7, label: "Ranura de batería" },
-    { id: 8, label: "Descanso de copa" },
-    { id: 9, label: "Interruptor de encendido" },
+    { img: partTanque, name: "Tanque", sub: "removible" },
+    { img: partFiltro, name: "Filtro", sub: "de goteo permanente" },
+    { img: partBateria, name: "Tapa para", sub: "puerto de batería" },
+    { img: partAsa, name: "Asa de", sub: "transporte" },
   ];
-
   return (
-    <section className="py-24 sm:py-32">
+    <section id="parts" className="py-24 sm:py-32 bg-espresso text-cream">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
-        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4 text-center">
-          Anatomía
-        </p>
-        <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] text-espresso text-center max-w-3xl mx-auto">
-          Cada parte tiene su <em>oficio</em>.
+        <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-cream max-w-3xl tracking-wide">
+          PARTES DE<br />LA CAFETERA
         </h2>
 
-        <div className="mt-16 grid lg:grid-cols-[1fr_auto_1fr] gap-10 items-center max-w-5xl mx-auto">
-          {/* Left list */}
-          <ul className="space-y-2 lg:text-right order-2 lg:order-1">
-            {parts.slice(0, 5).map((p) => (
-              <li key={p.id}>
-                <button
-                  onMouseEnter={() => setActive(p.id)}
-                  onClick={() => setActive(p.id)}
-                  className={`font-serif-display text-2xl sm:text-3xl transition-colors ${
-                    active === p.id ? "text-terracotta italic" : "text-espresso/40 hover:text-espresso"
-                  }`}
-                >
-                  <span className="font-mono text-xs mr-2 align-middle">0{p.id}</span>
-                  {p.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-
-          {/* Center image */}
-          <div className="relative w-[260px] sm:w-[320px] mx-auto order-1 lg:order-2">
-            <div className="absolute inset-4 rounded-full bg-cream-deep" />
-            <img src={heroImage} alt="DCM501" className="relative w-full" />
-          </div>
-
-          {/* Right list */}
-          <ul className="space-y-2 order-3">
-            {parts.slice(5).map((p) => (
-              <li key={p.id}>
-                <button
-                  onMouseEnter={() => setActive(p.id)}
-                  onClick={() => setActive(p.id)}
-                  className={`font-serif-display text-2xl sm:text-3xl transition-colors ${
-                    active === p.id ? "text-terracotta italic" : "text-espresso/40 hover:text-espresso"
-                  }`}
-                >
-                  <span className="font-mono text-xs mr-2 align-middle">0{p.id}</span>
-                  {p.label}
-                </button>
-              </li>
-            ))}
-          </ul>
+        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-7">
+          {parts.map((p) => (
+            <article key={p.name + p.sub} className="group">
+              <div className="aspect-square overflow-hidden rounded-md border border-cream/10 bg-black">
+                <img
+                  src={p.img}
+                  alt={`${p.name} ${p.sub}`}
+                  loading="lazy"
+                  width={768}
+                  height={768}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <p className="mt-5 font-sans text-lg sm:text-xl text-cream leading-tight">
+                {p.name}<br />
+                <span className="text-cream/70">{p.sub}</span>
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -384,30 +367,30 @@ function Specs() {
   ];
 
   return (
-    <section id="specs" className="py-24 sm:py-32 bg-espresso text-cream">
+    <section id="specs" className="py-24 sm:py-32 bg-cream-deep/60 text-espresso">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4">
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
-            Capítulo 03 — Ficha
+            Ficha
           </p>
-          <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02]">
-            La <em>letra chica</em>,<br />en grande.
+          <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] tracking-wide">
+            LA <span className="text-terracotta">LETRA CHICA</span>,<br />EN GRANDE.
           </h2>
-          <div className="mt-8 relative w-56">
-            <img src={tankTransparent} alt="Tanque" className="w-full opacity-90" loading="lazy" />
-          </div>
+          <p className="mt-8 text-espresso-soft max-w-sm">
+            Todos los números detrás de una taza de café que no debería existir.
+          </p>
         </div>
 
         <div className="lg:col-span-8">
-          <table className="w-full border-t border-cream/20">
+          <table className="w-full border-t border-espresso/20">
             <tbody>
               {rows.map(([k, v], i) => (
-                <tr key={k} className="border-b border-cream/15 hover:bg-cream/5 transition-colors">
-                  <td className="py-5 pr-4 font-mono text-[11px] uppercase tracking-[0.2em] text-cream/60 align-top w-16">
+                <tr key={k} className="border-b border-espresso/15 hover:bg-cream transition-colors">
+                  <td className="py-5 pr-4 font-mono text-[11px] uppercase tracking-[0.2em] text-mocha align-top w-16">
                     {String(i + 1).padStart(2, "0")}
                   </td>
-                  <td className="py-5 pr-4 font-sans text-base sm:text-lg text-cream/85">{k}</td>
-                  <td className="py-5 pl-4 text-right font-serif-display italic text-xl sm:text-2xl text-cream">{v}</td>
+                  <td className="py-5 pr-4 font-sans text-base sm:text-lg text-espresso/85">{k}</td>
+                  <td className="py-5 pl-4 text-right font-serif-display text-xl sm:text-2xl text-espresso tracking-wide">{v}</td>
                 </tr>
               ))}
             </tbody>
@@ -422,14 +405,14 @@ function Specs() {
 function Versions() {
   const versions = [
     {
-      name: "Azul Turquesa",
+      name: "AZUL TURQUESA",
       code: "DCM501Z",
       tag: "Clásico de catálogo",
       img: tealVersion,
       body: "El color institucional de Makita. La versión más fácil de conseguir, la que vas a ver en cualquier ferretería seria.",
     },
     {
-      name: "Verde Oliva",
+      name: "VERDE OLIVA",
       code: "DCM501ZO",
       tag: "Edición Lifestyle",
       img: oliveVersion,
@@ -441,8 +424,8 @@ function Versions() {
     <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="flex items-end justify-between mb-12">
-          <h2 className="font-serif-display text-5xl sm:text-6xl text-espresso leading-[1.02]">
-            Dos <em>versiones</em>.
+          <h2 className="font-serif-display text-5xl sm:text-6xl text-espresso leading-[1.02] tracking-wide">
+            DOS <span className="text-terracotta">VERSIONES</span>.
           </h2>
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-mocha hidden sm:block">
             Elegí tu acabado
@@ -464,7 +447,7 @@ function Versions() {
                 />
               </div>
               <div className="mt-6 flex items-baseline justify-between gap-4">
-                <h3 className="font-serif-display text-3xl sm:text-4xl text-espresso">{v.name}</h3>
+                <h3 className="font-serif-display text-3xl sm:text-4xl text-espresso tracking-wide">{v.name}</h3>
                 <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-terracotta">{v.tag}</span>
               </div>
               <p className="mt-3 text-espresso-soft leading-relaxed">{v.body}</p>
@@ -480,22 +463,22 @@ function Versions() {
 function CTA() {
   return (
     <section id="cta" className="py-28 sm:py-36 bg-terracotta text-cream relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
-        <div className="absolute top-10 left-10 font-serif-display text-[18rem] leading-none italic">c</div>
-        <div className="absolute bottom-10 right-10 font-serif-display text-[18rem] leading-none italic">é</div>
+      <div className="absolute inset-0 opacity-[0.1] pointer-events-none">
+        <div className="absolute top-10 left-10 font-serif-display text-[18rem] leading-none">C</div>
+        <div className="absolute bottom-10 right-10 font-serif-display text-[18rem] leading-none">É</div>
       </div>
       <div className="relative mx-auto max-w-[1100px] px-5 sm:px-8 text-center">
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-cream/70 mb-8">
           Una sola cosa más
         </p>
-        <h2 className="font-serif-display text-6xl sm:text-8xl leading-[0.95]">
-          No vuelvas<br />a tomar café <em>frío</em>.
+        <h2 className="font-serif-display text-6xl sm:text-8xl leading-[0.95] tracking-wide">
+          NO VUELVAS<br />A TOMAR CAFÉ <span className="text-primary">FRÍO</span>.
         </h2>
         <p className="mt-8 text-lg text-cream/85 max-w-xl mx-auto">
           Llevá la potencia de Makita a tu taza. La DCM501 te espera.
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-          <a href="#" className="group inline-flex items-center gap-3 rounded-full bg-cream px-9 py-4 text-sm font-medium text-espresso hover:bg-espresso hover:text-cream transition-colors">
+          <a href="#" className="group inline-flex items-center gap-3 bg-cream px-9 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors uppercase tracking-wider">
             Quiero mi Makita
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
@@ -521,10 +504,10 @@ function Contact() {
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-14">
           <div className="lg:col-span-7">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
-              Capítulo 04 — Contacto
+              Contacto
             </p>
-            <h2 className="font-serif-display text-5xl sm:text-7xl leading-[1] text-espresso">
-              Escribinos.<br /><em>Tomamos un café.</em>
+            <h2 className="font-serif-display text-5xl sm:text-7xl leading-[1] text-espresso tracking-wide">
+              ESCRIBINOS.<br /><span className="text-terracotta">TOMAMOS UN CAFÉ.</span>
             </h2>
           </div>
           <p className="lg:col-span-5 text-espresso-soft">
@@ -540,7 +523,7 @@ function Contact() {
                 <c.icon className="h-4 w-4 text-terracotta" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">{c.label}</span>
               </div>
-              <p className="font-serif-display text-2xl sm:text-3xl text-espresso leading-snug">{c.value}</p>
+              <p className="font-serif-display text-2xl sm:text-3xl text-espresso leading-snug tracking-wide">{c.value}</p>
               <p className="mt-3 text-sm text-espresso-soft">{c.note}</p>
             </div>
           ))}
@@ -557,21 +540,22 @@ function Footer() {
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 py-14">
         <div className="grid sm:grid-cols-3 gap-10 items-start">
           <div>
-            <span className="font-serif-display italic text-3xl text-cream">Makita</span>
+            <span className="font-serif-display text-3xl text-cream tracking-wide">MAKITA</span>
             <p className="mt-3 text-sm text-cream/60 max-w-xs">
               DCM501 — Edición editorial. Pieza de comunicación independiente.
             </p>
           </div>
           <div className="font-mono text-[11px] uppercase tracking-[0.2em] space-y-2">
-            <a href="#story" className="block hover:text-terracotta">Historia</a>
-            <a href="#features" className="block hover:text-terracotta">Detalles</a>
-            <a href="#specs" className="block hover:text-terracotta">Ficha</a>
-            <a href="#contact" className="block hover:text-terracotta">Contacto</a>
+            <a href="#story" className="block hover:text-primary">Historia</a>
+            <a href="#features" className="block hover:text-primary">Detalles</a>
+            <a href="#parts" className="block hover:text-primary">Partes</a>
+            <a href="#specs" className="block hover:text-primary">Ficha</a>
+            <a href="#contact" className="block hover:text-primary">Contacto</a>
           </div>
           <div className="flex sm:justify-end items-center gap-5">
-            <a href="#" className="hover:text-terracotta"><Instagram className="h-5 w-5" /></a>
-            <a href="#" className="hover:text-terracotta"><Twitter className="h-5 w-5" /></a>
-            <a href="#" className="hover:text-terracotta"><Youtube className="h-5 w-5" /></a>
+            <a href="#" className="hover:text-primary"><Instagram className="h-5 w-5" /></a>
+            <a href="#" className="hover:text-primary"><Twitter className="h-5 w-5" /></a>
+            <a href="#" className="hover:text-primary"><Youtube className="h-5 w-5" /></a>
           </div>
         </div>
         <div className="mt-12 pt-6 border-t border-cream/15 flex flex-wrap justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-cream/50">
@@ -591,7 +575,7 @@ function Index() {
       <Marquee />
       <Story />
       <Features />
-      <Anatomy />
+      <Parts />
       <Specs />
       <Versions />
       <CTA />
