@@ -17,7 +17,7 @@ import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
 import constructionImage from "@/assets/makita-construction-bg.png";
 import heroAsset from "@/assets/hero-makita-transparent.png.asset.json";
-import anatomyTransparent from "@/assets/DCM501_C2L0_1-2-transparent.png";
+import anatomyFront from "@/assets/DCM501_C1C0-rembg.png.asset.json";
 import bl1041 from "@/assets/compat/BL1041B_C2L0.jpg.asset.json";
 import bl1820 from "@/assets/compat/BL1820B_C2L0.jpg.asset.json";
 import bl1830 from "@/assets/compat/BL1830B_C2L0.jpg.asset.json";
@@ -33,7 +33,7 @@ import dc18re from "@/assets/compat/DC18RE_C2L0.png.asset.json";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const heroImg = heroAsset.url;
-const anatomyImg = anatomyTransparent;
+const anatomyImg = anatomyFront.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -301,11 +301,11 @@ function Features() {
 /* ---------- PARTS (interactive anatomy) ---------- */
 function Parts() {
   const hotspots = [
-    { id: "asa", x: 50, y: 12, name: "Asa", sub: "de transporte" },
-    { id: "tanque", x: 52, y: 28, name: "Tanque", sub: "removible · 240 ml" },
-    { id: "filtro", x: 55, y: 48, name: "Filtro", sub: "malla permanente" },
+    { id: "asa", x: 50, y: 10, name: "Asa", sub: "de transporte" },
+    { id: "tanque", x: 50, y: 26, name: "Tanque", sub: "removible · 240 ml" },
+    { id: "filtro", x: 50, y: 52, name: "Filtro", sub: "malla permanente" },
     { id: "bateria", x: 50, y: 78, name: "Puerto", sub: "batería 18V LXT" },
-    { id: "taza", x: 72, y: 88, name: "Taza", sub: "acero inoxidable" },
+    { id: "taza", x: 82, y: 72, name: "Taza", sub: "acero inoxidable" },
   ];
   const [active, setActive] = useState<string>("asa");
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
@@ -324,7 +324,7 @@ function Parts() {
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 relative mx-auto w-full max-w-[520px]">
-            <div className="relative aspect-[724/1000] w-full overflow-hidden">
+            <div className="relative aspect-[807/1000] w-full overflow-hidden">
               <img
                 src={anatomyImg}
                 alt="Makita DCM501 — anatomía"
