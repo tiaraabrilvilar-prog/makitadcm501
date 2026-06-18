@@ -684,6 +684,7 @@ function Index() {
       <Parts />
       <Specs />
       <Versions />
+      <Compatibles />
       <CTA />
       <Contact />
       <Footer />
