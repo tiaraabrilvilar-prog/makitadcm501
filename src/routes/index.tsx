@@ -13,14 +13,14 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import heroTransparent from "@/assets/hero-portada.png";
 import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
 import constructionImage from "@/assets/makita-construction-bg.png";
-import partTanque from "@/assets/part-tanque.jpg";
-import partFiltro from "@/assets/part-filtro.jpg";
-import partBateria from "@/assets/part-bateria.jpg";
-import partAsa from "@/assets/part-asa.jpg";
+import heroAsset from "@/assets/DCM501_F_001.jpg.asset.json";
+import anatomyAsset from "@/assets/DCM501_C2L0_1-2.jpg.asset.json";
+
+const heroImg = heroAsset.url;
+const anatomyImg = anatomyAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -106,7 +106,7 @@ function Hero() {
               Nueva en obra · 18V LXT
             </div>
 
-            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[4rem] sm:text-[7rem] lg:text-[9rem]">
+            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[3rem] sm:text-[4.5rem] lg:text-[6rem]">
               CAFÉ <span className="text-primary">SIN</span><br />
               ENCHUFE.<br />
               <span className="text-mocha">CAFÉ DE OBRA.</span>
@@ -126,20 +126,6 @@ function Hero() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
-
-            <div className="mt-12 flex flex-wrap gap-8 pt-8 border-t border-cream/15">
-              {[
-                { n: "240ml", u: "por carga" },
-                { n: "5min", u: "preparación" },
-                { n: "18V", u: "batería LXT" },
-                { n: "0", u: "cables" },
-              ].map((s) => (
-                <div key={s.u}>
-                  <p className="font-serif-display text-3xl sm:text-4xl text-primary leading-none">{s.n}</p>
-                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-cream/50">{s.u}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Image */}
@@ -148,7 +134,7 @@ function Hero() {
               <div className="absolute inset-6 rounded-full bg-primary/15 blur-2xl" />
               <div className="absolute inset-10 rounded-full border border-primary/30" />
               <img
-                src={heroTransparent}
+                src={heroImg}
                 alt="Makita DCM501"
                 className="relative z-10 w-full h-full object-contain animate-float"
               />
@@ -221,18 +207,6 @@ function Story() {
               metálica permanente y los sirve directo en una taza de acero que viene incluida.
               Sin papel, sin cables, sin termos resignados.
             </p>
-            <div className="grid grid-cols-3 gap-6 pt-6 border-t border-espresso/15">
-              {[
-                { n: "240", u: "ml por carga" },
-                { n: "05", u: "minutos" },
-                { n: "18V", u: "batería LXT" },
-              ].map((s) => (
-                <div key={s.n}>
-                  <p className="font-serif-display text-4xl sm:text-5xl text-terracotta">{s.n}</p>
-                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-mocha">{s.u}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
@@ -311,40 +285,89 @@ function Features() {
   );
 }
 
-/* ---------- PARTS (dark cards grid) ---------- */
+/* ---------- PARTS (interactive anatomy) ---------- */
 function Parts() {
-  const parts = [
-    { img: partTanque, name: "Tanque", sub: "removible" },
-    { img: partFiltro, name: "Filtro", sub: "de goteo permanente" },
-    { img: partBateria, name: "Tapa para", sub: "puerto de batería" },
-    { img: partAsa, name: "Asa de", sub: "transporte" },
+  const hotspots = [
+    { id: "tanque", x: 62, y: 18, name: "Tanque", sub: "removible · 240 ml" },
+    { id: "filtro", x: 50, y: 42, name: "Filtro", sub: "malla permanente" },
+    { id: "asa", x: 22, y: 50, name: "Asa", sub: "de transporte" },
+    { id: "bateria", x: 75, y: 75, name: "Puerto", sub: "batería 18V LXT" },
+    { id: "taza", x: 42, y: 86, name: "Taza", sub: "acero inoxidable" },
   ];
+  const [active, setActive] = useState<string>("tanque");
+  const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
+
   return (
     <section id="parts" className="py-24 sm:py-32 bg-espresso text-cream">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
-        <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-cream max-w-3xl tracking-wide">
-          PARTES DE<br />LA CAFETERA
-        </h2>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+          <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-cream max-w-3xl tracking-wide">
+            PARTES DE<br />LA CAFETERA
+          </h2>
+          <p className="max-w-sm text-cream/65 text-sm sm:text-base">
+            Tocá los puntos amarillos para conocer cada parte.
+          </p>
+        </div>
 
-        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-7">
-          {parts.map((p) => (
-            <article key={p.name + p.sub} className="group">
-              <div className="aspect-square overflow-hidden rounded-md border border-cream/10 bg-black">
-                <img
-                  src={p.img}
-                  alt={`${p.name} ${p.sub}`}
-                  loading="lazy"
-                  width={768}
-                  height={768}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <p className="mt-5 font-sans text-lg sm:text-xl text-cream leading-tight">
-                {p.name}<br />
-                <span className="text-cream/70">{p.sub}</span>
-              </p>
-            </article>
-          ))}
+        <div className="grid lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-8 relative">
+            <div className="relative aspect-[4/3] w-full bg-black rounded-md overflow-hidden border border-cream/10">
+              <img
+                src={anatomyImg}
+                alt="Makita DCM501 — anatomía"
+                className="w-full h-full object-contain"
+              />
+              {hotspots.map((h) => {
+                const isActive = h.id === active;
+                return (
+                  <button
+                    key={h.id}
+                    onClick={() => setActive(h.id)}
+                    aria-label={h.name}
+                    style={{ left: `${h.x}%`, top: `${h.y}%` }}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 group"
+                  >
+                    <span
+                      className={`block rounded-full transition-all ${
+                        isActive
+                          ? "h-5 w-5 bg-primary ring-4 ring-primary/30"
+                          : "h-4 w-4 bg-cream/90 group-hover:bg-primary"
+                      }`}
+                    />
+                    {isActive && (
+                      <span className="absolute left-1/2 top-1/2 -z-10 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/40 animate-ping" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="lg:col-span-4">
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary mb-4">
+              {String(hotspots.findIndex((h) => h.id === active) + 1).padStart(2, "0")} / {String(hotspots.length).padStart(2, "0")}
+            </p>
+            <h3 className="font-serif-display text-5xl sm:text-6xl text-cream tracking-wide leading-none">
+              {current.name}
+            </h3>
+            <p className="mt-3 font-sans text-lg text-cream/70">{current.sub}</p>
+
+            <div className="mt-8 flex flex-wrap gap-2">
+              {hotspots.map((h) => (
+                <button
+                  key={h.id}
+                  onClick={() => setActive(h.id)}
+                  className={`font-mono text-[10px] uppercase tracking-[0.25em] px-3 py-2 border transition-colors ${
+                    h.id === active
+                      ? "border-primary bg-primary text-espresso"
+                      : "border-cream/20 text-cream/60 hover:border-primary/60 hover:text-primary"
+                  }`}
+                >
+                  {h.name}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
