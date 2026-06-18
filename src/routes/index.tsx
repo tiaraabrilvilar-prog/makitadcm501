@@ -18,6 +18,16 @@ import oliveVersion from "@/assets/olive-version.png";
 import constructionImage from "@/assets/makita-construction-bg.png";
 import heroAsset from "@/assets/hero-makita-transparent.png.asset.json";
 import anatomyAsset from "@/assets/DCM501_C2L0_1-2.jpg.asset.json";
+import bl1041 from "@/assets/compat/BL1041B_C2L0.jpg.asset.json";
+import bl1820 from "@/assets/compat/BL1820B_C2L0.jpg.asset.json";
+import bl1830 from "@/assets/compat/BL1830B_C2L0.jpg.asset.json";
+import bl1840 from "@/assets/compat/BL1840B_C2L0.jpg.asset.json";
+import bl1850 from "@/assets/compat/BL1850B_C2L0.jpg.asset.json";
+import bl1860 from "@/assets/compat/BL1860B_C2L0.jpg.asset.json";
+import dc18sd from "@/assets/compat/DC18SD_C2L0.jpg.asset.json";
+import dc18sf from "@/assets/compat/DC18SF_C2L0.jpg.asset.json";
+import dc18rd from "@/assets/compat/DC18RD_C2L0.jpg.asset.json";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const heroImg = heroAsset.url;
 const anatomyImg = anatomyAsset.url;
