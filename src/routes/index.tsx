@@ -302,8 +302,8 @@ function Features() {
 function Parts() {
   const hotspots = [
     { id: "manija", x: 50, y: 10, name: "Manija", sub: "de transporte" },
-    { id: "filtro", x: 50, y: 52, name: "Filtro", sub: "malla permanente" },
-    { id: "boton", x: 50, y: 68, name: "Botón", sub: "encendido / apagado" },
+    { id: "filtro", x: 50, y: 48, name: "Filtro", sub: "malla permanente" },
+    { id: "boton", x: 50, y: 65, name: "Botón", sub: "encendido / apagado" },
     { id: "bateria", x: 50, y: 82, name: "Puerto", sub: "batería 18V LXT" },
     { id: "taza", x: 72, y: 82, name: "Taza", sub: "acero inoxidable" },
   ];
