@@ -37,47 +37,47 @@
   --color-terracotta: var(--terracotta);
   --color-terracotta-deep: var(--terracotta-deep);
   --color-mocha: var(--mocha);
-  --font-serif-display: 'Instrument Serif', 'Cormorant Garamond', serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif-display: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+  --font-sans: 'Barlow', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-/* Warm Editorial Coffee Theme */
+/* Construction · Cement & Yellow Theme */
 :root {
-  --radius: 0.5rem;
+  --radius: 0.25rem;
 
-  --cream: #f4ecdd;
-  --cream-deep: #e8dcc4;
-  --espresso: #2a1a10;
-  --espresso-soft: #4a3424;
-  --terracotta: #c2542a;
-  --terracotta-deep: #8a3a1c;
-  --mocha: #7a5a3e;
+  --cream: #e7e5e3;
+  --cream-deep: #cfcdcb;
+  --espresso: #1a1a1a;
+  --espresso-soft: #3a3a3a;
+  --terracotta: #ca8a04;
+  --terracotta-deep: #854d0e;
+  --mocha: #6b6b6b;
 
-  --background: #f4ecdd;
-  --foreground: #2a1a10;
+  --background: #e7e5e3;
+  --foreground: #1a1a1a;
   --card: #ffffff;
-  --card-foreground: #2a1a10;
+  --card-foreground: #1a1a1a;
   --popover: #ffffff;
-  --popover-foreground: #2a1a10;
-  --primary: #c2542a;
-  --primary-foreground: #f4ecdd;
-  --secondary: #e8dcc4;
-  --secondary-foreground: #2a1a10;
-  --muted: #e8dcc4;
-  --muted-foreground: #7a5a3e;
-  --accent: #c2542a;
-  --accent-foreground: #f4ecdd;
+  --popover-foreground: #1a1a1a;
+  --primary: #facc15;
+  --primary-foreground: #1a1a1a;
+  --secondary: #cfcdcb;
+  --secondary-foreground: #1a1a1a;
+  --muted: #cfcdcb;
+  --muted-foreground: #6b6b6b;
+  --accent: #facc15;
+  --accent-foreground: #1a1a1a;
   --destructive: #b3261e;
-  --destructive-foreground: #f4ecdd;
-  --border: rgba(42, 26, 16, 0.12);
-  --input: rgba(42, 26, 16, 0.18);
-  --ring: #c2542a;
+  --destructive-foreground: #e7e5e3;
+  --border: rgba(26, 26, 26, 0.14);
+  --input: rgba(26, 26, 26, 0.2);
+  --ring: #facc15;
 }
 
 .dark {
-  --background: #f4ecdd;
-  --foreground: #2a1a10;
+  --background: #e7e5e3;
+  --foreground: #1a1a1a;
 }
 
 @layer base {
