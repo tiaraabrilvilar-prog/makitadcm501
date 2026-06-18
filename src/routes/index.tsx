@@ -309,33 +309,8 @@ function Parts() {
   ];
   const [hotspots, setHotspots] = useState(initialHotspots);
   const [active, setActive] = useState<string>("manija");
-  const [editMode, setEditMode] = useState(false);
-  const [dragging, setDragging] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
-
-  useEffect(() => {
-    if (!dragging) return;
-    const onMove = (e: PointerEvent) => {
-      const rect = containerRef.current?.getBoundingClientRect();
-      if (!rect) return;
-      const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
-      const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
-      setHotspots((prev) => prev.map((h) => (h.id === dragging ? { ...h, x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 } : h)));
-    };
-    const onUp = () => setDragging(null);
-    window.addEventListener("pointermove", onMove);
-    window.addEventListener("pointerup", onUp);
-    return () => {
-      window.removeEventListener("pointermove", onMove);
-      window.removeEventListener("pointerup", onUp);
-    };
-  }, [dragging]);
-
-  const copyCoords = () => {
-    const text = hotspots.map((h) => `{ id: "${h.id}", x: ${h.x}, y: ${h.y}, name: "${h.name}", sub: "${h.sub}" },`).join("\n");
-    navigator.clipboard?.writeText(text);
-  };
 
   return (
     <section id="parts" className="py-24 sm:py-32 bg-espresso text-cream">
