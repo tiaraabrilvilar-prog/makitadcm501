@@ -357,13 +357,10 @@ function Parts() {
   return (
     <section id="parts" className="py-24 sm:py-32 bg-cream-deep text-espresso lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+        <div className="mb-12">
           <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-espresso max-w-3xl tracking-wide">
             PARTES DE<br />LA CAFETERA
           </h2>
-          <p className="max-w-sm text-espresso/65 text-sm sm:text-base">
-            Tocá los puntos amarillos para conocer cada parte.
-          </p>
         </div>
 
 
