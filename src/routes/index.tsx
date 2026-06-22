@@ -587,7 +587,7 @@ function CTA() {
           Una sola cosa más
         </p>
         <h2 className="font-serif-display text-6xl sm:text-8xl leading-[0.95] tracking-wide">
-          NO VUELVAS<br />A TOMAR CAFÉ <span className="text-primary">FRÍO</span>.
+          NO VUELVAS<br />A TOMAR CAFÉ <span className="text-white">FRÍO</span>.
         </h2>
         <p className="mt-8 text-lg text-cream/85 max-w-xl mx-auto">
           Llevá la potencia de Makita a tu taza. La DCM501 te espera.
