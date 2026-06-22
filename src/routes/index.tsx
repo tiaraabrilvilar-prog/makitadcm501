@@ -205,7 +205,7 @@ function Marquee() {
 function Story() {
   const { ref, visible } = useInView(0.1);
   return (
-    <section id="story" ref={ref} className="py-24 sm:py-32">
+    <section id="story" ref={ref} className="py-24 sm:py-32 lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5 lg:sticky lg:top-28 self-start">
@@ -287,7 +287,7 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="py-24 sm:py-32 bg-cream-deep/60">
+    <section id="features" className="py-24 sm:py-32 bg-cream-deep/60 lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
@@ -337,7 +337,7 @@ function Parts() {
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
 
   return (
-    <section id="parts" className="py-24 sm:py-32 bg-espresso text-cream">
+    <section id="parts" className="py-24 sm:py-32 bg-espresso text-cream lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-cream max-w-3xl tracking-wide">
@@ -433,7 +433,7 @@ function Specs() {
   ];
 
   return (
-    <section id="specs" className="py-24 sm:py-32 bg-cream-deep/60 text-espresso">
+    <section id="specs" className="py-24 sm:py-32 bg-cream-deep/60 text-espresso lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4">
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
@@ -484,7 +484,7 @@ function Versions() {
   ];
 
   return (
-    <section id="versions" className="py-24 sm:py-32">
+    <section id="versions" className="py-24 sm:py-32 lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="flex items-end justify-between mb-12">
           <h2 className="font-serif-display text-5xl sm:text-6xl text-espresso leading-[1.02] tracking-wide">
@@ -541,7 +541,7 @@ function Compatibles() {
   ];
 
   return (
-    <section id="compatibles" className="py-24 sm:py-32 bg-cream">
+    <section id="compatibles" className="py-24 sm:py-32 bg-cream lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div>
@@ -601,7 +601,7 @@ function Compatibles() {
 /* ---------- CTA ---------- */
 function CTA() {
   return (
-    <section id="cta" className="py-28 sm:py-36 bg-terracotta text-cream relative overflow-hidden">
+    <section id="cta" className="py-28 sm:py-36 bg-terracotta text-cream relative overflow-hidden lg:min-h-[56.25vw] flex items-center">
       <div className="absolute inset-0 opacity-[0.1] pointer-events-none">
         <div className="absolute top-10 left-10 font-serif-display text-[18rem] leading-none">C</div>
         <div className="absolute bottom-10 right-10 font-serif-display text-[18rem] leading-none">É</div>
@@ -638,7 +638,7 @@ function Contact() {
     { icon: MapPin, label: "Dirección", value: "Av. Industrial 1234", note: "Buenos Aires, AR" },
   ];
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-cream-deep/60">
+    <section id="contact" className="py-24 sm:py-32 bg-cream-deep/60 lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-14">
           <div className="lg:col-span-7">
