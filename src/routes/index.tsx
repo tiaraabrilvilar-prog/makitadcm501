@@ -137,9 +137,6 @@ function Hero() {
       <div className="absolute bottom-5 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/40 hidden sm:block">
         Café · Obra · 18V
       </div>
-      <div className="absolute bottom-5 right-5 sm:right-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/40 hidden sm:block">
-        Scroll ↓
-      </div>
 
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-10">
