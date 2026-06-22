@@ -27,7 +27,7 @@ import {
 import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
 import constructionImage from "@/assets/makita-construction-bg.png";
-import ctaBg from "@/assets/cta-bg.png";
+import ctaBg from "@/assets/cta-bg-new.png";
 import heroAsset from "@/assets/hero-makita-transparent.png.asset.json";
 import anatomyFront from "@/assets/DCM501_C1C0-rembg.png.asset.json";
 import bl1041 from "@/assets/compat/BL1041B_C2L0.jpg.asset.json";
@@ -682,9 +682,9 @@ function CTA() {
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{ filter: "grayscale(100%) contrast(1.1) brightness(0.55)" }}
       />
-      <div className="absolute inset-0 bg-[#0f5c3e] mix-blend-multiply opacity-80 pointer-events-none" />
-      <div className="absolute inset-0 bg-[#3dcc8a] mix-blend-screen opacity-25 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#3a9e7a] mix-blend-multiply opacity-70 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#7aeebb] mix-blend-screen opacity-35 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-black/30 pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center">
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-cream/70 mb-8">
