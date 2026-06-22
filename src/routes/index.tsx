@@ -554,10 +554,10 @@ function Versions() {
   ];
 
   return (
-    <section id="versions" className="py-24 sm:py-32 lg:min-h-[56.25vw] flex items-center">
+    <section id="versions" className="py-16 sm:py-24 lg:py-32 lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex items-end justify-between mb-12">
-          <h2 className="font-serif-display text-5xl sm:text-6xl text-espresso leading-[1.02] tracking-wide">
+          <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl text-espresso leading-[1.02] tracking-wide">
             DOS <span className="text-terracotta">VERSIONES</span>.
           </h2>
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-mocha hidden sm:block">
@@ -611,14 +611,14 @@ function Compatibles() {
   ];
 
   return (
-    <section id="compatibles" className="py-24 sm:py-32 bg-cream lg:min-h-[56.25vw] flex items-center">
+    <section id="compatibles" className="py-16 sm:py-24 lg:py-32 bg-cream lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
               Compatibles
             </p>
-            <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] text-espresso tracking-wide max-w-2xl">
+            <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl leading-[1.02] text-espresso tracking-wide max-w-2xl">
               UNA BATERÍA,<br /><span className="text-terracotta">MUCHAS HERRAMIENTAS</span>.
             </h2>
           </div>
@@ -671,7 +671,7 @@ function Compatibles() {
 /* ---------- CTA ---------- */
 function CTA() {
   return (
-    <section id="cta" className="py-28 sm:py-36 bg-terracotta text-cream relative overflow-hidden lg:min-h-[56.25vw] flex items-center">
+    <section id="cta" className="py-16 sm:py-24 lg:py-36 bg-terracotta text-cream relative overflow-hidden lg:min-h-[56.25vw] flex items-center">
       <div className="absolute inset-0 opacity-[0.1] pointer-events-none">
         <div className="absolute top-10 left-10 font-serif-display text-[18rem] leading-none">C</div>
         <div className="absolute bottom-10 right-10 font-serif-display text-[18rem] leading-none">É</div>
@@ -680,7 +680,7 @@ function CTA() {
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-cream/70 mb-8">
           Una sola cosa más
         </p>
-        <h2 className="font-serif-display text-6xl sm:text-8xl leading-[0.95] tracking-wide">
+        <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-8xl leading-[0.95] tracking-wide">
           NO VUELVAS<br />A TOMAR CAFÉ <span className="text-white">FRÍO</span>.
         </h2>
         <p className="mt-8 text-lg text-cream/85 max-w-xl mx-auto">
@@ -708,14 +708,14 @@ function Contact() {
     { icon: MapPin, label: "Dirección", value: "Av. Industrial 1234", note: "Buenos Aires, AR" },
   ];
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-cream-deep/60 lg:min-h-[56.25vw] flex items-center">
+    <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-cream-deep/60 lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-14">
           <div className="lg:col-span-7">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
               Contacto
             </p>
-            <h2 className="font-serif-display text-5xl sm:text-7xl leading-[1] text-espresso tracking-wide">
+            <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-7xl leading-[1] text-espresso tracking-wide">
               ESCRIBINOS.<br /><span className="text-terracotta">TOMAMOS UN CAFÉ.</span>
             </h2>
           </div>
