@@ -352,10 +352,10 @@ function Parts() {
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
 
   return (
-    <section id="parts" className="py-24 sm:py-32 bg-cream-deep text-espresso lg:min-h-[56.25vw] flex items-center">
+    <section id="parts" className="py-16 sm:py-24 lg:py-32 bg-cream-deep text-espresso lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="mb-12">
-          <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-espresso max-w-3xl tracking-wide">
+          <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[0.95] text-espresso max-w-3xl tracking-wide">
             PARTES DE<br />LA CAFETERA
           </h2>
         </div>
@@ -405,7 +405,7 @@ function Parts() {
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary mb-4">
               {String(hotspots.findIndex((h) => h.id === active) + 1).padStart(2, "0")} / {String(hotspots.length).padStart(2, "0")}
             </p>
-            <h3 className="font-serif-display text-5xl sm:text-6xl text-espresso tracking-wide leading-none">
+            <h3 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl text-espresso tracking-wide leading-none">
               {current.name}
             </h3>
             <p className="mt-3 font-sans text-lg text-espresso/70">{current.sub}</p>
@@ -472,13 +472,13 @@ function Specs() {
   const current = tabs.find((t) => t.id === active) ?? tabs[0];
 
   return (
-    <section id="specs" className="py-24 sm:py-32 bg-cream-deep/60 text-espresso lg:min-h-[56.25vw] flex items-center">
+    <section id="specs" className="py-16 sm:py-24 lg:py-32 bg-cream-deep/60 text-espresso lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
         <div className="text-center mb-12">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-terracotta mb-4">
             Ficha técnica
           </p>
-          <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] tracking-wide text-espresso">
+          <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-wide text-espresso">
             Especificaciones técnicas
           </h2>
         </div>
