@@ -192,10 +192,10 @@ function Hero() {
                 sin café frío.
               </p>
               <a
-                href="#versions"
+                href="#parts"
                 className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors whitespace-nowrap uppercase tracking-wider"
               >
-                Usá tus baterías acá
+                potencia tus mañanas
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
@@ -357,13 +357,10 @@ function Parts() {
   return (
     <section id="parts" className="py-24 sm:py-32 bg-cream-deep text-espresso lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+        <div className="mb-12">
           <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-espresso max-w-3xl tracking-wide">
             PARTES DE<br />LA CAFETERA
           </h2>
-          <p className="max-w-sm text-espresso/65 text-sm sm:text-base">
-            Tocá los puntos amarillos para conocer cada parte.
-          </p>
         </div>
 
 
@@ -401,6 +398,9 @@ function Parts() {
                 );
               })}
             </div>
+            <p className="mt-4 text-espresso/65 text-sm sm:text-base">
+              Tocá los puntos verdes para conocer cada parte.
+            </p>
           </div>
 
           <div className="lg:col-span-5">
