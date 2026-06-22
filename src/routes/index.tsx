@@ -206,7 +206,7 @@ function Story() {
   const { ref, visible } = useInView(0.1);
   return (
     <section id="story" ref={ref} className="py-24 sm:py-32 lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5 lg:sticky lg:top-28 self-start">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-6">
@@ -288,7 +288,7 @@ function Features() {
 
   return (
     <section id="features" className="py-24 sm:py-32 bg-cream-deep/60 lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
@@ -338,7 +338,7 @@ function Parts() {
 
   return (
     <section id="parts" className="py-24 sm:py-32 bg-espresso text-cream lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-cream max-w-3xl tracking-wide">
             PARTES DE<br />LA CAFETERA
@@ -434,7 +434,7 @@ function Specs() {
 
   return (
     <section id="specs" className="py-24 sm:py-32 bg-cream-deep/60 text-espresso lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 grid lg:grid-cols-12 gap-10">
+      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8 grid lg:grid-cols-12 gap-10">
         <div className="lg:col-span-4">
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
             Ficha
@@ -485,7 +485,7 @@ function Versions() {
 
   return (
     <section id="versions" className="py-24 sm:py-32 lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex items-end justify-between mb-12">
           <h2 className="font-serif-display text-5xl sm:text-6xl text-espresso leading-[1.02] tracking-wide">
             DOS <span className="text-terracotta">VERSIONES</span>.
@@ -542,7 +542,7 @@ function Compatibles() {
 
   return (
     <section id="compatibles" className="py-24 sm:py-32 bg-cream lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
@@ -639,7 +639,7 @@ function Contact() {
   ];
   return (
     <section id="contact" className="py-24 sm:py-32 bg-cream-deep/60 lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-14">
           <div className="lg:col-span-7">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
@@ -676,7 +676,7 @@ function Contact() {
 function Footer() {
   return (
     <footer className="bg-espresso text-cream/80">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 py-14">
+      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8 py-14">
         <div className="grid sm:grid-cols-3 gap-10 items-start">
           <div>
             <span className="font-serif-display text-3xl text-cream tracking-wide">MAKITA</span>
