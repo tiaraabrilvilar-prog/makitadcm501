@@ -398,6 +398,9 @@ function Parts() {
                 );
               })}
             </div>
+            <p className="mt-4 text-espresso/65 text-sm sm:text-base">
+              Tocá los puntos verdes para conocer cada parte.
+            </p>
           </div>
 
           <div className="lg:col-span-5">
