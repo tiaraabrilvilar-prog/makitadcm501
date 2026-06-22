@@ -817,8 +817,8 @@ function Index() {
     <div className="min-h-screen bg-cream text-espresso">
       <Navbar />
       <Hero />
-      <Empathy />
       <Marquee />
+      <Empathy />
       <Story />
       <Features />
       <Parts />
