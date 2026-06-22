@@ -672,11 +672,20 @@ function Compatibles() {
 /* ---------- CTA ---------- */
 function CTA() {
   return (
-    <section id="cta" className="py-16 sm:py-24 lg:py-36 bg-terracotta text-cream relative overflow-hidden lg:min-h-[56.25vw] flex items-center">
-      <div className="absolute inset-0 opacity-[0.1] pointer-events-none">
-        <div className="absolute top-10 left-10 font-serif-display text-[18rem] leading-none">C</div>
-        <div className="absolute bottom-10 right-10 font-serif-display text-[18rem] leading-none">É</div>
-      </div>
+    <section id="cta" className="py-16 sm:py-24 lg:py-36 text-cream relative overflow-hidden lg:min-h-[56.25vw] flex items-center">
+      {/* Background image — duotone green treatment */}
+      <img
+        src={ctaBg}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        style={{ filter: "grayscale(100%) contrast(1.1) brightness(0.55)" }}
+      />
+      <div className="absolute inset-0 bg-[#0f5c3e] mix-blend-multiply opacity-80 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#3dcc8a] mix-blend-screen opacity-25 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40 pointer-events-none" />
+
       <div className="relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center">
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-cream/70 mb-8">
           Una sola cosa más
