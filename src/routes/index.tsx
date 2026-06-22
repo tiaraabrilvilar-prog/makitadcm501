@@ -12,6 +12,17 @@ import {
   Phone,
   Mail,
   MapPin,
+  Droplet,
+  Clock,
+  Thermometer,
+  Battery,
+  Filter,
+  Wifi,
+  Weight,
+  Ruler,
+  Box,
+  Gauge,
+  Layers,
 } from "lucide-react";
 import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
@@ -417,47 +428,102 @@ function Parts() {
   );
 }
 
-/* ---------- SPECS (editorial table) ---------- */
+/* ---------- SPECS (tabs editorial) ---------- */
 function Specs() {
-  const rows = [
-    ["Capacidad del tanque", "240 ml"],
-    ["Autonomía", "Hasta 3 tazas por carga"],
-    ["Tiempo de preparación", "5 minutos"],
-    ["Temperatura", "~90 °C"],
-    ["Baterías compatibles", "12V CXT / 18V LXT"],
-    ["Sistema de filtro", "Malla permanente"],
-    ["Tipo de café", "Café molido"],
-    ["Peso (sin batería)", "1,5 kg"],
-    ["Altura máxima de taza", "90 mm"],
-    ["Dimensiones (A×A×L)", "135 × 118 × 244 mm"],
+  const tabs = [
+    {
+      id: "rendimiento",
+      label: "Rendimiento",
+      icon: Gauge,
+      items: [
+        { icon: Droplet, label: "Capacidad del tanque", value: "240 ml" },
+        { icon: Coffee, label: "Autonomía promedio", value: "Hasta 3 tazas" },
+        { icon: Clock, label: "Tiempo de preparación", value: "5 minutos" },
+        { icon: Thermometer, label: "Temperatura de extracción", value: "~90 °C" },
+      ],
+    },
+    {
+      id: "compatibilidad",
+      label: "Compatibilidad",
+      icon: Layers,
+      items: [
+        { icon: Battery, label: "Baterías compatibles", value: "12V CXT / 18V LXT" },
+        { icon: Filter, label: "Sistema de filtro", value: "Filtro permanente" },
+        { icon: Coffee, label: "Tipo de café", value: "Café molido" },
+        { icon: Wifi, label: "Conexión", value: "Inalámbrica" },
+      ],
+    },
+    {
+      id: "dimensiones",
+      label: "Dimensiones",
+      icon: Ruler,
+      items: [
+        { icon: Weight, label: "Peso (sin batería)", value: "1,5 kg" },
+        { icon: Ruler, label: "Altura máxima de taza", value: "90 mm" },
+        { icon: Box, label: "Dimensiones (A×A×L)", value: "135 × 118 × 244 mm" },
+      ],
+    },
   ];
+  const [active, setActive] = useState(tabs[0].id);
+  const current = tabs.find((t) => t.id === active) ?? tabs[0];
 
   return (
     <section id="specs" className="py-24 sm:py-32 bg-cream-deep/60 text-espresso lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8 grid lg:grid-cols-12 gap-10">
-        <div className="lg:col-span-4">
-          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
-            Ficha
+      <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
+        <div className="text-center mb-12">
+          <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-terracotta mb-4">
+            Ficha técnica
           </p>
-          <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] tracking-wide">
-            LA <span className="text-terracotta">LETRA CHICA</span>,<br />EN GRANDE.
+          <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] tracking-wide text-espresso">
+            Especificaciones técnicas
           </h2>
         </div>
 
-        <div className="lg:col-span-8">
-          <table className="w-full border-t border-espresso/20">
-            <tbody>
-              {rows.map(([k, v], i) => (
-                <tr key={k} className="border-b border-espresso/15 hover:bg-cream transition-colors">
-                  <td className="py-5 pr-4 font-mono text-[11px] uppercase tracking-[0.2em] text-mocha align-top w-16">
-                    {String(i + 1).padStart(2, "0")}
-                  </td>
-                  <td className="py-5 pr-4 font-sans text-base sm:text-lg text-espresso/85">{k}</td>
-                  <td className="py-5 pl-4 text-right font-serif-display text-xl sm:text-2xl text-espresso tracking-wide">{v}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* Tabs */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-8 border border-espresso/15 rounded-sm p-1.5 bg-cream/60">
+          {tabs.map((t) => {
+            const Icon = t.icon;
+            const isActive = t.id === active;
+            return (
+              <button
+                key={t.id}
+                onClick={() => setActive(t.id)}
+                className={`flex items-center justify-center gap-2 px-3 py-3 sm:py-4 text-xs sm:text-sm font-mono uppercase tracking-[0.2em] rounded-sm transition-colors ${
+                  isActive
+                    ? "bg-terracotta text-cream"
+                    : "text-espresso/70 hover:text-terracotta hover:bg-cream"
+                }`}
+              >
+                <Icon className="h-4 w-4 shrink-0" />
+                <span className="hidden sm:inline">{t.label}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Cards */}
+        <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+          {current.items.map((it) => {
+            const Icon = it.icon;
+            return (
+              <div
+                key={it.label}
+                className="flex items-center gap-4 border border-espresso/15 bg-cream/70 rounded-sm px-5 py-5 sm:py-6"
+              >
+                <div className="grid place-items-center h-11 w-11 shrink-0 rounded-sm border border-terracotta/40 bg-terracotta/10 text-terracotta">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div className="min-w-0 flex-1 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">
+                    {it.label}
+                  </span>
+                  <span className="font-serif-display text-xl sm:text-2xl text-espresso tracking-wide">
+                    {it.value}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
