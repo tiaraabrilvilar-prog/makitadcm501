@@ -116,7 +116,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative pt-28 pb-0 overflow-hidden bg-espresso text-cream lg:min-h-[56.25vw] flex flex-col justify-center"
+      className="relative pt-28 pb-0 overflow-hidden bg-cream-deep text-espresso lg:min-h-[56.25vw] flex flex-col justify-center"
     >
       {/* Pro background: subtle grid */}
       <div
@@ -125,23 +125,23 @@ function Hero() {
           backgroundImage:
             "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
           backgroundSize: "72px 72px",
-          color: "var(--cream)",
+          color: "var(--espresso)",
         }}
       />
       {/* Diagonal accent line */}
-      <div className="absolute inset-y-0 left-1/2 w-px bg-cream/10 pointer-events-none hidden lg:block" />
+      <div className="absolute inset-y-0 left-1/2 w-px bg-espresso/10 pointer-events-none hidden lg:block" />
 
       {/* Editorial corner marks */}
-      <div className="absolute top-24 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-cream/45 hidden sm:block">
+      <div className="absolute top-24 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/45 hidden sm:block">
         N.º 001 — Edición DCM501
       </div>
-      <div className="absolute top-24 right-5 sm:right-8 font-mono text-[10px] uppercase tracking-[0.3em] text-cream/45 hidden sm:block">
+      <div className="absolute top-24 right-5 sm:right-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/45 hidden sm:block">
         Makita · MMXXVI
       </div>
-      <div className="absolute bottom-5 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-cream/40 hidden sm:block">
+      <div className="absolute bottom-5 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/40 hidden sm:block">
         Café · Obra · 18V
       </div>
-      <div className="absolute bottom-5 right-5 sm:right-8 font-mono text-[10px] uppercase tracking-[0.3em] text-cream/40 hidden sm:block">
+      <div className="absolute bottom-5 right-5 sm:right-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/40 hidden sm:block">
         Scroll ↓
       </div>
 
@@ -150,8 +150,8 @@ function Hero() {
           {/* Image */}
           <div className="relative w-full flex items-center justify-center order-1 lg:order-2">
             <div className="relative aspect-square max-w-md w-full sm:max-w-lg">
-              <div className="absolute inset-8 rounded-full border border-cream/15" />
-              <div className="absolute inset-20 rounded-full border border-cream/10" />
+              <div className="absolute inset-8 rounded-full border border-espresso/15" />
+              <div className="absolute inset-20 rounded-full border border-espresso/10" />
               <img
                 src={heroImg}
                 alt="Makita DCM501"
@@ -162,26 +162,26 @@ function Hero() {
 
           {/* Headline */}
           <div className="text-center lg:text-left order-2 lg:order-1">
-            <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-cream/30 text-cream/80 font-mono text-[11px] uppercase tracking-[0.25em]">
+            <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-espresso/30 text-espresso/80 font-mono text-[11px] uppercase tracking-[0.25em]">
               <span className="block h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
               Nueva en obra · 18V LXT
             </div>
 
-            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem]">
+            <h1 className="font-serif-display text-espresso leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem]">
               CAFÉ <span className="text-primary">SIN</span><br />
               ENCHUFE.<br />
               <span className="text-mocha">CAFÉ DE OBRA.</span>
             </h1>
 
             <div className="mt-8 flex flex-col lg:items-start items-center gap-6 max-w-xl mx-auto lg:mx-0">
-              <p className="text-base sm:text-lg text-cream/75 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-espresso/75 leading-relaxed font-light">
                 La <strong className="text-primary font-semibold">DCM501</strong> corre con la
                 misma batería que tu taladro. Sin cables, sin filtros de papel,
                 sin café frío.
               </p>
               <a
                 href="#versions"
-                className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-cream transition-colors whitespace-nowrap uppercase tracking-wider"
+                className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors whitespace-nowrap uppercase tracking-wider"
               >
                 Usá tus baterías acá
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -298,14 +298,14 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="py-24 sm:py-32 bg-cream-deep/60 lg:min-h-[56.25vw] flex items-center">
+    <section id="features" className="py-14 sm:py-16 bg-cream-deep/60 lg:min-h-[35vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
               Detalles
             </p>
-            <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] text-espresso max-w-2xl">
+            <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.02] text-espresso max-w-2xl">
               SEIS RAZONES,<br /><span className="text-terracotta">UNA SOLA TAZA.</span>
             </h2>
           </div>
@@ -317,12 +317,12 @@ function Features() {
 
         <ol className="divide-y divide-espresso/20 border-y border-espresso/20">
           {items.map((it) => (
-            <li key={it.n} className="group grid grid-cols-12 gap-4 py-7 sm:py-9 items-baseline hover:bg-cream transition-colors px-2">
+            <li key={it.n} className="group grid grid-cols-12 gap-4 py-5 sm:py-6 items-baseline hover:bg-cream transition-colors px-2">
               <span className="col-span-2 sm:col-span-1 font-mono text-sm text-terracotta">{it.n}</span>
-              <h3 className="col-span-10 sm:col-span-4 font-serif-display text-2xl sm:text-4xl text-espresso leading-tight tracking-wide">
+              <h3 className="col-span-10 sm:col-span-4 font-serif-display text-xl sm:text-2xl text-espresso leading-tight tracking-wide">
                 {it.title}
               </h3>
-              <p className="col-span-12 sm:col-span-6 sm:col-start-7 text-espresso-soft text-base sm:text-lg leading-relaxed">
+              <p className="col-span-12 sm:col-span-6 sm:col-start-7 text-espresso-soft text-sm sm:text-base leading-relaxed">
                 {it.body}
               </p>
             </li>
@@ -348,13 +348,13 @@ function Parts() {
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
 
   return (
-    <section id="parts" className="py-24 sm:py-32 bg-espresso text-cream lg:min-h-[56.25vw] flex items-center">
+    <section id="parts" className="py-24 sm:py-32 bg-cream-deep text-espresso lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-          <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-cream max-w-3xl tracking-wide">
+          <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-espresso max-w-3xl tracking-wide">
             PARTES DE<br />LA CAFETERA
           </h2>
-          <p className="max-w-sm text-cream/65 text-sm sm:text-base">
+          <p className="max-w-sm text-espresso/65 text-sm sm:text-base">
             Tocá los puntos amarillos para conocer cada parte.
           </p>
         </div>
@@ -384,7 +384,7 @@ function Parts() {
                       className={`block rounded-full transition-all ${
                         isActive
                           ? "h-5 w-5 bg-primary ring-4 ring-primary/30"
-                          : "h-4 w-4 bg-cream/90 group-hover:bg-primary"
+                          : "h-4 w-4 bg-espresso/90 group-hover:bg-primary"
                       }`}
                     />
                     {isActive && (
@@ -401,10 +401,10 @@ function Parts() {
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary mb-4">
               {String(hotspots.findIndex((h) => h.id === active) + 1).padStart(2, "0")} / {String(hotspots.length).padStart(2, "0")}
             </p>
-            <h3 className="font-serif-display text-5xl sm:text-6xl text-cream tracking-wide leading-none">
+            <h3 className="font-serif-display text-5xl sm:text-6xl text-espresso tracking-wide leading-none">
               {current.name}
             </h3>
-            <p className="mt-3 font-sans text-lg text-cream/70">{current.sub}</p>
+            <p className="mt-3 font-sans text-lg text-espresso/70">{current.sub}</p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               {hotspots.map((h) => (
@@ -414,7 +414,7 @@ function Parts() {
                   className={`font-mono text-[10px] uppercase tracking-[0.25em] px-3 py-2 border transition-colors ${
                     h.id === active
                       ? "border-primary bg-primary text-espresso"
-                      : "border-cream/20 text-cream/60 hover:border-primary/60 hover:text-primary"
+                      : "border-espresso/20 text-espresso/60 hover:border-primary/60 hover:text-primary"
                   }`}
                 >
                   {h.name}
@@ -741,12 +741,12 @@ function Contact() {
 /* ---------- FOOTER ---------- */
 function Footer() {
   return (
-    <footer className="bg-espresso text-cream/80">
+    <footer className="bg-cream-deep text-espresso/80">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8 py-14">
         <div className="grid sm:grid-cols-3 gap-10 items-start">
           <div>
-            <span className="font-serif-display text-3xl text-cream tracking-wide">MAKITA</span>
-            <p className="mt-3 text-sm text-cream/60 max-w-xs">
+            <span className="font-serif-display text-3xl text-espresso tracking-wide">MAKITA</span>
+            <p className="mt-3 text-sm text-espresso/60 max-w-xs">
               DCM501 — Edición editorial. Pieza de comunicación independiente.
             </p>
           </div>
@@ -763,7 +763,7 @@ function Footer() {
             <a href="#" className="hover:text-primary"><Youtube className="h-5 w-5" /></a>
           </div>
         </div>
-        <div className="mt-12 pt-6 border-t border-cream/15 flex flex-wrap justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-cream/50">
+        <div className="mt-12 pt-6 border-t border-espresso/15 flex flex-wrap justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-espresso/50">
           <span>© 2026 Makita · Todos los derechos reservados</span>
           <span className="flex items-center gap-2"><Coffee className="h-3 w-3" /> Hecho con cafeína</span>
         </div>
