@@ -298,14 +298,14 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="py-24 sm:py-32 bg-cream-deep/60 lg:min-h-[56.25vw] flex items-center">
+    <section id="features" className="py-14 sm:py-16 bg-cream-deep/60 lg:min-h-[35vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
               Detalles
             </p>
-            <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] text-espresso max-w-2xl">
+            <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.02] text-espresso max-w-2xl">
               SEIS RAZONES,<br /><span className="text-terracotta">UNA SOLA TAZA.</span>
             </h2>
           </div>
@@ -317,12 +317,12 @@ function Features() {
 
         <ol className="divide-y divide-espresso/20 border-y border-espresso/20">
           {items.map((it) => (
-            <li key={it.n} className="group grid grid-cols-12 gap-4 py-7 sm:py-9 items-baseline hover:bg-cream transition-colors px-2">
+            <li key={it.n} className="group grid grid-cols-12 gap-4 py-5 sm:py-6 items-baseline hover:bg-cream transition-colors px-2">
               <span className="col-span-2 sm:col-span-1 font-mono text-sm text-terracotta">{it.n}</span>
-              <h3 className="col-span-10 sm:col-span-4 font-serif-display text-2xl sm:text-4xl text-espresso leading-tight tracking-wide">
+              <h3 className="col-span-10 sm:col-span-4 font-serif-display text-xl sm:text-2xl text-espresso leading-tight tracking-wide">
                 {it.title}
               </h3>
-              <p className="col-span-12 sm:col-span-6 sm:col-start-7 text-espresso-soft text-base sm:text-lg leading-relaxed">
+              <p className="col-span-12 sm:col-span-6 sm:col-start-7 text-espresso-soft text-sm sm:text-base leading-relaxed">
                 {it.body}
               </p>
             </li>
@@ -348,13 +348,13 @@ function Parts() {
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
 
   return (
-    <section id="parts" className="py-24 sm:py-32 bg-espresso text-cream lg:min-h-[56.25vw] flex items-center">
+    <section id="parts" className="py-24 sm:py-32 bg-cream-deep text-espresso lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-          <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-cream max-w-3xl tracking-wide">
+          <h2 className="font-serif-display text-5xl sm:text-7xl leading-[0.95] text-espresso max-w-3xl tracking-wide">
             PARTES DE<br />LA CAFETERA
           </h2>
-          <p className="max-w-sm text-cream/65 text-sm sm:text-base">
+          <p className="max-w-sm text-espresso/65 text-sm sm:text-base">
             Tocá los puntos amarillos para conocer cada parte.
           </p>
         </div>
@@ -384,7 +384,7 @@ function Parts() {
                       className={`block rounded-full transition-all ${
                         isActive
                           ? "h-5 w-5 bg-primary ring-4 ring-primary/30"
-                          : "h-4 w-4 bg-cream/90 group-hover:bg-primary"
+                          : "h-4 w-4 bg-espresso/90 group-hover:bg-primary"
                       }`}
                     />
                     {isActive && (
@@ -401,10 +401,10 @@ function Parts() {
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary mb-4">
               {String(hotspots.findIndex((h) => h.id === active) + 1).padStart(2, "0")} / {String(hotspots.length).padStart(2, "0")}
             </p>
-            <h3 className="font-serif-display text-5xl sm:text-6xl text-cream tracking-wide leading-none">
+            <h3 className="font-serif-display text-5xl sm:text-6xl text-espresso tracking-wide leading-none">
               {current.name}
             </h3>
-            <p className="mt-3 font-sans text-lg text-cream/70">{current.sub}</p>
+            <p className="mt-3 font-sans text-lg text-espresso/70">{current.sub}</p>
 
             <div className="mt-8 flex flex-wrap gap-2">
               {hotspots.map((h) => (
@@ -414,7 +414,7 @@ function Parts() {
                   className={`font-mono text-[10px] uppercase tracking-[0.25em] px-3 py-2 border transition-colors ${
                     h.id === active
                       ? "border-primary bg-primary text-espresso"
-                      : "border-cream/20 text-cream/60 hover:border-primary/60 hover:text-primary"
+                      : "border-espresso/20 text-espresso/60 hover:border-primary/60 hover:text-primary"
                   }`}
                 >
                   {h.name}
@@ -741,12 +741,12 @@ function Contact() {
 /* ---------- FOOTER ---------- */
 function Footer() {
   return (
-    <footer className="bg-espresso text-cream/80">
+    <footer className="bg-cream-deep text-espresso/80">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8 py-14">
         <div className="grid sm:grid-cols-3 gap-10 items-start">
           <div>
-            <span className="font-serif-display text-3xl text-cream tracking-wide">MAKITA</span>
-            <p className="mt-3 text-sm text-cream/60 max-w-xs">
+            <span className="font-serif-display text-3xl text-espresso tracking-wide">MAKITA</span>
+            <p className="mt-3 text-sm text-espresso/60 max-w-xs">
               DCM501 — Edición editorial. Pieza de comunicación independiente.
             </p>
           </div>
@@ -763,7 +763,7 @@ function Footer() {
             <a href="#" className="hover:text-primary"><Youtube className="h-5 w-5" /></a>
           </div>
         </div>
-        <div className="mt-12 pt-6 border-t border-cream/15 flex flex-wrap justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-cream/50">
+        <div className="mt-12 pt-6 border-t border-espresso/15 flex flex-wrap justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-espresso/50">
           <span>© 2026 Makita · Todos los derechos reservados</span>
           <span className="flex items-center gap-2"><Coffee className="h-3 w-3" /> Hecho con cafeína</span>
         </div>
