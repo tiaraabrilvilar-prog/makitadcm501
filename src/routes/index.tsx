@@ -682,9 +682,9 @@ function CTA() {
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{ filter: "grayscale(100%) contrast(1.1) brightness(0.55)" }}
       />
-      <div className="absolute inset-0 bg-[#3a9e7a] mix-blend-multiply opacity-70 pointer-events-none" />
-      <div className="absolute inset-0 bg-[#7aeebb] mix-blend-screen opacity-35 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-black/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#0f4d45] mix-blend-multiply opacity-80 pointer-events-none" />
+      <div className="absolute inset-0 bg-[#2dd4bf] mix-blend-screen opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/60 pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center">
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-cream/70 mb-8">
