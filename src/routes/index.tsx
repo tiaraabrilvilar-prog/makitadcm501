@@ -687,13 +687,16 @@ function CTA() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/60 pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center">
-        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-cream/70 mb-8">
+        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/90 mb-8">
           Una sola cosa más
         </p>
-        <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-8xl leading-[0.95] tracking-wide">
-          NO VUELVAS<br />A TOMAR CAFÉ <span className="text-white">FRÍO</span>.
+        <h2
+          className="font-serif-display text-4xl sm:text-6xl lg:text-8xl leading-[0.95] tracking-wide text-white"
+          style={{ textShadow: "0 2px 20px rgba(0,0,0,0.6), 0 4px 40px rgba(0,0,0,0.4)" }}
+        >
+          NO VUELVAS<br />A TOMAR CAFÉ <span className="text-primary">FRÍO</span>.
         </h2>
-        <p className="mt-8 text-lg text-cream/85 max-w-xl mx-auto">
+        <p className="mt-8 text-lg text-white/95 max-w-xl mx-auto" style={{ textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}>
           Llevá la potencia de Makita a tu taza. La DCM501 te espera.
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
@@ -701,7 +704,7 @@ function CTA() {
             Quiero mi Makita
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
-          <a href="#specs" className="inline-flex items-center gap-2 text-sm text-cream/80 underline underline-offset-4 hover:text-cream">
+          <a href="#specs" className="inline-flex items-center gap-2 text-sm text-white/90 underline underline-offset-4 hover:text-white">
             Ver ficha técnica
           </a>
         </div>
