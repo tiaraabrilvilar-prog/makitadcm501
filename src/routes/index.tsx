@@ -116,7 +116,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative pt-28 pb-0 overflow-hidden bg-espresso text-cream lg:min-h-[56.25vw] flex flex-col justify-center"
+      className="relative pt-28 pb-0 overflow-hidden bg-cream-deep text-espresso lg:min-h-[56.25vw] flex flex-col justify-center"
     >
       {/* Pro background: subtle grid */}
       <div
@@ -125,23 +125,23 @@ function Hero() {
           backgroundImage:
             "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
           backgroundSize: "72px 72px",
-          color: "var(--cream)",
+          color: "var(--espresso)",
         }}
       />
       {/* Diagonal accent line */}
-      <div className="absolute inset-y-0 left-1/2 w-px bg-cream/10 pointer-events-none hidden lg:block" />
+      <div className="absolute inset-y-0 left-1/2 w-px bg-espresso/10 pointer-events-none hidden lg:block" />
 
       {/* Editorial corner marks */}
-      <div className="absolute top-24 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-cream/45 hidden sm:block">
+      <div className="absolute top-24 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/45 hidden sm:block">
         N.º 001 — Edición DCM501
       </div>
-      <div className="absolute top-24 right-5 sm:right-8 font-mono text-[10px] uppercase tracking-[0.3em] text-cream/45 hidden sm:block">
+      <div className="absolute top-24 right-5 sm:right-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/45 hidden sm:block">
         Makita · MMXXVI
       </div>
-      <div className="absolute bottom-5 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-cream/40 hidden sm:block">
+      <div className="absolute bottom-5 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/40 hidden sm:block">
         Café · Obra · 18V
       </div>
-      <div className="absolute bottom-5 right-5 sm:right-8 font-mono text-[10px] uppercase tracking-[0.3em] text-cream/40 hidden sm:block">
+      <div className="absolute bottom-5 right-5 sm:right-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/40 hidden sm:block">
         Scroll ↓
       </div>
 
@@ -150,8 +150,8 @@ function Hero() {
           {/* Image */}
           <div className="relative w-full flex items-center justify-center order-1 lg:order-2">
             <div className="relative aspect-square max-w-md w-full sm:max-w-lg">
-              <div className="absolute inset-8 rounded-full border border-cream/15" />
-              <div className="absolute inset-20 rounded-full border border-cream/10" />
+              <div className="absolute inset-8 rounded-full border border-espresso/15" />
+              <div className="absolute inset-20 rounded-full border border-espresso/10" />
               <img
                 src={heroImg}
                 alt="Makita DCM501"
@@ -162,26 +162,26 @@ function Hero() {
 
           {/* Headline */}
           <div className="text-center lg:text-left order-2 lg:order-1">
-            <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-cream/30 text-cream/80 font-mono text-[11px] uppercase tracking-[0.25em]">
+            <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-espresso/30 text-espresso/80 font-mono text-[11px] uppercase tracking-[0.25em]">
               <span className="block h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
               Nueva en obra · 18V LXT
             </div>
 
-            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem]">
+            <h1 className="font-serif-display text-espresso leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem]">
               CAFÉ <span className="text-primary">SIN</span><br />
               ENCHUFE.<br />
               <span className="text-mocha">CAFÉ DE OBRA.</span>
             </h1>
 
             <div className="mt-8 flex flex-col lg:items-start items-center gap-6 max-w-xl mx-auto lg:mx-0">
-              <p className="text-base sm:text-lg text-cream/75 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-espresso/75 leading-relaxed font-light">
                 La <strong className="text-primary font-semibold">DCM501</strong> corre con la
                 misma batería que tu taladro. Sin cables, sin filtros de papel,
                 sin café frío.
               </p>
               <a
                 href="#versions"
-                className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-cream transition-colors whitespace-nowrap uppercase tracking-wider"
+                className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors whitespace-nowrap uppercase tracking-wider"
               >
                 Usá tus baterías acá
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
