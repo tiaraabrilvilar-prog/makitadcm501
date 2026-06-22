@@ -42,37 +42,37 @@
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-/* Construction · Cement & Yellow Theme */
+/* Dark Teal Theme · Matching reference palette */
 :root {
   --radius: 0.25rem;
 
-  --cream: #e7e5e3;
-  --cream-deep: #cfcdcb;
-  --espresso: #1a1a1a;
-  --espresso-soft: #3a3a3a;
-  --terracotta: #ca8a04;
-  --terracotta-deep: #854d0e;
-  --mocha: #6b6b6b;
+  --cream: #0f111a;
+  --cream-deep: #161827;
+  --espresso: #e8e8ec;
+  --espresso-soft: #8b8d9e;
+  --terracotta: #14b8a6;
+  --terracotta-deep: #0d9488;
+  --mocha: #6b7280;
 
-  --background: #e7e5e3;
-  --foreground: #1a1a1a;
-  --card: #ffffff;
-  --card-foreground: #1a1a1a;
-  --popover: #ffffff;
-  --popover-foreground: #1a1a1a;
-  --primary: #facc15;
-  --primary-foreground: #1a1a1a;
-  --secondary: #cfcdcb;
-  --secondary-foreground: #1a1a1a;
-  --muted: #cfcdcb;
-  --muted-foreground: #6b6b6b;
-  --accent: #facc15;
-  --accent-foreground: #1a1a1a;
-  --destructive: #b3261e;
-  --destructive-foreground: #e7e5e3;
-  --border: rgba(26, 26, 26, 0.14);
-  --input: rgba(26, 26, 26, 0.2);
-  --ring: #facc15;
+  --background: #0f111a;
+  --foreground: #e8e8ec;
+  --card: #161827;
+  --card-foreground: #e8e8ec;
+  --popover: #161827;
+  --popover-foreground: #e8e8ec;
+  --primary: #14b8a6;
+  --primary-foreground: #0f111a;
+  --secondary: #1a1c2e;
+  --secondary-foreground: #e8e8ec;
+  --muted: #1a1c2e;
+  --muted-foreground: #8b8d9e;
+  --accent: #14b8a6;
+  --accent-foreground: #0f111a;
+  --destructive: #ef4444;
+  --destructive-foreground: #e8e8ec;
+  --border: rgba(232, 232, 236, 0.1);
+  --input: rgba(232, 232, 236, 0.15);
+  --ring: #14b8a6;
 }
 
 .dark {
