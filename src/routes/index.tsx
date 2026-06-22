@@ -141,7 +141,7 @@ function Hero() {
         Scroll ↓
       </div>
 
-      <div className="relative mx-auto max-w-[140', 1400px] px-5 sm:px-8 w-full">
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-10">
           {/* Image */}
           <div className="relative w-full flex items-center justify-center order-1 lg:order-2">
