@@ -192,10 +192,10 @@ function Hero() {
                 sin café frío.
               </p>
               <a
-                href="#versions"
+                href="#parts"
                 className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors whitespace-nowrap uppercase tracking-wider"
               >
-                Usá tus baterías acá
+                potencia tus mañanas
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
