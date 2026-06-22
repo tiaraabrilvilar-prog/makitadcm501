@@ -216,33 +216,33 @@ function Marquee() {
 function Story() {
   const { ref, visible } = useInView(0.1);
   return (
-    <section id="story" ref={ref} className="py-24 sm:py-32 lg:min-h-[56.25vw] flex items-center">
+    <section id="story" ref={ref} className="py-16 sm:py-20 lg:min-h-[50vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-          <div className="lg:col-span-5 lg:sticky lg:top-28 self-start">
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-6">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
               Historia
             </p>
-            <h2 className="font-serif-display text-5xl sm:text-6xl leading-[1.02] text-espresso">
+            <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.02] text-espresso">
               UNA HERRAMIENTA<br />QUE TAMBIÉN <span className="text-terracotta">DESPIERTA</span>.
             </h2>
-            <div className={`mt-8 transition-all duration-700 ${visible ? "opacity-100" : "opacity-0"}`}>
+            <div className={`mt-6 transition-all duration-700 ${visible ? "opacity-100" : "opacity-0"}`}>
               <img
                 src={constructionImage}
                 alt="DCM501 en obra"
                 className="w-full rounded-sm border border-espresso/10 grayscale-[20%]"
                 loading="lazy"
               />
-              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">
+              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">
                 ↑ DCM501 en obra · Mendoza, 2025
               </p>
             </div>
           </div>
 
-          <div className="lg:col-span-7 lg:col-start-7 space-y-10 text-lg text-espresso-soft leading-[1.7]">
-            <p className="font-serif-display text-3xl sm:text-4xl text-espresso leading-snug tracking-wide">
-              "EL CAFÉ DEL TERMO SE ENFRÍA A LAS DOS HORAS. EL INSTANTÁNEO NUNCA FUE UNA OPCIÓN.
-              Y LOS ENCHUFES EN LA OBRA SON UNA UTOPÍA."
+          <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-base text-espresso-soft leading-[1.7]">
+            <p className="font-serif-display text-2xl sm:text-3xl text-espresso leading-snug tracking-wide">
+              "El café del termo se enfría a las dos horas. El instantáneo nunca fue una opción.
+              Y los enchufes en la obra son una utopía."
             </p>
             <p>
               Por eso Makita hizo lo que nadie esperaba de una marca de herramientas: diseñó una
@@ -772,11 +772,52 @@ function Footer() {
   );
 }
 
+/* ---------- EMPATHY ---------- */
+function Empathy() {
+  const pains = [
+    "¿Cansado del café tibio de termo después de unas horas?",
+    "¿Perdés tiempo buscando un enchufe en la obra o el camping?",
+    "¿El café instantáneo ya no es una opción para vos?",
+  ];
+  return (
+    <section className="py-16 sm:py-20 bg-cream text-espresso">
+      <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
+        <div className="text-center mb-10">
+          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-3">
+            Empatía
+          </p>
+          <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.05] text-espresso tracking-wide">
+            Te entendemos
+          </h2>
+          <p className="mt-4 max-w-xl mx-auto text-espresso-soft">
+            Antes de mostrarte la solución, sabemos que estos dolores te suenan familiares.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-3 gap-4">
+          {pains.map((p, i) => (
+            <div
+              key={i}
+              className="border border-espresso/15 rounded-sm p-6 sm:p-8 bg-cream-deep/40 hover:border-terracotta/30 transition-colors"
+            >
+              <span className="font-mono text-xs text-terracotta tracking-wider">0{i + 1}</span>
+              <p className="mt-3 font-serif-display text-lg sm:text-xl text-espresso leading-snug tracking-wide">
+                {p}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-cream text-espresso">
       <Navbar />
       <Hero />
+      <Empathy />
       <Marquee />
       <Story />
       <Features />
