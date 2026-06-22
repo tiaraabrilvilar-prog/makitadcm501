@@ -118,18 +118,14 @@ function Hero() {
       id="top"
       className="relative pt-28 pb-0 overflow-hidden bg-cream-deep text-espresso lg:min-h-[56.25vw] flex flex-col justify-center"
     >
-      {/* Pro background: subtle grid */}
+      {/* Studio ambient light — warm spotlight behind product */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.07]"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
-          color: "var(--espresso)",
+          background:
+            "radial-gradient(circle at 70% 45%, rgba(20,184,166,0.12) 0%, transparent 55%), radial-gradient(circle at 30% 60%, rgba(20,184,166,0.06) 0%, transparent 45%)",
         }}
       />
-      {/* Diagonal accent line */}
-      <div className="absolute inset-y-0 left-1/2 w-px bg-espresso/10 pointer-events-none hidden lg:block" />
 
       {/* Editorial corner marks */}
       <div className="absolute top-24 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/45 hidden sm:block">
@@ -145,17 +141,33 @@ function Hero() {
         Scroll ↓
       </div>
 
-      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full">
+      <div className="relative mx-auto max-w-[140', 1400px] px-5 sm:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-10">
           {/* Image */}
           <div className="relative w-full flex items-center justify-center order-1 lg:order-2">
             <div className="relative aspect-square max-w-md w-full sm:max-w-lg">
-              <div className="absolute inset-8 rounded-full border border-espresso/15" />
-              <div className="absolute inset-20 rounded-full border border-espresso/10" />
+              {/* Studio floor shadow */}
+              <div
+                className="absolute bottom-[8%] left-1/2 -translate-x-1/2 w-[70%] h-[12%] rounded-[50%] pointer-events-none"
+                style={{
+                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, transparent 80%)",
+                  filter: "blur(14px)",
+                }}
+              />
+              {/* Soft rim light behind product */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: "radial-gradient(circle at 50% 55%, rgba(20,184,166,0.15) 0%, transparent 60%)",
+                }}
+              />
               <img
                 src={heroImg}
                 alt="Makita DCM501"
                 className="relative z-10 w-full h-full object-contain animate-float"
+                style={{
+                  filter: "drop-shadow(0 30px 50px rgba(0,0,0,0.5)) drop-shadow(0 10px 20px rgba(0,0,0,0.3))",
+                }}
               />
             </div>
           </div>
