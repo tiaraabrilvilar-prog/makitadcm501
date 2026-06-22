@@ -555,10 +555,10 @@ function Versions() {
   ];
 
   return (
-    <section id="versions" className="py-16 sm:py-24 lg:py-32 lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
-        <div className="flex items-end justify-between mb-12">
-          <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl text-espresso leading-[1.02] tracking-wide">
+    <section id="versions" className="py-12 sm:py-16 lg:py-20 flex items-center">
+      <div className="mx-auto max-w-[1200px] w-full px-5 sm:px-8">
+        <div className="flex items-end justify-between mb-8">
+          <h2 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl text-espresso leading-[1.02] tracking-wide">
             DOS <span className="text-terracotta">VERSIONES</span>.
           </h2>
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-mocha hidden sm:block">
@@ -566,10 +566,10 @@ function Versions() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-10">
           {versions.map((v, i) => (
             <article key={v.code} className="group">
-              <div className="aspect-[4/5] bg-cream-deep rounded-sm overflow-hidden flex items-center justify-center relative">
+              <div className="aspect-[4/3] bg-cream-deep rounded-sm overflow-hidden flex items-center justify-center relative">
                 <span className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">
                   N.º {String(i + 1).padStart(2, "0")} · {v.code}
                 </span>
@@ -577,14 +577,14 @@ function Versions() {
                   src={v.img}
                   alt={v.name}
                   loading="lazy"
-                  className="w-2/3 transition-transform duration-500 group-hover:scale-105"
+                  className="w-1/2 transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="mt-6 flex items-baseline justify-between gap-4">
-                <h3 className="font-serif-display text-3xl sm:text-4xl text-espresso tracking-wide">{v.name}</h3>
+              <div className="mt-4 flex items-baseline justify-between gap-4">
+                <h3 className="font-serif-display text-2xl sm:text-3xl text-espresso tracking-wide">{v.name}</h3>
                 <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-terracotta">{v.tag}</span>
               </div>
-              <p className="mt-3 text-espresso-soft leading-relaxed">{v.body}</p>
+              <p className="mt-2 text-sm text-espresso-soft leading-relaxed">{v.body}</p>
             </article>
           ))}
         </div>
