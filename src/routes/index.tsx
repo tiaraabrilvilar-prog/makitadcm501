@@ -220,13 +220,7 @@ function Story() {
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-5">
-            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
-              Historia
-            </p>
-            <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.02] text-espresso">
-              UNA HERRAMIENTA<br />QUE TAMBIÉN <span className="text-terracotta">DESPIERTA</span>.
-            </h2>
-            <div className={`mt-6 transition-all duration-700 ${visible ? "opacity-100" : "opacity-0"}`}>
+            <div className={`transition-all duration-700 ${visible ? "opacity-100" : "opacity-0"}`}>
               <img
                 src={constructionImage}
                 alt="DCM501 en obra"
@@ -239,21 +233,22 @@ function Story() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-base text-espresso-soft leading-[1.7]">
+          <div className="lg:col-span-7 space-y-6 text-base text-espresso-soft leading-[1.7]">
+            <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta">
+              Historia
+            </p>
+            <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.02] text-espresso">
+              UNA HERRAMIENTA<br />QUE TAMBIÉN <span className="text-terracotta">DESPIERTA</span>.
+            </h2>
             <p className="font-serif-display text-2xl sm:text-3xl text-espresso leading-snug tracking-wide">
               "El café del termo se enfría a las dos horas. El instantáneo nunca fue una opción.
               Y los enchufes en la obra son una utopía."
             </p>
             <p>
-              Por eso Makita hizo lo que nadie esperaba de una marca de herramientas: diseñó una
-              cafetera. No una cualquiera —una que corre con la misma batería de iones de litio
-              que ya tenés cargando en el banco, 12V CXT o 18V LXT.
+              Por eso Makita hizo lo que nadie esperaba de una marca de herramientas: diseñó una cafetera. No una cualquiera —una que corre con la misma batería de iones de litio que ya tenés cargando en el banco, 12V CXT o 18V LXT.
             </p>
             <p>
-              Calienta el agua a <strong className="text-espresso">~90 °C</strong> en cinco minutos,
-              filtra <strong className="text-espresso">240 ml</strong> a través de una malla
-              metálica permanente y los sirve directo en una taza de acero que viene incluida.
-              Sin papel, sin cables, sin termos resignados.
+              Calienta el agua a ~90 °C en cinco minutos, filtra 240 ml a través de una malla metálica permanente y los sirve directo en una taza de acero que viene incluida. Sin papel, sin cables, sin termos resignados.
             </p>
           </div>
         </div>
