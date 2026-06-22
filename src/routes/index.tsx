@@ -606,7 +606,7 @@ function CTA() {
         <div className="absolute top-10 left-10 font-serif-display text-[18rem] leading-none">C</div>
         <div className="absolute bottom-10 right-10 font-serif-display text-[18rem] leading-none">É</div>
       </div>
-      <div className="relative mx-auto max-w-[1100px] px-5 sm:px-8 text-center">
+      <div className="relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center">
         <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-cream/70 mb-8">
           Una sola cosa más
         </p>
