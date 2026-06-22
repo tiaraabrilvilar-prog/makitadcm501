@@ -12,6 +12,17 @@ import {
   Phone,
   Mail,
   MapPin,
+  Droplet,
+  Clock,
+  Thermometer,
+  Battery,
+  Filter,
+  Wifi,
+  Weight,
+  Ruler,
+  Box,
+  Gauge,
+  Layers,
 } from "lucide-react";
 import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
