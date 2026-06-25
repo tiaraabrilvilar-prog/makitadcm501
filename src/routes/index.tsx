@@ -86,7 +86,7 @@ function Navbar() {
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">/ DCM501</span>
         </a>
         <div className="hidden md:flex items-center gap-10 font-mono text-[11px] uppercase tracking-[0.2em]">
-          <a href="#story" className="text-espresso/70 hover:text-terracotta transition-colors">Origen</a>
+          <a href="#story" className="text-espresso/70 hover:text-terracotta transition-colors">Contexto</a>
           <a href="#features" className="text-espresso/70 hover:text-terracotta transition-colors">Detalles</a>
           <a href="#parts" className="text-espresso/70 hover:text-terracotta transition-colors">Partes</a>
           <a href="#specs" className="text-espresso/70 hover:text-terracotta transition-colors">Ficha</a>
