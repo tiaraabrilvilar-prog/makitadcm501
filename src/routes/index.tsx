@@ -162,7 +162,7 @@ function Hero() {
               <img
                 src={heroImg}
                 alt="Makita DCM501"
-                className="relative z-10 w-full h-full object-contain animate-float"
+                className="relative z-10 w-full h-full object-contain animate-float scale-x-[-1]"
                 style={{
                   filter: "drop-shadow(0 30px 50px rgba(0,0,0,0.5)) drop-shadow(0 10px 20px rgba(0,0,0,0.3))",
                 }}
@@ -234,7 +234,7 @@ function Story() {
               <img
                 src={constructionImage}
                 alt="DCM501 en obra"
-                className="w-full rounded-sm border border-espresso/10 grayscale-[20%]"
+                className="w-full max-h-[45vh] sm:max-h-[50vh] object-cover rounded-sm border border-espresso/10 grayscale-[20%]"
                 loading="lazy"
               />
               <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">
@@ -400,7 +400,7 @@ function Parts() {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-7 relative mx-auto w-full max-w-[520px]">
+          <div className="lg:col-span-7 relative mx-auto w-full max-w-[420px]">
             <div ref={containerRef} className="relative aspect-[807/1000] w-full overflow-hidden select-none">
               <img
                 src={anatomyImg}
@@ -420,14 +420,14 @@ function Parts() {
                     className="absolute -translate-x-1/2 -translate-y-1/2 group touch-none"
                   >
                     <span
-                      className={`block rounded-full transition-all ${
+                      className={`block rounded-full transition-all shadow-lg ${
                         isActive
-                          ? "h-5 w-5 bg-primary ring-4 ring-primary/30"
-                          : "h-4 w-4 bg-espresso/90 group-hover:bg-primary"
+                          ? "h-5 w-5 bg-primary ring-4 ring-white/40 shadow-primary/50"
+                          : "h-4 w-4 bg-white/90 ring-2 ring-primary/50 group-hover:bg-primary group-hover:ring-white/60"
                       }`}
                     />
                     {isActive && (
-                      <span className="absolute left-1/2 top-1/2 -z-10 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/40 animate-ping" />
+                      <span className="absolute left-1/2 top-1/2 -z-10 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/30 animate-ping" />
                     )}
                   </button>
                 );
