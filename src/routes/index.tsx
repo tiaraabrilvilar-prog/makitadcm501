@@ -341,16 +341,58 @@ function Features() {
 /* ---------- PARTS (interactive anatomy) ---------- */
 function Parts() {
   const initialHotspots = [
-    { id: "manija", x: 38, y: 5, name: "Manija", sub: "de transporte" },
-    { id: "tanque", x: 50, y: 28, name: "Tanque", sub: "removible · 240 ml" },
-    { id: "filtro", x: 91.5, y: 40.3, name: "Filtro", sub: "malla permanente" },
-    { id: "taza", x: 86.1, y: 68.3, name: "Taza", sub: "acero inoxidable" },
-    { id: "bateria", x: 28, y: 72, name: "Puerto", sub: "batería 18V LXT" },
+    {
+      id: "manija",
+      x: 38,
+      y: 5,
+      name: "Manija",
+      sub: "de transporte",
+      desc: "Agarre ergonómico y antideslizante que permite llevar la cafetera de un lugar a otro de la obra sin esfuerzo.",
+    },
+    {
+      id: "tanque",
+      x: 50,
+      y: 28,
+      name: "Tanque",
+      sub: "removible · 240 ml",
+      desc: "Recipiente removible de 240 ml que se desmonta fácilmente para llenar y limpiar bajo la canilla.",
+    },
+    {
+      id: "filtro",
+      x: 91.5,
+      y: 40.3,
+      name: "Filtro",
+      sub: "malla permanente",
+      desc: "Malla metálica fina y permanente que filtra el café sin necesidad de papeles desechables.",
+    },
+    {
+      id: "taza",
+      x: 86.1,
+      y: 68.3,
+      name: "Taza",
+      sub: "acero inoxidable",
+      desc: "Vaso térmico de acero inoxidable de 90 mm con tapa, incluido y calzado al portafiltros.",
+    },
+    {
+      id: "bateria",
+      x: 28,
+      y: 72,
+      name: "Puerto",
+      sub: "batería 18V LXT",
+      desc: "Base compatible con baterías Makita CXT 12V y LXT 18V para máxima versatilidad en obra.",
+    },
   ];
-  const [hotspots, setHotspots] = useState(initialHotspots);
+  const [hotspots] = useState(initialHotspots);
   const [active, setActive] = useState<string>("manija");
+  const [showDesc, setShowDesc] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const current = hotspots.find((h) => h.id === active) ?? hotspots[0];
+
+  useEffect(() => {
+    setShowDesc(false);
+    const t = setTimeout(() => setShowDesc(true), 50);
+    return () => clearTimeout(t);
+  }, [active]);
 
   return (
     <section id="parts" className="py-16 sm:py-24 lg:py-32 bg-cream-deep text-espresso lg:min-h-[56.25vw] flex items-center">
@@ -360,7 +402,6 @@ function Parts() {
             PARTES DE<br />LA CAFETERA
           </h2>
         </div>
-
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7 relative mx-auto w-full max-w-[520px]">
@@ -402,7 +443,6 @@ function Parts() {
           </div>
 
           <div className="lg:col-span-5">
-
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary mb-4">
               {String(hotspots.findIndex((h) => h.id === active) + 1).padStart(2, "0")} / {String(hotspots.length).padStart(2, "0")}
             </p>
@@ -410,6 +450,15 @@ function Parts() {
               {current.name}
             </h3>
             <p className="mt-3 font-sans text-lg text-espresso/70">{current.sub}</p>
+            <div
+              className={`mt-6 transition-all duration-500 ${
+                showDesc ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+              }`}
+            >
+              <p className="text-sm sm:text-base text-espresso-soft leading-relaxed border-l-2 border-primary pl-4">
+                {current.desc}
+              </p>
+            </div>
 
             <div className="mt-8 flex flex-wrap gap-2">
               {hotspots.map((h) => (
