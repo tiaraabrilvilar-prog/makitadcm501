@@ -314,10 +314,6 @@ function Features() {
               SEIS RAZONES,<br /><span className="text-terracotta">UNA SOLA TAZA.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-espresso-soft">
-            Cada decisión de diseño existe para que el café aparezca donde el café no
-            debería ser posible.
-          </p>
         </div>
 
         <ol className="divide-y divide-espresso/20 border-y border-espresso/20">
