@@ -166,7 +166,7 @@ function Hero() {
                 sin café frío.
               </p>
               <a
-                href="#parts"
+                href="#story"
                 className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors whitespace-nowrap uppercase tracking-wider"
               >
                 potencia tus mañanas
@@ -210,7 +210,7 @@ function Story() {
               <img
                 src={constructionImage}
                 alt="DCM501 en obra"
-                className="w-full max-h-[45vh] sm:max-h-[50vh] object-cover rounded-sm border border-espresso/10 grayscale-[20%]"
+                className="w-full object-contain rounded-sm border border-espresso/10 grayscale-[20%]"
                 loading="lazy"
               />
             </div>
