@@ -562,7 +562,7 @@ function Versions() {
     {
       name: "AZUL TURQUESA",
       code: "DCM501Z",
-      tag: "Clásico de catálogo",
+      tag: "Clásico",
       img: tealVersion,
       body: "El color institucional de Makita. La versión más fácil de conseguir, la que vas a ver en cualquier ferretería seria.",
     },
@@ -571,7 +571,7 @@ function Versions() {
       code: "DCM501ZO",
       tag: "Edición Lifestyle",
       img: oliveVersion,
-      body: 'Edición especial del catálogo "Lifestyle" de Makita. Estética táctica, pensada para camping y expediciones. La "O" final viene de Olive.',
+      body: 'Edición especial del catálogo "Lifestyle" de Makita. Estética táctica, pensada para camping y expediciones.',
     },
   ];
 
