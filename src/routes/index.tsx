@@ -86,7 +86,7 @@ function Navbar() {
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">/ DCM501</span>
         </a>
         <div className="hidden md:flex items-center gap-10 font-mono text-[11px] uppercase tracking-[0.2em]">
-          <a href="#story" className="text-espresso/70 hover:text-terracotta transition-colors">Historia</a>
+          <a href="#story" className="text-espresso/70 hover:text-terracotta transition-colors">Origen</a>
           <a href="#features" className="text-espresso/70 hover:text-terracotta transition-colors">Detalles</a>
           <a href="#parts" className="text-espresso/70 hover:text-terracotta transition-colors">Partes</a>
           <a href="#specs" className="text-espresso/70 hover:text-terracotta transition-colors">Ficha</a>
@@ -101,7 +101,7 @@ function Navbar() {
       </div>
       {open && (
         <div className="md:hidden border-t border-espresso/10 bg-cream/95 px-5 py-5 space-y-4 font-mono text-xs uppercase tracking-[0.2em]">
-          <a href="#story" onClick={() => setOpen(false)} className="block text-espresso/80">Historia</a>
+          <a href="#story" onClick={() => setOpen(false)} className="block text-espresso/80">Origen</a>
           <a href="#features" onClick={() => setOpen(false)} className="block text-espresso/80">Detalles</a>
           <a href="#parts" onClick={() => setOpen(false)} className="block text-espresso/80">Partes</a>
           <a href="#specs" onClick={() => setOpen(false)} className="block text-espresso/80">Ficha</a>
@@ -163,7 +163,7 @@ function Hero() {
           {/* Headline */}
           <div className="text-center lg:text-left order-2 lg:order-1">
             <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-espresso/30 text-espresso/80 font-mono text-[11px] uppercase tracking-[0.25em]">
-              Nueva en obra · 18V LXT
+              Nueva en obra
             </div>
 
             <h1 className="font-serif-display text-espresso leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem]">
@@ -231,11 +231,14 @@ function Story() {
 
           <div className="lg:col-span-7 space-y-6 text-base text-espresso-soft leading-[1.7]">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta">
-              Historia
+              Origen
             </p>
             <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.02] text-espresso">
               UNA HERRAMIENTA<br />QUE TAMBIÉN <span className="text-terracotta">DESPIERTA</span>.
             </h2>
+            <p className="text-lg sm:text-xl text-espresso-soft leading-relaxed max-w-xl">
+              El café del termo se enfría a las dos horas. El instantáneo nunca fue una opción. Y los enchufes en la obra son una utopía.
+            </p>
           </div>
         </div>
       </div>
@@ -497,11 +500,8 @@ function Specs() {
     <section id="specs" className="py-16 sm:py-24 lg:py-32 bg-[#11131f] text-espresso lg:min-h-[56.25vw] flex items-center bg-grid-subtle">
       <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
         <div className="text-center mb-12">
-          <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-terracotta mb-4">
-            Ficha técnica
-          </p>
           <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-wide text-espresso">
-            Especificaciones técnicas
+            Rendimiento y dimensiones
           </h2>
         </div>
 
@@ -703,7 +703,7 @@ function CTA() {
 
       <div className="relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center">
         <h2
-          className="font-serif-display text-4xl sm:text-6xl lg:text-8xl leading-[0.95] tracking-wide text-white"
+          className="font-serif-display text-3xl sm:text-5xl lg:text-6xl leading-[0.95] tracking-wide text-white"
           style={{ textShadow: "0 2px 20px rgba(0,0,0,0.6), 0 4px 40px rgba(0,0,0,0.4)" }}
         >
           Diseñada para que tu energía y tu café nunca se enfríen
