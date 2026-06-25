@@ -236,13 +236,6 @@ function Story() {
             <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.02] text-espresso">
               UNA HERRAMIENTA<br />QUE TAMBIÉN <span className="text-terracotta">DESPIERTA</span>.
             </h2>
-            <p className="font-serif-display text-2xl sm:text-3xl text-espresso leading-snug tracking-wide">
-              "El café del termo se enfría a las dos horas. El instantáneo nunca fue una opción.
-              Y los enchufes en la obra son una utopía."
-            </p>
-            <p>
-              Por eso Makita hizo lo que nadie esperaba de una marca de herramientas: diseñó una cafetera. No una cualquiera —una que corre con la misma batería de iones de litio que ya tenés cargando en el banco, 12V CXT o 18V LXT.
-            </p>
           </div>
         </div>
       </div>
