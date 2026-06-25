@@ -128,16 +128,6 @@ function Hero() {
         }}
       />
 
-      {/* Editorial corner marks */}
-      <div className="absolute top-24 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/45 hidden sm:block">
-        N.º 001 — Edición DCM501
-      </div>
-      <div className="absolute top-24 right-5 sm:right-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/45 hidden sm:block">
-        Makita · MMXXVI
-      </div>
-      <div className="absolute bottom-5 left-5 sm:left-8 font-mono text-[10px] uppercase tracking-[0.3em] text-espresso/40 hidden sm:block">
-        Café · Obra · 18V
-      </div>
 
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-10">
@@ -173,7 +163,6 @@ function Hero() {
           {/* Headline */}
           <div className="text-center lg:text-left order-2 lg:order-1">
             <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-espresso/30 text-espresso/80 font-mono text-[11px] uppercase tracking-[0.25em]">
-              <span className="block h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
               Nueva en obra · 18V LXT
             </div>
 
@@ -237,9 +226,6 @@ function Story() {
                 className="w-full max-h-[45vh] sm:max-h-[50vh] object-cover rounded-sm border border-espresso/10 grayscale-[20%]"
                 loading="lazy"
               />
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">
-                ↑ DCM501 en obra · Mendoza, 2025
-              </p>
             </div>
           </div>
 
@@ -250,13 +236,6 @@ function Story() {
             <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.02] text-espresso">
               UNA HERRAMIENTA<br />QUE TAMBIÉN <span className="text-terracotta">DESPIERTA</span>.
             </h2>
-            <p className="font-serif-display text-2xl sm:text-3xl text-espresso leading-snug tracking-wide">
-              "El café del termo se enfría a las dos horas. El instantáneo nunca fue una opción.
-              Y los enchufes en la obra son una utopía."
-            </p>
-            <p>
-              Por eso Makita hizo lo que nadie esperaba de una marca de herramientas: diseñó una cafetera. No una cualquiera —una que corre con la misma batería de iones de litio que ya tenés cargando en el banco, 12V CXT o 18V LXT.
-            </p>
           </div>
         </div>
       </div>
@@ -300,7 +279,7 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="py-14 sm:py-16 bg-[#0d1615] lg:min-h-[35vw] flex items-center">
+    <section id="features" className="py-14 sm:py-16 bg-[#131520] lg:min-h-[35vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
@@ -583,7 +562,7 @@ function Versions() {
     {
       name: "AZUL TURQUESA",
       code: "DCM501Z",
-      tag: "Clásico de catálogo",
+      tag: "Clásico",
       img: tealVersion,
       body: "El color institucional de Makita. La versión más fácil de conseguir, la que vas a ver en cualquier ferretería seria.",
     },
@@ -592,7 +571,7 @@ function Versions() {
       code: "DCM501ZO",
       tag: "Edición Lifestyle",
       img: oliveVersion,
-      body: 'Edición especial del catálogo "Lifestyle" de Makita. Estética táctica, pensada para camping y expediciones. La "O" final viene de Olive.',
+      body: 'Edición especial del catálogo "Lifestyle" de Makita. Estética táctica, pensada para camping y expediciones.',
     },
   ];
 
@@ -603,18 +582,12 @@ function Versions() {
           <h2 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl text-espresso leading-[1.02] tracking-wide">
             DOS <span className="text-terracotta">VERSIONES</span>.
           </h2>
-          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-mocha hidden sm:block">
-            Elegí tu acabado
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-10">
           {versions.map((v, i) => (
             <article key={v.code} className="group">
               <div className="aspect-[4/3] bg-cream-deep rounded-sm overflow-hidden flex items-center justify-center relative">
-                <span className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">
-                  N.º {String(i + 1).padStart(2, "0")} · {v.code}
-                </span>
                 <img
                   src={v.img}
                   alt={v.name}
@@ -729,14 +702,11 @@ function CTA() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/60 pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center">
-        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/90 mb-8">
-          Una sola cosa más
-        </p>
         <h2
           className="font-serif-display text-4xl sm:text-6xl lg:text-8xl leading-[0.95] tracking-wide text-white"
           style={{ textShadow: "0 2px 20px rgba(0,0,0,0.6), 0 4px 40px rgba(0,0,0,0.4)" }}
         >
-          NO VUELVAS<br />A TOMAR CAFÉ <span className="text-primary">FRÍO</span>.
+          Diseñada para que tu energía y tu café nunca se enfríen
         </h2>
         <p className="mt-8 text-lg text-white/95 max-w-xl mx-auto" style={{ textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}>
           Llevá la potencia de Makita a tu taza. La DCM501 te espera.
