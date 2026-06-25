@@ -37,7 +37,7 @@
   --color-terracotta: var(--terracotta);
   --color-terracotta-deep: var(--terracotta-deep);
   --color-mocha: var(--mocha);
-  --font-serif-display: 'La Femme Makita', 'Bebas Neue', 'Barlow Condensed', sans-serif;
+  --font-serif-display: 'Bebas Neue', 'Barlow Condensed', sans-serif;
   --font-makita: 'La Femme Makita', 'Bebas Neue', 'Barlow Condensed', sans-serif;
   --font-sans: 'Barlow', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
