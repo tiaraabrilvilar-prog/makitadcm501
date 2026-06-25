@@ -226,9 +226,6 @@ function Story() {
                 className="w-full max-h-[45vh] sm:max-h-[50vh] object-cover rounded-sm border border-espresso/10 grayscale-[20%]"
                 loading="lazy"
               />
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">
-                ↑ DCM501 en obra · Mendoza, 2025
-              </p>
             </div>
           </div>
 
