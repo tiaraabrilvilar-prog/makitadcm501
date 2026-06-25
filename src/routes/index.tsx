@@ -257,9 +257,6 @@ function Story() {
             <p>
               Por eso Makita hizo lo que nadie esperaba de una marca de herramientas: diseñó una cafetera. No una cualquiera —una que corre con la misma batería de iones de litio que ya tenés cargando en el banco, 12V CXT o 18V LXT.
             </p>
-            <p>
-              Calienta el agua a ~90 °C en cinco minutos, filtra 240 ml a través de una malla metálica permanente y los sirve directo en una taza de acero que viene incluida. Sin papel, sin cables, sin termos resignados.
-            </p>
           </div>
         </div>
       </div>
