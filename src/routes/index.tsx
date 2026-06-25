@@ -163,7 +163,7 @@ function Hero() {
           {/* Headline */}
           <div className="text-center lg:text-left order-2 lg:order-1">
             <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-espresso/30 text-espresso/80 font-mono text-[11px] uppercase tracking-[0.25em]">
-              Nueva en obra
+              NUEVA EN OBRA
             </div>
 
             <h1 className="font-serif-display text-espresso leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem]">
@@ -499,11 +499,6 @@ function Specs() {
   return (
     <section id="specs" className="py-16 sm:py-24 lg:py-32 bg-[#11131f] text-espresso lg:min-h-[56.25vw] flex items-center bg-grid-subtle">
       <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
-        <div className="text-center mb-12">
-          <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-wide text-espresso">
-            Rendimiento y dimensiones
-          </h2>
-        </div>
 
         {/* Tabs */}
         <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-8 border border-espresso/15 rounded-sm p-1.5 bg-cream/60">
