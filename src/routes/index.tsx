@@ -279,7 +279,7 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="py-14 sm:py-16 bg-[#0d1615] lg:min-h-[35vw] flex items-center">
+    <section id="features" className="py-14 sm:py-16 bg-[#131520] lg:min-h-[35vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
