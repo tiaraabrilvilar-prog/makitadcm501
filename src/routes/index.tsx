@@ -82,7 +82,7 @@ function Navbar() {
     <nav className="fixed top-0 inset-x-0 z-50 bg-cream/80 backdrop-blur-md border-b border-espresso/10">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-4 sm:px-8">
         <a href="#top" className="flex items-baseline gap-2">
-          <span className="font-makita text-3xl leading-none text-espresso tracking-wide">MAKITA</span>
+          <span className="font-makita text-3xl leading-none text-espresso tracking-wide">Makita</span>
           <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">/ DCM501</span>
         </a>
         <div className="hidden md:flex items-center gap-10 font-mono text-[11px] uppercase tracking-[0.2em]">
