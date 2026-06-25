@@ -582,18 +582,12 @@ function Versions() {
           <h2 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl text-espresso leading-[1.02] tracking-wide">
             DOS <span className="text-terracotta">VERSIONES</span>.
           </h2>
-          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-mocha hidden sm:block">
-            Elegí tu acabado
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-10">
           {versions.map((v, i) => (
             <article key={v.code} className="group">
               <div className="aspect-[4/3] bg-cream-deep rounded-sm overflow-hidden flex items-center justify-center relative">
-                <span className="absolute top-4 left-4 font-mono text-[10px] uppercase tracking-[0.25em] text-mocha">
-                  N.º {String(i + 1).padStart(2, "0")} · {v.code}
-                </span>
                 <img
                   src={v.img}
                   alt={v.name}
@@ -708,14 +702,11 @@ function CTA() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/60 pointer-events-none" />
 
       <div className="relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center">
-        <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/90 mb-8">
-          Una sola cosa más
-        </p>
         <h2
           className="font-serif-display text-4xl sm:text-6xl lg:text-8xl leading-[0.95] tracking-wide text-white"
           style={{ textShadow: "0 2px 20px rgba(0,0,0,0.6), 0 4px 40px rgba(0,0,0,0.4)" }}
         >
-          NO VUELVAS<br />A TOMAR CAFÉ <span className="text-primary">FRÍO</span>.
+          Diseñada para que tu energía y tu café nunca se enfríen
         </h2>
         <p className="mt-8 text-lg text-white/95 max-w-xl mx-auto" style={{ textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}>
           Llevá la potencia de Makita a tu taza. La DCM501 te espera.
