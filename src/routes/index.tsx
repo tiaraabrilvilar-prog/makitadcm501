@@ -101,7 +101,7 @@ function Navbar() {
       </div>
       {open && (
         <div className="md:hidden border-t border-espresso/10 bg-cream/95 px-5 py-5 space-y-4 font-mono text-xs uppercase tracking-[0.2em]">
-          <a href="#story" onClick={() => setOpen(false)} className="block text-espresso/80">Origen</a>
+          <a href="#story" onClick={() => setOpen(false)} className="block text-espresso/80">Contexto</a>
           <a href="#features" onClick={() => setOpen(false)} className="block text-espresso/80">Detalles</a>
           <a href="#parts" onClick={() => setOpen(false)} className="block text-espresso/80">Partes</a>
           <a href="#specs" onClick={() => setOpen(false)} className="block text-espresso/80">Ficha</a>
@@ -168,8 +168,8 @@ function Hero() {
 
             <h1 className="font-serif-display text-espresso leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem]">
               CAFÉ <span className="text-primary">SIN</span><br />
-              ENCHUFE.<br />
-              <span className="text-mocha">CAFÉ DE OBRA.</span>
+              ENCHUFE<br />
+              <span className="text-mocha">CAFÉ DE OBRA</span>
             </h1>
 
             <div className="mt-8 flex flex-col lg:items-start items-center gap-6 max-w-xl mx-auto lg:mx-0">
@@ -231,10 +231,10 @@ function Story() {
 
           <div className="lg:col-span-7 space-y-6 text-base text-espresso-soft leading-[1.7]">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta">
-              Origen
+              Contexto
             </p>
             <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.02] text-espresso">
-              UNA HERRAMIENTA<br />QUE TAMBIÉN <span className="text-terracotta">DESPIERTA</span>.
+              UNA HERRAMIENTA<br />QUE TAMBIÉN <span className="text-terracotta">DESPIERTA</span>
             </h2>
             <p className="text-lg sm:text-xl text-espresso-soft leading-relaxed max-w-xl">
               El café del termo se enfría a las dos horas. El instantáneo nunca fue una opción. Y los enchufes en la obra son una utopía.
@@ -290,7 +290,7 @@ function Features() {
               Detalles
             </p>
             <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.02] text-espresso max-w-2xl">
-              SEIS RAZONES,<br /><span className="text-terracotta">UNA SOLA TAZA.</span>
+              SEIS RAZONES,<br /><span className="text-terracotta">UNA SOLA TAZA</span>
             </h2>
           </div>
         </div>
@@ -575,7 +575,7 @@ function Versions() {
       <div className="mx-auto max-w-[1200px] w-full px-5 sm:px-8">
         <div className="flex items-end justify-between mb-8">
           <h2 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl text-espresso leading-[1.02] tracking-wide">
-            DOS <span className="text-terracotta">VERSIONES</span>.
+            DOS <span className="text-terracotta">VERSIONES</span>
           </h2>
         </div>
 
@@ -736,7 +736,7 @@ function Contact() {
               Contacto
             </p>
             <h2 className="font-serif-display text-4xl sm:text-5xl lg:text-7xl leading-[1] text-espresso tracking-wide">
-              ESCRIBINOS.<br /><span className="text-terracotta">TOMAMOS UN CAFÉ.</span>
+              ESCRIBINOS<br /><span className="text-terracotta">TOMAMOS UN CAFÉ</span>
             </h2>
           </div>
           <p className="lg:col-span-5 text-espresso-soft">
