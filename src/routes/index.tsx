@@ -162,7 +162,7 @@ function Hero() {
               <img
                 src={heroImg}
                 alt="Makita DCM501"
-                className="relative z-10 w-full h-full object-contain animate-float"
+                className="relative z-10 w-full h-full object-contain animate-float scale-x-[-1]"
                 style={{
                   filter: "drop-shadow(0 30px 50px rgba(0,0,0,0.5)) drop-shadow(0 10px 20px rgba(0,0,0,0.3))",
                 }}
