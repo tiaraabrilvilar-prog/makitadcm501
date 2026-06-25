@@ -226,7 +226,7 @@ function Marquee() {
 function Story() {
   const { ref, visible } = useInView(0.1);
   return (
-    <section id="story" ref={ref} className="py-16 sm:py-20 lg:min-h-[50vw] flex items-center">
+    <section id="story" ref={ref} className="py-16 sm:py-20 lg:min-h-[50vw] flex items-center bg-[#131520]">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-5">
@@ -303,7 +303,7 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="py-14 sm:py-16 bg-cream-deep/60 lg:min-h-[35vw] flex items-center">
+    <section id="features" className="py-14 sm:py-16 bg-[#0d1615] lg:min-h-[35vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
@@ -395,7 +395,7 @@ function Parts() {
   }, [active]);
 
   return (
-    <section id="parts" className="py-16 sm:py-24 lg:py-32 bg-cream-deep text-espresso lg:min-h-[56.25vw] flex items-center">
+    <section id="parts" className="py-16 sm:py-24 lg:py-32 bg-[#161b27] text-espresso lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="mb-12">
           <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[0.95] text-espresso max-w-3xl tracking-wide">
@@ -522,7 +522,7 @@ function Specs() {
   const current = tabs.find((t) => t.id === active) ?? tabs[0];
 
   return (
-    <section id="specs" className="py-16 sm:py-24 lg:py-32 bg-cream-deep/60 text-espresso lg:min-h-[56.25vw] flex items-center">
+    <section id="specs" className="py-16 sm:py-24 lg:py-32 bg-[#11131f] text-espresso lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
         <div className="text-center mb-12">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-terracotta mb-4">
@@ -604,7 +604,7 @@ function Versions() {
   ];
 
   return (
-    <section id="versions" className="py-12 sm:py-16 lg:py-20 flex items-center">
+    <section id="versions" className="py-12 sm:py-16 lg:py-20 flex items-center bg-cream">
       <div className="mx-auto max-w-[1200px] w-full px-5 sm:px-8">
         <div className="flex items-end justify-between mb-8">
           <h2 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl text-espresso leading-[1.02] tracking-wide">
@@ -661,7 +661,7 @@ function Compatibles() {
   ];
 
   return (
-    <section id="compatibles" className="py-16 sm:py-24 lg:py-32 bg-cream lg:min-h-[56.25vw] flex items-center">
+    <section id="compatibles" className="py-16 sm:py-24 lg:py-32 bg-[#0d1615] lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div>
@@ -770,7 +770,7 @@ function Contact() {
     { icon: MapPin, label: "Dirección", value: "Av. Industrial 1234", note: "Buenos Aires, AR" },
   ];
   return (
-    <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-cream-deep/60 lg:min-h-[56.25vw] flex items-center">
+    <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-[#131520] lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-14">
           <div className="lg:col-span-7">
