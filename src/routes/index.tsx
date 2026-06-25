@@ -449,7 +449,7 @@ function Parts() {
             <h3 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl text-espresso tracking-wide leading-none">
               {current.name}
             </h3>
-            <p className="mt-3 font-sans text-lg text-espresso/70">{current.sub}</p>
+            
             <div
               className={`mt-6 transition-all duration-500 ${
                 showDesc ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
