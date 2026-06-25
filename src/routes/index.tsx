@@ -435,12 +435,12 @@ function Parts() {
               </p>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-8 flex gap-1.5">
               {hotspots.map((h) => (
                 <button
                   key={h.id}
                   onClick={() => setActive(h.id)}
-                  className={`font-mono text-[10px] uppercase tracking-[0.25em] px-3 py-2 border transition-colors ${
+                  className={`font-mono text-[10px] uppercase tracking-[0.2em] px-2 py-1.5 border transition-colors whitespace-nowrap ${
                     h.id === active
                       ? "border-primary bg-primary text-espresso"
                       : "border-espresso/20 text-espresso/60 hover:border-primary/60 hover:text-primary"
@@ -622,7 +622,7 @@ function Compatibles() {
   ];
 
   return (
-    <section id="compatibles" className="py-16 sm:py-24 lg:py-32 bg-[#0d1615] lg:min-h-[56.25vw] flex items-center">
+    <section id="compatibles" className="py-16 sm:py-24 lg:py-32 bg-cream lg:min-h-[56.25vw] flex items-center">
       <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div>
