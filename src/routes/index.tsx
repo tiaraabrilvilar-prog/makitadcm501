@@ -314,10 +314,6 @@ function Features() {
               SEIS RAZONES,<br /><span className="text-terracotta">UNA SOLA TAZA.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-espresso-soft">
-            Cada decisión de diseño existe para que el café aparezca donde el café no
-            debería ser posible.
-          </p>
         </div>
 
         <ol className="divide-y divide-espresso/20 border-y border-espresso/20">
@@ -522,7 +518,7 @@ function Specs() {
   const current = tabs.find((t) => t.id === active) ?? tabs[0];
 
   return (
-    <section id="specs" className="py-16 sm:py-24 lg:py-32 bg-[#11131f] text-espresso lg:min-h-[56.25vw] flex items-center">
+    <section id="specs" className="py-16 sm:py-24 lg:py-32 bg-[#11131f] text-espresso lg:min-h-[56.25vw] flex items-center bg-grid-subtle">
       <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
         <div className="text-center mb-12">
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-terracotta mb-4">
