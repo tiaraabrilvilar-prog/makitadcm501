@@ -30,6 +30,7 @@ import constructionImage from "@/assets/makita-construction-bg.png";
 import ctaBg from "@/assets/cta-bg-new.png";
 import heroStudioAsset from "@/assets/hero-makita-studio.png.asset.json";
 import anatomyFront from "@/assets/DCM501_C1C0-rembg.png.asset.json";
+import heroTransparent from "@/assets/hero-portada-transparent.png";
 
 const heroImg = heroStudioAsset.url;
 const anatomyImg = anatomyFront.url;
