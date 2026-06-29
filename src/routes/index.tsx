@@ -105,60 +105,67 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative pt-24 lg:pt-28 overflow-hidden text-cream min-h-screen lg:min-h-[56.25vw] flex flex-col justify-center"
+      className="relative pt-24 lg:pt-28 overflow-hidden text-cream bg-[#0a0c12]"
     >
-      {/* Full-bleed background image */}
-      <img
-        src={heroImg}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      {/* Desktop: image as right-side background with strong left gradient. Mobile: solid dark bg, image below. */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none">
+        <img
+          src={heroImg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-right"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(10,12,18,0.97) 0%, rgba(10,12,18,0.92) 35%, rgba(10,12,18,0.55) 60%, rgba(10,12,18,0.15) 100%)",
+          }}
+        />
+      </div>
 
-      {/* Dark overlay for text legibility */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(10,12,18,0.88) 0%, rgba(10,12,18,0.55) 50%, rgba(10,12,18,0.25) 100%)",
-        }}
-      />
-      {/* Bottom vignette */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(180deg, transparent 60%, rgba(10,12,18,0.7) 100%)",
-        }}
-      />
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center py-10 lg:py-24 lg:min-h-[80vh]">
+          {/* Text block */}
+          <div className="relative z-10 text-center lg:text-left">
+            <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-cream/25 text-cream/80 font-mono text-[11px] uppercase tracking-[0.25em]">
+              Nueva en obra
+            </div>
 
-      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full flex-1 flex items-center">
-        {/* Text block — left aligned */}
-        <div className="relative z-10 w-full lg:w-1/2 py-10 lg:py-20 text-center lg:text-left">
-          <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-cream/25 text-cream/70 font-mono text-[11px] uppercase tracking-[0.25em] backdrop-blur-sm">
-            Nueva en obra
+            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.75rem] sm:text-[4rem] lg:text-[5rem] xl:text-[5.5rem]">
+              CAFÉ <span className="text-primary">SIN</span><br />
+              ENCHUFE<br />
+              <span className="text-cream/70">CAFÉ DE OBRA</span>
+            </h1>
+
+            <div className="mt-6 lg:mt-8 flex flex-col lg:items-start items-center gap-5 lg:gap-6 max-w-xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg text-cream/80 leading-relaxed font-light">
+                La <strong className="text-primary font-semibold">DCM501</strong> corre con la
+                misma batería que tu taladro. Sin cables, sin filtros de papel,
+                sin café frío.
+              </p>
+              <a
+                href="#story"
+                className="group inline-flex items-center gap-3 bg-primary px-6 py-3.5 lg:px-7 lg:py-4 text-xs sm:text-sm font-semibold text-espresso hover:bg-cream transition-colors whitespace-nowrap uppercase tracking-wider shadow-xl"
+              >
+                potencia tus mañanas
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
           </div>
 
-          <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem] xl:text-[5.5rem]">
-            CAFÉ <span className="text-primary">SIN</span><br />
-            ENCHUFE<br />
-            <span className="text-cream/70">CAFÉ DE OBRA</span>
-          </h1>
-
-          <div className="mt-6 lg:mt-8 flex flex-col lg:items-start items-center gap-5 lg:gap-6 max-w-xl mx-auto lg:mx-0">
-            <p className="text-sm sm:text-base lg:text-lg text-cream/70 leading-relaxed font-light">
-              La <strong className="text-primary font-semibold">DCM501</strong> corre con la
-              misma batería que tu taladro. Sin cables, sin filtros de papel,
-              sin café frío.
-            </p>
-            <a
-              href="#story"
-              className="group inline-flex items-center gap-3 bg-primary px-6 py-3.5 lg:px-7 lg:py-4 text-xs sm:text-sm font-semibold text-espresso hover:bg-cream hover:text-espresso transition-colors whitespace-nowrap uppercase tracking-wider shadow-xl"
-            >
-              potencia tus mañanas
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
+          {/* Image block — only visible on mobile (desktop uses bg above) */}
+          <div className="lg:hidden -mx-5 sm:-mx-8">
+            <img
+              src={heroImg}
+              alt="Makita DCM501"
+              className="w-full h-auto object-cover"
+              loading="eager"
+            />
           </div>
+
+          {/* Desktop spacer to preserve grid */}
+          <div className="hidden lg:block" />
         </div>
       </div>
     </section>
