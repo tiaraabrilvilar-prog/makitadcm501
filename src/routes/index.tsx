@@ -366,7 +366,8 @@ function Parts() {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-7 relative mx-auto w-full max-w-[420px]">
+          {/* Imagen */}
+          <div className="lg:col-span-7 relative mx-auto w-full max-w-[420px] order-1">
             <div ref={containerRef} className="relative aspect-[807/1000] w-full overflow-hidden select-none">
               <img
                 src={anatomyImg}
@@ -404,7 +405,25 @@ function Parts() {
             </p>
           </div>
 
-          <div className="lg:col-span-5">
+          {/* Botones — móvil: entre imagen y descripción */}
+          <div className="lg:col-span-5 lg:hidden order-2 flex gap-1.5 flex-wrap">
+            {hotspots.map((h) => (
+              <button
+                key={h.id}
+                onClick={() => setActive(h.id)}
+                className={`font-mono text-[10px] uppercase tracking-[0.2em] px-2 py-1.5 border transition-colors whitespace-nowrap ${
+                  h.id === active
+                    ? "border-primary bg-primary text-espresso"
+                    : "border-espresso/20 text-espresso/60 hover:border-primary/60 hover:text-primary"
+                }`}
+              >
+                {h.name}
+              </button>
+            ))}
+          </div>
+
+          {/* Info */}
+          <div className="lg:col-span-5 order-3">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary mb-4">
               {String(hotspots.findIndex((h) => h.id === active) + 1).padStart(2, "0")} / {String(hotspots.length).padStart(2, "0")}
             </p>
@@ -422,7 +441,8 @@ function Parts() {
               </p>
             </div>
 
-            <div className="mt-8 flex gap-1.5">
+            {/* Botones — desktop */}
+            <div className="mt-8 hidden lg:flex gap-1.5">
               {hotspots.map((h) => (
                 <button
                   key={h.id}
