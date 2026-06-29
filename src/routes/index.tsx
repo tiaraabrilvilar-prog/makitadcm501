@@ -31,7 +31,7 @@ import ctaBg from "@/assets/cta-bg-new.png";
 import heroStudioAsset from "@/assets/hero-makita-studio.png.asset.json";
 import anatomyFront from "@/assets/DCM501_C1C0-rembg.png.asset.json";
 
-const heroImg = heroAsset.url;
+const heroImg = heroStudioAsset.url;
 const anatomyImg = anatomyFront.url;
 
 export const Route = createFileRoute("/")({
