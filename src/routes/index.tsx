@@ -122,7 +122,7 @@ function Hero() {
             </h1>
 
             <div className="mt-6 lg:mt-8 flex flex-col lg:items-start items-center gap-5 lg:gap-6 max-w-xl mx-auto lg:mx-0">
-              <p className="text-base sm:text-lg text-cream/80 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-white/95 leading-relaxed">
                 La <strong className="text-primary font-semibold">DCM501</strong> corre con la
                 misma batería que tu taladro. Sin cables, sin filtros de papel,
                 sin café frío.
