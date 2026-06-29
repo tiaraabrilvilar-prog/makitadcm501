@@ -104,63 +104,69 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative pt-28 pb-0 overflow-hidden bg-cream-deep text-espresso lg:min-h-[56.25vw] flex flex-col justify-center"
+      className="relative pt-28 overflow-hidden bg-cream-deep text-cream min-h-screen lg:min-h-[56.25vw] flex flex-col justify-center"
     >
-      {/* Studio ambient light — warm spotlight behind product */}
+      {/* Full-bleed background image */}
+      <img
+        src={constructionImage}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      {/* Dark gradient overlay for text legibility */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(circle at 70% 45%, rgba(20,184,166,0.12) 0%, transparent 55%), radial-gradient(circle at 30% 60%, rgba(20,184,166,0.06) 0%, transparent 45%)",
+            "linear-gradient(90deg, rgba(8,10,16,0.85) 0%, rgba(8,10,16,0.55) 45%, rgba(8,10,16,0.15) 75%, rgba(8,10,16,0.05) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(8,10,16,0.4) 0%, transparent 25%, transparent 70%, rgba(8,10,16,0.6) 100%)",
         }}
       />
 
-
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-10">
-          {/* Image */}
-          <div className="relative w-full flex items-center justify-center order-1 lg:order-2">
-            <div className="relative aspect-video max-w-2xl w-full sm:max-w-3xl">
-              <img
-                src={heroImg}
-                alt="Makita DCM501"
-                className="relative z-10 w-full h-full object-contain animate-float rounded-sm"
-              />
-            </div>
+        <div className="max-w-2xl py-16 lg:py-24 text-center lg:text-left">
+          <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-cream/40 text-cream/90 font-mono text-[11px] uppercase tracking-[0.25em] backdrop-blur-sm">
+            Nueva en obra
           </div>
 
-          {/* Headline */}
-          <div className="text-center lg:text-left order-2 lg:order-1">
-            <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-espresso/30 text-espresso/80 font-mono text-[11px] uppercase tracking-[0.25em]">
-              Nueva en obra
-            </div>
+          <h1
+            className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.75rem] sm:text-[4rem] lg:text-[5.5rem]"
+            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
+          >
+            CAFÉ <span className="text-primary">SIN</span><br />
+            ENCHUFE<br />
+            <span className="text-cream/90">CAFÉ DE OBRA</span>
+          </h1>
 
-            <h1 className="font-serif-display text-espresso leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem]">
-              CAFÉ <span className="text-primary">SIN</span><br />
-              ENCHUFE<br />
-              <span className="text-mocha">CAFÉ DE OBRA</span>
-            </h1>
-
-            <div className="mt-8 flex flex-col lg:items-start items-center gap-6 max-w-xl mx-auto lg:mx-0">
-              <p className="text-base sm:text-lg text-espresso/75 leading-relaxed font-light">
-                La <strong className="text-primary font-semibold">DCM501</strong> corre con la
-                misma batería que tu taladro. Sin cables, sin filtros de papel,
-                sin café frío.
-              </p>
-              <a
-                href="#story"
-                className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors whitespace-nowrap uppercase tracking-wider"
-              >
-                potencia tus mañanas
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
+          <div className="mt-8 flex flex-col lg:items-start items-center gap-6 max-w-xl mx-auto lg:mx-0">
+            <p
+              className="text-base sm:text-lg text-cream/90 leading-relaxed font-light"
+              style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
+            >
+              La <strong className="text-primary font-semibold">DCM501</strong> corre con la
+              misma batería que tu taladro. Sin cables, sin filtros de papel,
+              sin café frío.
+            </p>
+            <a
+              href="#story"
+              className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-cream hover:text-espresso transition-colors whitespace-nowrap uppercase tracking-wider shadow-xl"
+            >
+              potencia tus mañanas
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ---------- MARQUEE ---------- */
 function Marquee() {
