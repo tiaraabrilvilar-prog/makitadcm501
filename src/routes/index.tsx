@@ -28,7 +28,7 @@ import tealVersion from "@/assets/teal-version.png";
 import oliveVersion from "@/assets/olive-version.png";
 import constructionImage from "@/assets/makita-construction-bg.png";
 import ctaBg from "@/assets/cta-bg-new.png";
-import heroAsset from "@/assets/hero-makita-transparent.png.asset.json";
+import heroStudioAsset from "@/assets/hero-makita-studio.png.asset.json";
 import anatomyFront from "@/assets/DCM501_C1C0-rembg.png.asset.json";
 
 const heroImg = heroAsset.url;
