@@ -757,7 +757,7 @@ function Empathy() {
               className="border border-espresso/15 rounded-sm p-6 sm:p-8 bg-cream-deep/40 hover:border-terracotta/30 transition-colors"
             >
               <span className="font-mono text-xs text-terracotta tracking-wider">0{i + 1}</span>
-              <p className="mt-3 font-serif-display text-lg sm:text-xl text-espresso leading-snug tracking-wide">
+              <p className="mt-3 font-serif-display text-xl sm:text-2xl text-espresso leading-snug tracking-wide">
                 {p}
               </p>
             </div>
