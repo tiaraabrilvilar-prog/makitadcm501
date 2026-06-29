@@ -30,7 +30,7 @@ import constructionImage from "@/assets/makita-construction-bg.png";
 import ctaBg from "@/assets/cta-bg-new.png";
 import heroStudioAsset from "@/assets/hero-makita-studio.png.asset.json";
 import anatomyFront from "@/assets/DCM501_C1C0-rembg.png.asset.json";
-import heroTransparent from "@/assets/hero-portada-transparent.png";
+
 
 const heroImg = heroStudioAsset.url;
 const anatomyImg = anatomyFront.url;
@@ -105,22 +105,22 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative pt-24 lg:pt-28 overflow-hidden bg-cream-deep text-cream min-h-screen lg:min-h-[56.25vw] flex flex-col justify-center"
+      className="relative pt-24 lg:pt-28 overflow-hidden text-cream min-h-screen lg:min-h-[56.25vw] flex flex-col justify-center"
     >
-      {/* Studio spotlight — warm glow from the right */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle at 78% 45%, rgba(20,184,166,0.12) 0%, transparent 55%), radial-gradient(circle at 82% 35%, rgba(255,200,120,0.06) 0%, transparent 45%)",
-        }}
+      {/* Full-bleed background image */}
+      <img
+        src={heroImg}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
       />
-      {/* Left fade for text legibility */}
+
+      {/* Dark overlay for text legibility */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(90deg, rgba(15,17,26,0.92) 0%, rgba(15,17,26,0.6) 45%, transparent 70%)",
+            "linear-gradient(90deg, rgba(10,12,18,0.88) 0%, rgba(10,12,18,0.55) 50%, rgba(10,12,18,0.25) 100%)",
         }}
       />
       {/* Bottom vignette */}
@@ -128,34 +128,13 @@ function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, transparent 60%, rgba(15,17,26,0.6) 100%)",
+            "linear-gradient(180deg, transparent 60%, rgba(10,12,18,0.7) 100%)",
         }}
       />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full flex-1 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0">
-        {/* Product image — mobile top / desktop absolute right */}
-        <div className="relative z-0 w-full lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[58%] xl:w-[55%] flex justify-center lg:justify-end order-1 lg:order-2 pointer-events-none select-none">
-          <img
-            src={heroTransparent}
-            alt="Makita DCM501"
-            className="w-[75%] sm:w-[55%] lg:w-full object-contain"
-            style={{
-              filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(20,184,166,0.12))",
-            }}
-          />
-        </div>
-
-        {/* Text block */}
-        <div className="relative z-10 w-full lg:w-1/2 py-10 lg:py-20 text-center lg:text-left order-2 lg:order-1">
-          {/* Mobile text backdrop for legibility */}
-          <div
-            className="absolute inset-x-0 -top-20 bottom-0 -z-10 lg:hidden"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(15,17,26,0.4) 0%, rgba(15,17,26,0.92) 20%, rgba(15,17,26,0.95) 100%)",
-            }}
-          />
-
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full flex-1 flex items-center">
+        {/* Text block — left aligned */}
+        <div className="relative z-10 w-full lg:w-1/2 py-10 lg:py-20 text-center lg:text-left">
           <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-cream/25 text-cream/70 font-mono text-[11px] uppercase tracking-[0.25em] backdrop-blur-sm">
             Nueva en obra
           </div>
