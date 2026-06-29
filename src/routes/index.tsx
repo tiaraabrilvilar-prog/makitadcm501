@@ -132,46 +132,53 @@ function Hero() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
-          {/* Text column */}
-          <div className="py-12 lg:py-20 text-center lg:text-left order-2 lg:order-1">
-            <div className="inline-flex items-center gap-3 mb-6 px-3 py-1.5 border border-cream/30 text-cream/80 font-mono text-[11px] uppercase tracking-[0.25em] backdrop-blur-sm">
-              Nueva en obra
-            </div>
+      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full flex-1 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-0">
+        {/* Product image — mobile top / desktop absolute right */}
+        <div className="relative z-0 w-full lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[58%] xl:w-[55%] flex justify-center lg:justify-end order-1 lg:order-2 pointer-events-none select-none">
+          <img
+            src={heroTransparent}
+            alt="Makita DCM501"
+            className="w-[75%] sm:w-[55%] lg:w-full object-contain"
+            style={{
+              filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(20,184,166,0.12))",
+            }}
+          />
+        </div>
 
-            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.75rem] sm:text-[4rem] lg:text-[5.5rem]">
-              CAFÉ <span className="text-primary">SIN</span><br />
-              ENCHUFE<br />
-              <span className="text-cream/80">CAFÉ DE OBRA</span>
-            </h1>
+        {/* Text block */}
+        <div className="relative z-10 w-full lg:w-1/2 py-10 lg:py-20 text-center lg:text-left order-2 lg:order-1">
+          {/* Mobile text backdrop for legibility */}
+          <div
+            className="absolute inset-x-0 -top-20 bottom-0 -z-10 lg:hidden"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(15,17,26,0.4) 0%, rgba(15,17,26,0.92) 20%, rgba(15,17,26,0.95) 100%)",
+            }}
+          />
 
-            <div className="mt-8 flex flex-col lg:items-start items-center gap-6 max-w-xl mx-auto lg:mx-0">
-              <p className="text-base sm:text-lg text-cream/80 leading-relaxed font-light">
-                La <strong className="text-primary font-semibold">DCM501</strong> corre con la
-                misma batería que tu taladro. Sin cables, sin filtros de papel,
-                sin café frío.
-              </p>
-              <a
-                href="#story"
-                className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm font-semibold text-espresso hover:bg-cream hover:text-espresso transition-colors whitespace-nowrap uppercase tracking-wider shadow-xl"
-              >
-                potencia tus mañanas
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
+          <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-cream/25 text-cream/70 font-mono text-[11px] uppercase tracking-[0.25em] backdrop-blur-sm">
+            Nueva en obra
           </div>
 
-          {/* Product image column */}
-          <div className="relative flex items-end justify-center lg:justify-end order-1 lg:order-2">
-            <img
-              src={heroTransparent}
-              alt="Makita DCM501"
-              className="w-[85%] sm:w-[70%] lg:w-[110%] xl:w-[120%] max-w-none object-contain drop-shadow-2xl"
-              style={{
-                filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(20,184,166,0.15))",
-              }}
-            />
+          <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.5rem] sm:text-[3.5rem] lg:text-[5rem] xl:text-[5.5rem]">
+            CAFÉ <span className="text-primary">SIN</span><br />
+            ENCHUFE<br />
+            <span className="text-cream/70">CAFÉ DE OBRA</span>
+          </h1>
+
+          <div className="mt-6 lg:mt-8 flex flex-col lg:items-start items-center gap-5 lg:gap-6 max-w-xl mx-auto lg:mx-0">
+            <p className="text-sm sm:text-base lg:text-lg text-cream/70 leading-relaxed font-light">
+              La <strong className="text-primary font-semibold">DCM501</strong> corre con la
+              misma batería que tu taladro. Sin cables, sin filtros de papel,
+              sin café frío.
+            </p>
+            <a
+              href="#story"
+              className="group inline-flex items-center gap-3 bg-primary px-6 py-3.5 lg:px-7 lg:py-4 text-xs sm:text-sm font-semibold text-espresso hover:bg-cream hover:text-espresso transition-colors whitespace-nowrap uppercase tracking-wider shadow-xl"
+            >
+              potencia tus mañanas
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
       </div>
