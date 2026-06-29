@@ -107,32 +107,15 @@ function Hero() {
       id="top"
       className="relative pt-24 lg:pt-28 overflow-hidden text-cream bg-[#0a0c12]"
     >
-      {/* Desktop: image as right-side background with strong left gradient. Mobile: solid dark bg, image below. */}
-      <div className="hidden lg:block absolute inset-0 pointer-events-none">
-        <img
-          src={heroImg}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-right"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(10,12,18,0.97) 0%, rgba(10,12,18,0.92) 35%, rgba(10,12,18,0.55) 60%, rgba(10,12,18,0.15) 100%)",
-          }}
-        />
-      </div>
-
-      <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center py-10 lg:py-24 lg:min-h-[80vh]">
-          {/* Text block */}
-          <div className="relative z-10 text-center lg:text-left">
-            <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-cream/25 text-cream/80 font-mono text-[11px] uppercase tracking-[0.25em]">
+      <div className="relative mx-auto max-w-[1400px] w-full">
+        <div className="grid lg:grid-cols-2 items-stretch">
+          {/* TEXT — solid dark, full contrast */}
+          <div className="relative z-10 px-5 sm:px-8 lg:px-12 py-12 lg:py-28 text-center lg:text-left bg-[#0a0c12]">
+            <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-cream/30 text-cream/85 font-mono text-[11px] uppercase tracking-[0.25em]">
               Nueva en obra
             </div>
 
-            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.75rem] sm:text-[4rem] lg:text-[5rem] xl:text-[5.5rem]">
+            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.75rem] sm:text-[4rem] lg:text-[4.5rem] xl:text-[5.5rem]">
               CAFÉ <span className="text-primary">SIN</span><br />
               ENCHUFE<br />
               <span className="text-cream/70">CAFÉ DE OBRA</span>
@@ -154,18 +137,23 @@ function Hero() {
             </div>
           </div>
 
-          {/* Image block — only visible on mobile (desktop uses bg above) */}
-          <div className="lg:hidden -mx-5 sm:-mx-8">
+          {/* IMAGE — own column, no overlap */}
+          <div className="relative h-[55vh] sm:h-[60vh] lg:h-auto lg:min-h-[80vh]">
             <img
               src={heroImg}
               alt="Makita DCM501"
-              className="w-full h-auto object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
             />
+            {/* Soft fade into the text column on desktop */}
+            <div
+              className="hidden lg:block absolute inset-y-0 left-0 w-32 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(90deg, #0a0c12 0%, rgba(10,12,18,0) 100%)",
+              }}
+            />
           </div>
-
-          {/* Desktop spacer to preserve grid */}
-          <div className="hidden lg:block" />
         </div>
       </div>
     </section>
