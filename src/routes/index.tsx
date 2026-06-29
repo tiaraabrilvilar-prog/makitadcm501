@@ -111,18 +111,18 @@ function Hero() {
         <div className="grid lg:grid-cols-2 items-stretch">
           {/* TEXT — solid dark, full contrast */}
           <div className="relative z-10 px-5 sm:px-8 lg:px-12 py-12 lg:py-28 text-center lg:text-left bg-[#0a0c12]">
-            <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-cream/30 text-cream/85 font-mono text-[11px] uppercase tracking-[0.25em]">
+            <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-primary/60 text-primary font-mono text-[11px] uppercase tracking-[0.25em] bg-primary/10">
               Nueva en obra
             </div>
 
-            <h1 className="font-serif-display text-cream leading-[0.9] tracking-tight text-[2.75rem] sm:text-[4rem] lg:text-[4.5rem] xl:text-[5.5rem]">
+            <h1 className="font-serif-display text-white leading-[0.9] tracking-tight text-[2.75rem] sm:text-[4rem] lg:text-[4.5rem] xl:text-[5.5rem]">
               CAFÉ <span className="text-primary">SIN</span><br />
               ENCHUFE<br />
-              <span className="text-cream/70">CAFÉ DE OBRA</span>
+              <span className="text-white/90">CAFÉ DE OBRA</span>
             </h1>
 
             <div className="mt-6 lg:mt-8 flex flex-col lg:items-start items-center gap-5 lg:gap-6 max-w-xl mx-auto lg:mx-0">
-              <p className="text-base sm:text-lg text-cream/80 leading-relaxed font-light">
+              <p className="text-base sm:text-lg text-white/95 leading-relaxed">
                 La <strong className="text-primary font-semibold">DCM501</strong> corre con la
                 misma batería que tu taladro. Sin cables, sin filtros de papel,
                 sin café frío.
