@@ -406,12 +406,12 @@ function Parts() {
           </div>
 
           {/* Botones — móvil: entre imagen y descripción */}
-          <div className="lg:col-span-5 lg:hidden order-2 flex gap-1.5 flex-wrap">
+          <div className="lg:col-span-5 lg:hidden order-2 flex gap-1">
             {hotspots.map((h) => (
               <button
                 key={h.id}
                 onClick={() => setActive(h.id)}
-                className={`font-mono text-[10px] uppercase tracking-[0.2em] px-2 py-1.5 border transition-colors whitespace-nowrap ${
+                className={`font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] px-1.5 sm:px-2 py-1.5 border transition-colors whitespace-nowrap ${
                   h.id === active
                     ? "border-primary bg-primary text-espresso"
                     : "border-espresso/20 text-espresso/60 hover:border-primary/60 hover:text-primary"
