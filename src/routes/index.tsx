@@ -120,29 +120,11 @@ function Hero() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center py-10">
           {/* Image */}
           <div className="relative w-full flex items-center justify-center order-1 lg:order-2">
-            <div className="relative aspect-square max-w-md w-full sm:max-w-lg">
-              {/* Studio floor shadow */}
-              <div
-                className="absolute bottom-[8%] left-1/2 -translate-x-1/2 w-[70%] h-[12%] rounded-[50%] pointer-events-none"
-                style={{
-                  background: "radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, transparent 80%)",
-                  filter: "blur(14px)",
-                }}
-              />
-              {/* Soft rim light behind product */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: "radial-gradient(circle at 50% 55%, rgba(20,184,166,0.15) 0%, transparent 60%)",
-                }}
-              />
+            <div className="relative aspect-video max-w-2xl w-full sm:max-w-3xl">
               <img
                 src={heroImg}
                 alt="Makita DCM501"
-                className="relative z-10 w-full h-full object-contain animate-float scale-x-[-1]"
-                style={{
-                  filter: "drop-shadow(0 30px 50px rgba(0,0,0,0.5)) drop-shadow(0 10px 20px rgba(0,0,0,0.3))",
-                }}
+                className="relative z-10 w-full h-full object-contain animate-float rounded-sm"
               />
             </div>
           </div>
