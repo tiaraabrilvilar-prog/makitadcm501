@@ -107,60 +107,57 @@ function Hero() {
       id="top"
       className="relative pt-24 lg:pt-28 overflow-hidden text-cream bg-[#0a0c12]"
     >
-      <div className="relative mx-auto max-w-[1400px] w-full">
-        <div className="grid lg:grid-cols-2 items-stretch">
-          {/* TEXT — solid dark, full contrast */}
-          <div className="relative z-10 px-5 sm:px-8 lg:px-12 py-12 lg:py-28 text-center lg:text-left bg-[#0a0c12]">
-            <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-primary/60 text-primary font-mono text-[11px] uppercase tracking-[0.25em] bg-primary/10">
-              Nueva en obra
-            </div>
+      {/* Full-bleed background image */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImg}
+          alt="Makita DCM501"
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+        {/* Dark overlay that fades from solid left to transparent right */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, #0a0c12 0%, #0a0c12 35%, rgba(10,12,18,0.55) 55%, rgba(10,12,18,0.2) 70%, transparent 100%)",
+          }}
+        />
+        {/* Stronger mobile overlay for legibility */}
+        <div
+          className="absolute inset-0 lg:hidden"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(10,12,18,0.92) 0%, rgba(10,12,18,0.6) 40%, rgba(10,12,18,0.3) 100%)",
+          }}
+        />
+      </div>
 
-            <h1 className="font-serif-display text-white leading-[0.9] tracking-tight text-[2.75rem] sm:text-[4rem] lg:text-[4.5rem] xl:text-[5.5rem]">
-              CAFÉ <span className="text-primary">SIN</span><br />
-              ENCHUFE<br />
-              <span className="text-white/90">CAFÉ DE OBRA</span>
-            </h1>
-
-            <div className="mt-6 lg:mt-8 flex flex-col lg:items-start items-center gap-5 lg:gap-6 max-w-xl mx-auto lg:mx-0">
-              <p className="text-base sm:text-lg text-white/95 leading-relaxed">
-                La <strong className="text-primary font-semibold">DCM501</strong> corre con la
-                misma batería que tu taladro. Sin cables, sin filtros de papel,
-                sin café frío.
-              </p>
-              <a
-                href="#story"
-                className="group inline-flex items-center gap-3 bg-primary px-6 py-3.5 lg:px-7 lg:py-4 text-xs sm:text-sm font-semibold text-espresso hover:bg-cream transition-colors whitespace-nowrap uppercase tracking-wider shadow-xl"
-              >
-                potencia tus mañanas
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
+      <div className="relative z-10 mx-auto max-w-[1400px] w-full px-5 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-28 min-h-[70vh] lg:min-h-[80vh] flex items-center">
+        <div className="max-w-xl text-center lg:text-left">
+          <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-primary/60 text-primary font-mono text-[11px] uppercase tracking-[0.25em] bg-primary/10">
+            Nueva en obra
           </div>
 
-          {/* IMAGE — own column, no overlap */}
-          <div className="relative h-[55vh] sm:h-[60vh] lg:h-auto lg:min-h-[80vh]">
-            <img
-              src={heroImg}
-              alt="Makita DCM501"
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="eager"
-            />
-            {/* Strong fade into the text column on desktop */}
-            <div
-              className="hidden lg:block absolute inset-y-0 left-0 w-48 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(90deg, #0a0c12 0%, #0a0c12 35%, rgba(10,12,18,0) 100%)",
-              }}
-            />
-            {/* Bottom vignette for visual depth */}
-            <div
-              className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(10,12,18,0.6) 0%, transparent 100%)",
-              }}
-            />
+          <h1 className="font-serif-display text-white leading-[0.9] tracking-tight text-[2.75rem] sm:text-[4rem] lg:text-[4.5rem] xl:text-[5.5rem]">
+            CAFÉ <span className="text-primary">SIN</span><br />
+            ENCHUFE<br />
+            <span className="text-white/90">CAFÉ DE OBRA</span>
+          </h1>
+
+          <div className="mt-6 lg:mt-8 flex flex-col lg:items-start items-center gap-5 lg:gap-6">
+            <p className="text-base sm:text-lg text-white/95 leading-relaxed">
+              La <strong className="text-primary font-semibold">DCM501</strong> corre con la
+              misma batería que tu taladro. Sin cables, sin filtros de papel,
+              sin café frío.
+            </p>
+            <a
+              href="#story"
+              className="group inline-flex items-center gap-3 bg-primary px-6 py-3.5 lg:px-7 lg:py-4 text-xs sm:text-sm font-semibold text-espresso hover:bg-cream transition-colors whitespace-nowrap uppercase tracking-wider shadow-xl"
+            >
+              potencia tus mañanas
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
       </div>
