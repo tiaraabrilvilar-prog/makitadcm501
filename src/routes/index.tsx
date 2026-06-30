@@ -107,10 +107,10 @@ function Hero() {
       id="top"
       className="relative pt-24 lg:pt-28 overflow-hidden text-cream bg-[#0a0c12]"
     >
-      <div className="mx-auto max-w-[1400px] w-full min-h-[70vh] lg:min-h-[80vh]">
-        <div className="grid lg:grid-cols-2 min-h-[70vh] lg:min-h-[80vh]">
+      <div className="w-full min-h-[70vh] lg:min-h-[80vh]">
+        <div className="grid lg:grid-cols-[0.85fr_1.15fr] min-h-[70vh] lg:min-h-[80vh]">
           {/* Text column — solid dark, always legible */}
-          <div className="flex items-center px-5 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-0 order-2 lg:order-1">
+          <div className="flex items-center px-5 sm:px-8 lg:pl-12 xl:pl-[calc((100vw-1400px)/2+48px)] lg:pr-6 py-16 sm:py-20 lg:py-0 order-2 lg:order-1">
             <div className="max-w-xl text-center lg:text-left">
               <div className="inline-flex items-center gap-3 mb-5 px-3 py-1.5 border border-primary/60 text-primary font-mono text-[11px] uppercase tracking-[0.25em] bg-primary/10">
                 Nueva en obra
@@ -139,14 +139,16 @@ function Hero() {
             </div>
           </div>
 
-          {/* Image column — clean, no overlay, full presence */}
-          <div className="relative order-1 lg:order-2 h-[45vh] lg:h-auto">
+          {/* Image column — larger presence with soft edge gradients */}
+          <div className="relative order-1 lg:order-2 h-[55vh] sm:h-[62vh] lg:h-auto overflow-hidden bg-[#0a0c12]">
             <img
               src={heroImg}
               alt="Makita DCM501"
-              className="absolute inset-0 w-full h-full object-cover lg:object-contain lg:object-right"
+              className="absolute inset-0 w-full h-full object-cover object-center lg:object-[58%_center]"
               loading="eager"
             />
+            <div className="absolute inset-y-0 left-0 hidden w-40 bg-gradient-to-r from-[#0a0c12] via-[#0a0c12]/55 to-transparent lg:block" />
+            <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#0a0c12]/70 via-[#0a0c12]/20 to-transparent" />
           </div>
         </div>
       </div>
