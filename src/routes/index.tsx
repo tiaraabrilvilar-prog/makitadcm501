@@ -145,12 +145,20 @@ function Hero() {
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
             />
-            {/* Soft fade into the text column on desktop */}
+            {/* Strong fade into the text column on desktop */}
             <div
-              className="hidden lg:block absolute inset-y-0 left-0 w-32 pointer-events-none"
+              className="hidden lg:block absolute inset-y-0 left-0 w-48 pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(90deg, #0a0c12 0%, rgba(10,12,18,0) 100%)",
+                  "linear-gradient(90deg, #0a0c12 0%, #0a0c12 35%, rgba(10,12,18,0) 100%)",
+              }}
+            />
+            {/* Bottom vignette for visual depth */}
+            <div
+              className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(10,12,18,0.6) 0%, transparent 100%)",
               }}
             />
           </div>
