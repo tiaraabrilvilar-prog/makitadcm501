@@ -628,7 +628,7 @@ function CTA() {
           Llevá la potencia de Makita a tu taza. La DCM501 te espera.
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-          <a href="#" className="group inline-flex items-center gap-3 bg-cream px-9 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors uppercase tracking-wider">
+          <a href="https://makita.com.ar/donde-comprar/" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 bg-cream px-9 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors uppercase tracking-wider">
             Quiero mi Makita
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
