@@ -145,12 +145,20 @@ function Hero() {
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
             />
-            {/* Soft fade into the text column on desktop */}
+            {/* Strong fade into the text column on desktop */}
             <div
-              className="hidden lg:block absolute inset-y-0 left-0 w-32 pointer-events-none"
+              className="hidden lg:block absolute inset-y-0 left-0 w-48 pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(90deg, #0a0c12 0%, rgba(10,12,18,0) 100%)",
+                  "linear-gradient(90deg, #0a0c12 0%, #0a0c12 35%, rgba(10,12,18,0) 100%)",
+              }}
+            />
+            {/* Bottom vignette for visual depth */}
+            <div
+              className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(10,12,18,0.6) 0%, transparent 100%)",
               }}
             />
           </div>
@@ -620,7 +628,7 @@ function CTA() {
           Llevá la potencia de Makita a tu taza. La DCM501 te espera.
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-          <a href="#" className="group inline-flex items-center gap-3 bg-cream px-9 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors uppercase tracking-wider">
+          <a href="https://makita.com.ar/donde-comprar/" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 bg-cream px-9 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors uppercase tracking-wider">
             Quiero mi Makita
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
