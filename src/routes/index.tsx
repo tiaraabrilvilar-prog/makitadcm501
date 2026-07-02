@@ -614,7 +614,7 @@ function CTA() {
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
           <a href="https://makita.com.ar/donde-comprar/" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 bg-cream px-9 py-4 text-sm font-semibold text-espresso hover:bg-espresso hover:text-cream transition-colors uppercase tracking-wider">
-            Quiero mi Makita
+            DONDE COMPRAR
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
           <a href="#specs" className="inline-flex items-center gap-2 text-sm text-white/90 underline underline-offset-4 hover:text-white">
