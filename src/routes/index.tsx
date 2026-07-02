@@ -277,6 +277,7 @@ function Features() {
 
 /* ---------- PARTS (interactive anatomy) ---------- */
 function Parts() {
+  const { ref, visible } = useInView(0.1);
   const initialHotspots = [
     {
       id: "manija",
@@ -332,8 +333,8 @@ function Parts() {
   }, [active]);
 
   return (
-    <section id="parts" className="py-16 sm:py-24 lg:py-32 bg-[#161b27] text-espresso lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
+    <section id="parts" ref={ref} className="py-16 sm:py-24 lg:py-32 bg-[#161b27] text-espresso lg:min-h-[56.25vw] flex items-center">
+      <div className={`mx-auto max-w-[1400px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="mb-12">
           <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[0.95] text-espresso max-w-3xl tracking-wide">
             PARTES DE<br />LA CAFETERA
