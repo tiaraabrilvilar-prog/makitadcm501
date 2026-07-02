@@ -707,14 +707,15 @@ function Footer() {
 
 /* ---------- EMPATHY ---------- */
 function Empathy() {
+  const { ref, visible } = useInView(0.1);
   const pains = [
     "¿Cansado del café tibio de termo después de unas horas?",
     "¿Perdés tiempo buscando un enchufe en la obra o el camping?",
     "¿El café instantáneo ya no es una opción para vos?",
   ];
   return (
-    <section className="py-16 sm:py-20 bg-cream text-espresso">
-      <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
+    <section ref={ref} className="py-16 sm:py-20 bg-cream text-espresso">
+      <div className={`mx-auto max-w-[1100px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="text-center mb-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-3">
             Empatía
