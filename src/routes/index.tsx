@@ -591,8 +591,9 @@ function Versions() {
 
 /* ---------- CTA ---------- */
 function CTA() {
+  const { ref, visible } = useInView(0.1);
   return (
-    <section id="cta" className="py-16 sm:py-24 lg:py-36 text-cream relative overflow-hidden lg:min-h-[56.25vw] flex items-center">
+    <section id="cta" ref={ref} className="py-16 sm:py-24 lg:py-36 text-cream relative overflow-hidden lg:min-h-[56.25vw] flex items-center">
       {/* Background image — duotone green treatment */}
       <img
         src={ctaBg}
@@ -606,7 +607,7 @@ function CTA() {
       <div className="absolute inset-0 bg-[#2dd4bf] mix-blend-screen opacity-30 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/60 pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center">
+      <div className={`relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <h2
           className="font-serif-display text-3xl sm:text-5xl lg:text-6xl leading-[0.95] tracking-wide text-white"
           style={{ textShadow: "0 2px 20px rgba(0,0,0,0.6), 0 4px 40px rgba(0,0,0,0.4)" }}
