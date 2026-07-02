@@ -537,6 +537,7 @@ function Specs() {
 
 /* ---------- VERSIONS ---------- */
 function Versions() {
+  const { ref, visible } = useInView(0.1);
   const versions = [
     {
       name: "AZUL TURQUESA",
@@ -555,8 +556,8 @@ function Versions() {
   ];
 
   return (
-    <section id="versions" className="py-12 sm:py-16 lg:py-20 flex items-center bg-cream">
-      <div className="mx-auto max-w-[1200px] w-full px-5 sm:px-8">
+    <section id="versions" ref={ref} className="py-12 sm:py-16 lg:py-20 flex items-center bg-cream">
+      <div className={`mx-auto max-w-[1200px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="flex items-end justify-between mb-8">
           <h2 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl text-espresso leading-[1.02] tracking-wide">
             DOS <span className="text-terracotta">VERSIONES</span>
