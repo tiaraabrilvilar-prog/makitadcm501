@@ -633,14 +633,15 @@ function CTA() {
 
 /* ---------- CONTACT ---------- */
 function Contact() {
+  const { ref, visible } = useInView(0.1);
   const items = [
     { icon: Phone, label: "Teléfono", value: "+54 9 11 5555-0199", note: "Lun a Vie · 9 a 18 h" },
     { icon: Mail, label: "Correo", value: "hola@makita-demo.local", note: "Respuesta 24-48 h" },
     { icon: MapPin, label: "Dirección", value: "Av. Industrial 1234", note: "Buenos Aires, AR" },
   ];
   return (
-    <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-[#131520] lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
+    <section id="contact" ref={ref} className="py-16 sm:py-24 lg:py-32 bg-[#131520] lg:min-h-[56.25vw] flex items-center">
+      <div className={`mx-auto max-w-[1400px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-14">
           <div className="lg:col-span-7">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
