@@ -442,6 +442,7 @@ function Parts() {
 
 /* ---------- SPECS (tabs editorial) ---------- */
 function Specs() {
+  const { ref, visible } = useInView(0.1);
   const tabs = [
     {
       id: "rendimiento",
@@ -480,8 +481,8 @@ function Specs() {
   const current = tabs.find((t) => t.id === active) ?? tabs[0];
 
   return (
-    <section id="specs" className="py-16 sm:py-24 lg:py-32 bg-[#11131f] text-espresso lg:min-h-[56.25vw] flex items-center bg-grid-subtle">
-      <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
+    <section id="specs" ref={ref} className="py-16 sm:py-24 lg:py-32 bg-[#11131f] text-espresso lg:min-h-[56.25vw] flex items-center bg-grid-subtle">
+      <div className={`mx-auto max-w-[1100px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
 
         {/* Tabs */}
         <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-8 border border-espresso/15 rounded-sm p-1.5 bg-cream/60">
