@@ -209,6 +209,7 @@ function Story() {
 
 /* ---------- FEATURES (numbered editorial list) ---------- */
 function Features() {
+  const { ref, visible } = useInView(0.1);
   const items = [
     {
       n: "01",
@@ -243,8 +244,8 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="py-14 sm:py-16 bg-[#131520] lg:min-h-[35vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
+    <section id="features" ref={ref} className="py-14 sm:py-16 bg-[#131520] lg:min-h-[35vw] flex items-center">
+      <div className={`mx-auto max-w-[1400px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
