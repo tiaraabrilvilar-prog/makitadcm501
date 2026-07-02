@@ -80,9 +80,6 @@ function Navbar() {
           <a href="#specs" className="text-espresso/70 hover:text-terracotta transition-colors">Ficha</a>
           <a href="#contact" className="text-espresso/70 hover:text-terracotta transition-colors">Contacto</a>
         </div>
-        <a href="#cta" className="hidden md:inline-flex items-center gap-2 rounded-full bg-espresso px-5 py-2.5 text-xs font-medium text-cream hover:bg-terracotta transition-colors">
-          Comprar <ArrowUpRight className="h-3.5 w-3.5" />
-        </a>
         <button className="md:hidden text-espresso" onClick={() => setOpen(!open)}>
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
