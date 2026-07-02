@@ -209,6 +209,7 @@ function Story() {
 
 /* ---------- FEATURES (numbered editorial list) ---------- */
 function Features() {
+  const { ref, visible } = useInView(0.1);
   const items = [
     {
       n: "01",
@@ -243,8 +244,8 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="py-14 sm:py-16 bg-[#131520] lg:min-h-[35vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
+    <section id="features" ref={ref} className="py-14 sm:py-16 bg-[#131520] lg:min-h-[35vw] flex items-center">
+      <div className={`mx-auto max-w-[1400px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
@@ -276,6 +277,7 @@ function Features() {
 
 /* ---------- PARTS (interactive anatomy) ---------- */
 function Parts() {
+  const { ref, visible } = useInView(0.1);
   const initialHotspots = [
     {
       id: "manija",
@@ -331,8 +333,8 @@ function Parts() {
   }, [active]);
 
   return (
-    <section id="parts" className="py-16 sm:py-24 lg:py-32 bg-[#161b27] text-espresso lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
+    <section id="parts" ref={ref} className="py-16 sm:py-24 lg:py-32 bg-[#161b27] text-espresso lg:min-h-[56.25vw] flex items-center">
+      <div className={`mx-auto max-w-[1400px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="mb-12">
           <h2 className="font-serif-display text-4xl sm:text-6xl lg:text-7xl leading-[0.95] text-espresso max-w-3xl tracking-wide">
             PARTES DE<br />LA CAFETERA
@@ -440,6 +442,7 @@ function Parts() {
 
 /* ---------- SPECS (tabs editorial) ---------- */
 function Specs() {
+  const { ref, visible } = useInView(0.1);
   const tabs = [
     {
       id: "rendimiento",
@@ -478,8 +481,8 @@ function Specs() {
   const current = tabs.find((t) => t.id === active) ?? tabs[0];
 
   return (
-    <section id="specs" className="py-16 sm:py-24 lg:py-32 bg-[#11131f] text-espresso lg:min-h-[56.25vw] flex items-center bg-grid-subtle">
-      <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
+    <section id="specs" ref={ref} className="py-16 sm:py-24 lg:py-32 bg-[#11131f] text-espresso lg:min-h-[56.25vw] flex items-center bg-grid-subtle">
+      <div className={`mx-auto max-w-[1100px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
 
         {/* Tabs */}
         <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-8 border border-espresso/15 rounded-sm p-1.5 bg-cream/60">
@@ -534,6 +537,7 @@ function Specs() {
 
 /* ---------- VERSIONS ---------- */
 function Versions() {
+  const { ref, visible } = useInView(0.1);
   const versions = [
     {
       name: "AZUL TURQUESA",
@@ -552,8 +556,8 @@ function Versions() {
   ];
 
   return (
-    <section id="versions" className="py-12 sm:py-16 lg:py-20 flex items-center bg-cream">
-      <div className="mx-auto max-w-[1200px] w-full px-5 sm:px-8">
+    <section id="versions" ref={ref} className="py-12 sm:py-16 lg:py-20 flex items-center bg-cream">
+      <div className={`mx-auto max-w-[1200px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="flex items-end justify-between mb-8">
           <h2 className="font-serif-display text-3xl sm:text-4xl lg:text-5xl text-espresso leading-[1.02] tracking-wide">
             DOS <span className="text-terracotta">VERSIONES</span>
@@ -587,8 +591,9 @@ function Versions() {
 
 /* ---------- CTA ---------- */
 function CTA() {
+  const { ref, visible } = useInView(0.1);
   return (
-    <section id="cta" className="py-16 sm:py-24 lg:py-36 text-cream relative overflow-hidden lg:min-h-[56.25vw] flex items-center">
+    <section id="cta" ref={ref} className="py-16 sm:py-24 lg:py-36 text-cream relative overflow-hidden lg:min-h-[56.25vw] flex items-center">
       {/* Background image — duotone green treatment */}
       <img
         src={ctaBg}
@@ -602,7 +607,7 @@ function CTA() {
       <div className="absolute inset-0 bg-[#2dd4bf] mix-blend-screen opacity-30 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/60 pointer-events-none" />
 
-      <div className="relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center">
+      <div className={`relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <h2
           className="font-serif-display text-3xl sm:text-5xl lg:text-6xl leading-[0.95] tracking-wide text-white"
           style={{ textShadow: "0 2px 20px rgba(0,0,0,0.6), 0 4px 40px rgba(0,0,0,0.4)" }}
@@ -628,14 +633,15 @@ function CTA() {
 
 /* ---------- CONTACT ---------- */
 function Contact() {
+  const { ref, visible } = useInView(0.1);
   const items = [
     { icon: Phone, label: "Teléfono", value: "+54 9 11 5555-0199", note: "Lun a Vie · 9 a 18 h" },
     { icon: Mail, label: "Correo", value: "hola@makita-demo.local", note: "Respuesta 24-48 h" },
     { icon: MapPin, label: "Dirección", value: "Av. Industrial 1234", note: "Buenos Aires, AR" },
   ];
   return (
-    <section id="contact" className="py-16 sm:py-24 lg:py-32 bg-[#131520] lg:min-h-[56.25vw] flex items-center">
-      <div className="mx-auto max-w-[1400px] w-full px-5 sm:px-8">
+    <section id="contact" ref={ref} className="py-16 sm:py-24 lg:py-32 bg-[#131520] lg:min-h-[56.25vw] flex items-center">
+      <div className={`mx-auto max-w-[1400px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="grid lg:grid-cols-12 gap-10 items-end mb-14">
           <div className="lg:col-span-7">
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-4">
@@ -704,14 +710,15 @@ function Footer() {
 
 /* ---------- EMPATHY ---------- */
 function Empathy() {
+  const { ref, visible } = useInView(0.1);
   const pains = [
     "¿Cansado del café tibio de termo después de unas horas?",
     "¿Perdés tiempo buscando un enchufe en la obra o el camping?",
     "¿El café instantáneo ya no es una opción para vos?",
   ];
   return (
-    <section className="py-16 sm:py-20 bg-cream text-espresso">
-      <div className="mx-auto max-w-[1100px] w-full px-5 sm:px-8">
+    <section ref={ref} className="py-16 sm:py-20 bg-cream text-espresso">
+      <div className={`mx-auto max-w-[1100px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="text-center mb-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-3">
             Empatía
