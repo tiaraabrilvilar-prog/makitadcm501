@@ -622,9 +622,6 @@ function CTA() {
             DONDE COMPRAR
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
-          <a href="#specs" className="inline-flex items-center gap-2 text-sm text-white/90 underline underline-offset-4 hover:text-white">
-            Ver ficha técnica
-          </a>
         </div>
       </div>
     </section>
