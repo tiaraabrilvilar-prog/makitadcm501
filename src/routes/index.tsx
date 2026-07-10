@@ -334,13 +334,20 @@ function Parts() {
 
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           {/* Imagen */}
-          <div className="lg:col-span-7 relative mx-auto w-full max-w-[420px] order-1">
-            <div ref={containerRef} className="relative aspect-[807/1000] w-full overflow-hidden select-none">
+          <div className="lg:col-span-7 relative mx-auto w-full max-w-[460px] order-1">
+            <div
+              ref={containerRef}
+              className="relative aspect-[807/1000] w-full overflow-hidden select-none rounded-sm bg-gradient-radial from-white/[0.07] via-transparent to-transparent"
+              style={{
+                background: "radial-gradient(ellipse at 50% 55%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 45%, transparent 70%)",
+              }}
+            >
               <img
                 src={anatomyImg}
                 alt="Makita DCM501 — anatomía"
                 draggable={false}
-                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none drop-shadow-2xl"
+                style={{ filter: "drop-shadow(0 28px 40px rgba(0,0,0,0.55)) drop-shadow(0 10px 18px rgba(0,0,0,0.35))" }}
               />
 
               {hotspots.map((h) => {
