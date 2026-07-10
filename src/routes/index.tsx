@@ -104,8 +104,8 @@ function Hero() {
       id="top"
       className="relative pt-24 lg:pt-28 overflow-hidden text-cream bg-[#0a0c12]"
     >
-      <div className="w-full min-h-[70vh] lg:min-h-[80vh]">
-        <div className="grid lg:grid-cols-[0.85fr_1.15fr] min-h-[70vh] lg:min-h-[80vh]">
+      <div className="w-full min-h-[60vh] lg:min-h-[72vh]">
+        <div className="grid lg:grid-cols-[0.85fr_1.15fr] min-h-[60vh] lg:min-h-[72vh]">
           {/* Text column — solid dark, always legible */}
           <div className="flex items-center px-5 sm:px-8 lg:pl-12 xl:pl-[calc((100vw-1400px)/2+48px)] lg:pr-6 py-16 sm:py-20 lg:py-0 order-2 lg:order-1">
             <div className="max-w-xl text-center lg:text-left">
@@ -119,20 +119,11 @@ function Hero() {
                 <span className="text-white/90">CAFÉ DE OBRA</span>
               </h1>
 
-              <div className="mt-6 lg:mt-8 flex flex-col lg:items-start items-center gap-5 lg:gap-6">
-                <p className="text-base sm:text-lg text-white/95 leading-relaxed">
-                  La <strong className="text-primary font-semibold">DCM501</strong> corre con la
-                  misma batería que tu taladro. Sin cables, sin filtros de papel,
-                  sin café frío.
-                </p>
-                <a
-                  href="#story"
-                  className="group inline-flex items-center gap-3 bg-primary px-6 py-3.5 lg:px-7 lg:py-4 text-xs sm:text-sm font-semibold text-espresso hover:bg-cream transition-colors whitespace-nowrap uppercase tracking-wider shadow-xl"
-                >
-                  potencia tus mañanas
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </div>
+              <p className="mt-6 lg:mt-8 text-base sm:text-lg text-white/95 leading-relaxed max-w-xl">
+                La <strong className="text-primary font-semibold">DCM501</strong> corre con la
+                misma batería que tu taladro. Sin cables, sin filtros de papel,
+                sin café frío.
+              </p>
             </div>
           </div>
 
@@ -141,7 +132,7 @@ function Hero() {
             <img
               src={heroImg}
               alt="Makita DCM501"
-              className="absolute inset-0 w-full h-full object-cover object-center lg:object-[58%_center]"
+              className="absolute inset-0 w-full h-full object-cover object-center lg:object-[58%_35%]"
               loading="eager"
             />
             <div className="absolute inset-y-0 left-0 hidden w-40 bg-gradient-to-r from-[#0a0c12] via-[#0a0c12]/55 to-transparent lg:block" />
@@ -717,9 +708,6 @@ function Empathy() {
     <section ref={ref} className="py-16 sm:py-20 bg-cream text-espresso">
       <div className={`mx-auto max-w-[1100px] w-full px-5 sm:px-8 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <div className="text-center mb-10">
-          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-terracotta mb-3">
-            Empatía
-          </p>
           <h2 className="font-serif-display text-4xl sm:text-5xl leading-[1.05] text-espresso tracking-wide">
             Te entendemos
           </h2>
