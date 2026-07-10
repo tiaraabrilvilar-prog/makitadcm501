@@ -394,19 +394,9 @@ function Parts() {
             <h3 className="font-serif-display text-3xl sm:text-5xl lg:text-6xl text-espresso tracking-wide leading-none">
               {current.name}
             </h3>
-            
-            <div
-              className={`mt-6 transition-all duration-500 ${
-                showDesc ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-              }`}
-            >
-              <p className="text-sm sm:text-base text-espresso-soft leading-relaxed border-l-2 border-primary pl-4">
-                {current.desc}
-              </p>
-            </div>
 
             {/* Botones — desktop */}
-            <div className="mt-8 hidden lg:flex gap-1.5">
+            <div className="mt-6 hidden lg:flex gap-1.5">
               {hotspots.map((h) => (
                 <button
                   key={h.id}
@@ -420,6 +410,16 @@ function Parts() {
                   {h.name}
                 </button>
               ))}
+            </div>
+            
+            <div
+              className={`mt-6 transition-all duration-500 ${
+                showDesc ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+              }`}
+            >
+              <p className="text-sm sm:text-base text-espresso-soft leading-relaxed border-l-2 border-primary pl-4">
+                {current.desc}
+              </p>
             </div>
           </div>
         </div>
