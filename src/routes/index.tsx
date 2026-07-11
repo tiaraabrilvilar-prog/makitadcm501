@@ -346,8 +346,7 @@ function Parts() {
                 src={anatomyImg}
                 alt="Makita DCM501 — anatomía"
                 draggable={false}
-                className="absolute inset-0 w-full h-full object-cover pointer-events-none drop-shadow-2xl"
-                style={{ filter: "drop-shadow(0 28px 40px rgba(0,0,0,0.55)) drop-shadow(0 10px 18px rgba(0,0,0,0.35))" }}
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               />
 
               {hotspots.map((h) => {
