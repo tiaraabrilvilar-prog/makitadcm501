@@ -603,10 +603,10 @@ function CTA() {
 
       <div className={`relative mx-auto max-w-[1100px] w-full px-5 sm:px-8 text-center transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
         <h2
-          className="font-serif-display text-3xl sm:text-5xl lg:text-6xl leading-[0.95] tracking-wide text-white max-w-[14ch] lg:max-w-[18ch] mx-auto text-balance"
+          className="font-serif-display text-3xl sm:text-5xl lg:text-6xl leading-[0.95] tracking-wide text-white mx-auto"
           style={{ textShadow: "0 2px 20px rgba(0,0,0,0.6), 0 4px 40px rgba(0,0,0,0.4)" }}
         >
-          Diseñada para que tu energía y tu café nunca se enfríen
+          Diseñada para que tu energía y tu café<br className="hidden sm:inline" /> nunca se enfríen
         </h2>
         <p className="mt-8 text-lg text-white/95 max-w-xl mx-auto" style={{ textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}>
           Llevá la potencia de Makita a tu taza. La DCM501 te espera.
