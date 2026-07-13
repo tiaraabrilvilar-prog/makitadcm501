@@ -402,15 +402,16 @@ function Parts() {
             </h3>
 
             {/* Botones — desktop */}
-            <div className="mt-6 hidden lg:flex gap-1.5">
+            <div className="mt-6 hidden lg:flex gap-2">
               {hotspots.map((h) => (
                 <button
                   key={h.id}
                   onClick={() => setActive(h.id)}
-                  className={`font-mono text-[10px] uppercase tracking-[0.2em] px-2 py-1.5 border transition-colors whitespace-nowrap ${
+                  className={`font-mono text-xs uppercase tracking-[0.2em] px-3.5 py-2 border transition-colors whitespace-nowrap ${
                     h.id === active
                       ? "border-primary bg-primary text-espresso"
                       : "border-espresso/20 text-espresso/60 hover:border-primary/60 hover:text-primary"
+
                   }`}
                 >
                   {h.name}
